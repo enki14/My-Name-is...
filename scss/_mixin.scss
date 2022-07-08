@@ -1,0 +1,112 @@
+$main: #6CA5E8;
+$acsent: #EFBA30;
+$acsent_hover: #b59133;
+$white: #FBFFE0;
+$black: #323436;
+
+
+// mixinでメディアクエリを管理する
+$breakpoint: (
+    sps: 'all and (max-width: 340px)',
+    sp: 'all and (max-width: 767px)',
+    tab: 'all and (max-width: 1430px)',
+    pc: 'all and (max-width: 1610px)'
+);
+
+// $bpは$breakpointのそれぞれのキーを示している
+// map-get関数でマップの値を取得する
+@mixin mq($bp){
+    @media #{map-get($breakpoint, $bp)} {
+        @content;
+    }
+}
+
+
+@mixin clearfix{
+    &::after{
+        content: '';
+        display: block;
+        clear: both
+    }
+}
+
+// テーブルレイアウトで要素を横並び
+@mixin table_layout($margin: 0, $width: 100%){
+    display: table;
+    margin: 0 auto;
+    width: #{$width};
+    border-collapse: collapse;
+    
+    > li{
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 #{$margin / 2};
+        &:first-child{
+            padding-left: 0;
+        }
+        &:last-child{
+            padding-right: 0;
+        }
+    }
+}
+
+@mixin font_pattern($size: 14px, $color: #666, $weight: 500){
+    font-size: #{$size};
+    color: #{$color};
+    font-weight: #{$weight};
+}
+
+@mixin btn_pattern($width: 100%, $padding: 20px 30px, $background: blue, $radius: 5px){
+    padding: #{$padding};
+    background: #{$background};
+    border-radius: #{$radius};
+    text-align: center;
+    width: #{$width};
+}
+
+@mixin background_url($file: '', $width: '', $height: '', $repeat: no-repeat){
+    content: '';
+    display: inline-block;
+    width: #{$width};
+    height: #{$height};
+    background: url('../images/#{$file}');
+    background-repeat: #{$repeat};
+}
+
+
+html{
+    font-size: 62.5%;
+    overflow:auto;
+   
+}
+
+
+body{
+    margin: 0;
+    line-height: 2;
+    overflow: hidden;
+    background: #FBFFE0;
+    font-family: 'HGSKyokashotai', 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体',YuGothic,'Yu Gothic',sans-serif;
+    @include font_pattern(16px, #333, 500);
+
+    h1{
+        font-size: 2.3em;
+    }
+
+    h2{
+        font-size: 1.7em;
+    }
+
+    h3{
+        font-size: 1.5em;
+    }
+
+    h4{
+        font-size: 1.2em;
+    }
+
+    p,
+    a{
+        font-size: 1em;
+    }
+}

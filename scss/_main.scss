@@ -1,0 +1,214 @@
+
+main{
+    .main_header{
+        width: 1000px;
+        margin: 0 auto 25rem;
+        text-align: center;
+
+        .sns_aria{
+            @include table_layout(1rem, 100%);
+
+            li{
+                float: left;
+                list-style: none;
+
+                a{
+
+                    i{
+                        color: $acsent;
+                        
+                        &:hover{
+                            transition: 1.0s;
+                            color: #b59133;
+                        }
+                    }
+                }
+            }
+        }
+
+        p{
+            font-size: 28px;
+        }
+
+        button{
+            @include btn_pattern(200px, 20px 30px, $acsent, 2.5px);
+            box-shadow: 1.5rem 1.5rem #323436;
+            border: none;
+            margin-top: 3rem;
+
+            &:hover{
+                transition: 1.0s;
+                background: #b59133;
+            }
+
+        }
+    }
+
+    #training{
+        margin-bottom: 25rem;
+
+        h3{
+            width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+
+            img{
+                padding-left: 3rem;
+                padding-bottom: 5rem;
+            }
+        }
+
+        .one_post{
+            position: relative;
+            @include clearfix();
+
+            article{
+                width: 1000px;
+                margin: 0 auto;
+                display: flex;
+                padding: 4rem;
+
+                .post_side{
+                    z-index: 3;
+                    padding-top: 3rem;
+
+                    a{
+                        float: right;
+                        padding-right: 3rem;
+                    }
+                }
+
+                img{
+                    z-index: 3;
+                    margin-right: 3rem;
+                }
+               
+            }
+
+            &:nth-of-type(4n+1){
+                &::after{
+                    position: absolute;
+                    content: "";
+                    display: inline-block;
+                    background: $main repeat-x;
+                    border-radius: 175px 0 0 175px;
+                    left: 5vw;
+                    top: 0;
+                    width: 100%;
+                    height: 350px;
+                    z-index: 1;
+
+                }
+            }
+            
+            &:nth-of-type(4n+3){
+                &::after{
+                    position: absolute;
+                    content: "";
+                    display: inline-block;
+                    background: $acsent repeat-x;
+                    border-radius: 0 175px 175px 0;
+                    right: 5vw;
+                    top: 0;
+                    width: 100%;
+                    height: 350px;
+                    z-index: 1;
+
+                }
+            }
+
+        }
+    }
+
+
+    #about{
+        padding-bottom: 25rem;
+        position: relative;
+
+        &::before{
+            // @include background_url('pc/Intersect.png', 100vw, 100%, no-repeat);
+            // position: absolute;
+            // top: -130rem;
+            // background-size: cover;
+            
+
+        }
+
+        &::after{
+            // @include background_url('pc/Intersect-1.png', 100vw, 100%, no-repeat);
+            // position: absolute;
+            // top: 60rem;
+            // background-size: contain;
+        }
+        
+        .about_aria{
+            position: relative;
+            background: $main;
+            z-index: 1;
+
+           
+    
+    
+            .about_wrap{
+                width: 1000px;
+                margin: 0 auto;
+                color: $white;
+
+                h3{
+                    text-align: center;
+                    padding-top: 3rem;
+                }
+
+                .a_overview{
+                    text-align: center;
+                    padding-top: 3rem;
+                    font-size: 2rem;
+                }
+    
+                article{
+                    display: flex;
+                    justify-content: space-around;
+                    z-index: 3;
+                    margin-top: 5rem;
+    
+                    ul{
+                        padding-top: 3rem;
+                        font-size: 2rem;
+                        li{
+                            list-style: none;
+                        }
+
+                        .list_space{
+                            height: 5rem;
+                        }
+                    }
+    
+                    .about_img{
+                        @include btn_pattern(260px, 20px 30px, url('../images/pc/image0.jpeg'), 2.5px);
+                        height: 350px;
+                        background-size: cover;
+                        box-shadow: 2.5rem 2.5rem #323436;
+                        border: none;
+                        // margin-right: 5rem;
+                        
+                    }
+
+                }
+
+                .profile_aria{
+                    width: 800px;
+                    margin: 0 auto;
+                    padding: 7rem 0;
+
+                    p{
+                        padding-top: 2rem;
+                        font-size: 2rem;
+                    }
+
+                   
+                }
+            }
+        }
+    }
+}
+

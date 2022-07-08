@@ -1,0 +1,44 @@
+header{
+    @include background_url('pc/DSC_0011 (1).JPG', 100vw, 100vh, no-repeat);
+    position: relative;
+    background-size: cover;
+    
+
+    .menu-my-menu-container{
+        position: absolute;
+        top: 5rem;
+        right: 10vw;
+        width: 600px;
+        
+        ul li{
+            list-style: none;
+
+            &:nth-child(1){
+                text-align: left;
+            }
+            &:nth-child(2){
+                text-align: center;
+            }
+            &:nth-child(3){
+                text-align: right;
+            }
+        }
+    }
+
+    .h_wrap{
+        position: relative;
+        width: 1000px;
+        height: 100%;
+        margin: 0 auto;
+
+        h1{
+            position: absolute;
+            width: 500px;
+            left: 10%;
+            bottom: 38%;
+            @include font_pattern(34px, $white, 500);
+            text-align: center;
+        }
+    }
+    
+}
