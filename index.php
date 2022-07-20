@@ -282,28 +282,71 @@
             });
         });
 
+
+        // #about内の山形に変化するアニメーション
         jQuery(function(){
             let a_top = $('.about_top');
             let a_bottom = $('.about_bottom');
 
-            let t_before = `
+            // translateの数値はあくまでその要素の初期値
+            let t_mountain = `
                 .about_top::before{
-                    opacity: 1;
+                    animation: top_left 1.5s ease-in forwards;
                 }
-            `;
+                @keyframes top_left {
+                    0%{
+                        transform: translateX(-65vw);                   
+                    }
+                    100%{
+                        transform: translateX(0vw);
+                    }
+                }
 
-            let style_3 = $('<style>');
-            style_3.text(t_before);
-
-
-            let t_after = `
                 .about_top::after{
-                    opacity: 1;
+                    animation: top_right 1.5s ease-in forwards;
+                }
+                @keyframes top_right {
+                    0%{
+                        transform: translateX(32vw);                    
+                    }
+                    100%{
+                        transform: translateX(0vw);
+                    }
+                }
+
+            `;
+            let style_3 = $('<style>');
+            style_3.text(t_mountain);
+
+
+            let b_mountain = `
+                .about_bottom::before{
+                    animation: bottom_left 1.5s ease-in forwards;
+                }
+                @keyframes bottom_left {
+                    0%{
+                        transform: translateX(-65vw);                   
+                    }
+                    100%{
+                        transform: translateX(0vw);
+                    }
+                }
+
+                .about_bottom::after{
+                    animation: bottom_right 1.5s ease-in forwards;
+                }
+                @keyframes bottom_right {
+                    0%{
+                        transform: translateX(32vw);                    
+                    }
+                    100%{
+                        transform: translateX(0vw);
+                    }
                 }
             `;
 
             let style_4 = $('<style>');
-            style_4.text(t_after);
+            style_4.text(b_mountain);
 
             
             function deformation(){
@@ -312,7 +355,16 @@
                     let scroll = $(window).scrollTop();
                     let windowHeight = $(window).height();
                     if(scroll >= a_topTop - windowHeight){
-                       $('body').append(style_3, style_4);
+                       $('body').append(style_3);
+                    }
+                });
+
+                a_bottom.each(function(){
+                    let a_btmTop = a_bottom.offset().top;
+                    let scroll = $(window).scrollTop();
+                    let windowHeight = $(window).height();
+                    if(scroll >= a_btmTop - windowHeight){
+                       $('body').append(style_4);
                     }
                 });
             };

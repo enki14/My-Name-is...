@@ -1,93 +1,204 @@
-header{
-    @include background_url('pc/DSC_0011 (1).JPG', 100vw, 100vh, no-repeat);
-    position: relative;
-    background-size: cover;
-    
+.home{
 
-    .menu-my-menu-container{
-        position: absolute;
-        top: 5rem;
-        right: 10vw;
-        width: 500px;
-        // 要素がabsoluteの場合は重なり具合を意識する
-        z-index: 3;
+    header{
+        @include background_url('pc/DSC_0011 (1).JPG', 100vw, 100vh, no-repeat);
+        position: relative;
+        background-size: cover;
         
-        ul li{
-            list-style: none;
-
-            a img{
-                width: 130px;
-            }
-
-            &:nth-child(1){
-                text-align: left;
-            }
-            &:nth-child(2){
-                text-align: center;
-
+    
+        .menu-my-menu-container{
+            position: absolute;
+            top: 5rem;
+            right: 10vw;
+            width: 500px;
+            // 要素がabsoluteの場合は重なり具合を意識する
+            z-index: 3;
+            
+            ul li{
+                list-style: none;
+    
                 a img{
-                    width: 100px;
+                    width: 130px;
+                }
+    
+                &:nth-child(1){
+                    text-align: left;
+                }
+                &:nth-child(2){
+                    text-align: center;
+    
+                    a img{
+                        width: 100px;
+                    }
+                }
+                &:nth-child(3){
+                    text-align: right;
                 }
             }
-            &:nth-child(3){
-                text-align: right;
-            }
         }
+    
+        .h_wrap{
+            position: relative;
+            width: 1000px;
+            height: 100%;
+            margin: 0 auto;
+    
+            h1{
+                p{
+                    position: absolute;
+                    width: 600px;
+                    left: 0;
+                    bottom: 38%;
+                    @include font_pattern(34px, $white, 500);
+                    text-align: center;
+                }
+    
+                .p_1{
+                    animation: fadeHeader 3s ease-in-out 5s both;
+                }
+                .p_2{
+                    animation: fadeHeader 6s ease-in-out 8s both;
+                }
+                .p_3{
+                    animation: fadeHeader 5s ease-in-out 14s both;
+                }
+                .p_4{
+                    animation: fadeHeader 5s ease-in-out 19s both;
+                }
+                .p_5{
+                    animation: fadeHeader_2 1s ease-in-out 24s both;
+                }
+    
+            } 
+            
+            
+    
+            @keyframes fadeHeader {
+                0%{
+                    
+                    opacity: 0;
+                }
+                10%{
+                    opacity: 0.5;
+                }
+                30%{
+                    opacity: 1;
+                }
+                90%{
+                    opacity: 0.5;
+                }
+                100%{
+                    opacity: 0;
+                    display: none;
+                }
+            }
+    
+            @keyframes fadeHeader_2 {
+                0%{
+                    
+                    opacity: 0;
+                }
+                100%{
+                    opacity: 1;
+                }
+            }
+    
+        }
+        
     }
+}
 
-    .h_wrap{
-        position: relative;
-        width: 1000px;
-        height: 100%;
-        margin: 0 auto;
 
-        h1{
-            p{
+
+// カスタム投稿タイプ「制作物」内のheader
+// single-productionはbody_class()で自動付与されたもの
+.single-production{
+
+    header{
+        height: 400px;
+        background: $main;
+    
+        .ph_wrap{
+            width: 1000px;
+            height: 350px;
+            margin: 0 auto;
+            position: relative;
+    
+            img{
                 position: absolute;
-                width: 600px;
-                left: 0;
-                bottom: 38%;
-                @include font_pattern(34px, $white, 500);
-                text-align: center;
-            }
-
-            .p_1{
-                animation: fadeHeader 6s ease-in-out 5s both;
-            }
-            .p_2{
-                animation: fadeHeader 6s ease-in-out 11s both;
-            }
-            .p_3{
-                animation: fadeHeader 6s ease-in-out 17s both;
-            }
-            .p_4{
-                animation: fadeHeader 6s ease-in-out 24s both;
-            }
-
-        } 
-        
-        
-
-        @keyframes fadeHeader {
-            0%{
-                
-                opacity: 0;
-            }
-            10%{
-                opacity: 0.5;
-            }
-            30%{
-                opacity: 1;
-            }
-            70%{
-                opacity: 0.7;
-            }
-            100%{
-                opacity: 0;
-                display: none;
+                top: 35%;
+                display: inline-block;
+                width: 900px;
+                height: auto;
+                content: '';
+                background-size: cover;
+    
             }
         }
-
     }
+}
+
+
+.error404{
+    position: relative;
+    
+
+    &::before{
+        position: absolute;
+        display: inline-block;
+        top: 10vh;
+        right: 10vw;      
+        content: 'お探しのページは見つかりませんでした';
+        font-size: 2.7rem;  
+        color: $white;
+        z-index: 3;
+    }
+
+    &::after{
+        position: absolute;
+        display: inline-block;
+        bottom: 15vh;
+        left: 4vw; 
+        content: 'copyright, My Name is...';
+        font-size: 1.6rem;
+        color: $white;
+    }
+
+    header{
+        @include background_url('pc/IMG_0076.JPG', 100vw, 100vh, no-repeat);
+        position: relative;
+        background-size: cover;
+
+        a{
+            @include btn_pattern(150px, 20px 30px, $main, 2.5px);
+            box-shadow: 1.5rem 1.5rem #323436;
+            border: none;
+            position: absolute;
+            display: inline-block;
+            top: 45vh;
+            left: 40vw; 
+            content: '';
+            text-decoration: none;
+            font-weight: bold;
+            color: $black;
+            transition: 0.5s;
+
+            &:hover{
+                transition: 0.5s;
+                background: #98c2f2;
+            }
+
+            &:active{
+                transition: 0.5s;
+                box-shadow: 0 0 $white;
+                position: relative;
+                top: calc(45vh + 1.5rem);
+                left: calc(40vw + 1.5rem);
+            }
+
+        }
+        
+    }
+
     
 }
