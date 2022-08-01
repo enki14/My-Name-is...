@@ -7,10 +7,10 @@ $black: #323436;
 
 // mixinでメディアクエリを管理する
 $breakpoint: (
-    sps: 'all and (max-width: 340px)',
-    sp: 'all and (max-width: 767px)',
-    tab: 'all and (max-width: 1430px)',
-    pc: 'all and (max-width: 1610px)'
+    sp_s: 'all and (max-width: 420px)',
+    sp: 'all and (max-width: 720px)',
+    tab_s: 'all and (max-width: 920px)',
+    tab: 'all and (max-width: 1200px)'
 );
 
 // $bpは$breakpointのそれぞれのキーを示している
@@ -88,6 +88,7 @@ body{
     background: #FBFFE0;
     font-family: 'HGSKyokashotai', 'Yu Mincho Light','YuMincho','Yu Mincho','游明朝体',YuGothic,'Yu Gothic',sans-serif;
     @include font_pattern(16px, #333, 500);
+
 
     h1{
         font-size: 2.3em;

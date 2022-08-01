@@ -46,6 +46,8 @@
     jQuery(function(){
         let blue_band = $('.one_post:nth-of-type(4n+1)');
         let yellow_band = $('.one_post:nth-of-type(4n+3)');
+        let blue_top = blue_band.offset().top;
+        let yellow_top = yellow_band.offset().top;
         
         // 疑似要素のスタイルをまるっと指定する
         let blue_css = `
@@ -54,10 +56,10 @@
                 content: "";
                 display: inline-block;
                 background: #6CA5E8 repeat-x;
-                border-radius: 175px 0 0 175px;
+                border-radius: 128px 0 0 128px;
                 top: 0;
                 width: 100%;
-                height: 350px;
+                height: 256px;
                 z-index: 1;
                 animation: slideIn 1.5s ease-in-out forwards; 
             }
@@ -71,7 +73,27 @@
                     transform: translateX(2vw);
                     opacity: 1;
                 }
-            }`;
+            }
+            
+            @media screen and (max-width: 920px){
+                @keyframes slideIn {
+                    0%{
+                        transform: translateX(95vw);
+                        opacity: 1;
+                    }
+                    100%{
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 720px){
+                .one_post:nth-of-type(4n+1)::before{
+                    height: 260px;
+                }
+            }
+        `;
         // styleタグにblue_cssの記述をセットする
         let style = $('<style>');
         style.text(blue_css);
@@ -82,10 +104,10 @@
                 content: "";
                 display: inline-block;
                 background: #EFBA30 repeat-x;
-                border-radius: 0 175px 175px 0;
+                border-radius: 0 128px 128px 0;
                 top: 0;
                 width: 100%;
-                height: 350px;
+                height: 256px;
                 z-index: 1;
                 animation: slideOut 1.5s ease-in-out forwards; 
             }
@@ -96,8 +118,40 @@
                     opacity: 1;
                 }
                 100%{
-                    transform: translateX(-3vw);
+                    transform: translateX(-5vw);
                     opacity: 1;
+                }
+            }
+
+            @media screen and (max-width: 920px){
+                @keyframes slideOut {
+                    0%{
+                        transform: translateX(-95vw);
+                        opacity: 1;
+                    }
+                    100%{
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 720px){
+                .one_post:nth-of-type(4n+3)::before{
+                    height: 260px;
+                }
+            }
+
+            @media screen and (max-width: 420px){
+                @keyframes slideOut {
+                    0%{
+                        transform: translateX(-95vw);
+                        opacity: 1;
+                    }
+                    100%{
+                        transform: translateX(-3vw);
+                        opacity: 1;
+                    }
                 }
             }
         `;
@@ -105,21 +159,19 @@
         style_2.text(yellow_css);
 
 
-        function moveAnime(){
+        function moveAnime(b_top, y_top){
             blue_band.each(function(){
-                let blue_top = blue_band.offset().top;
                 let scroll = $(window).scrollTop();
                 let windowHeight = $(window).height();
-                if(scroll >= blue_top - windowHeight){
+                if(scroll >= b_top - windowHeight){
                     $('body').append(style);
                 }
             });
 
             yellow_band.each(function(){
-                let yellow_top = yellow_band.offset().top;
                 let scroll = $(window).scrollTop();
                 let windowHeight = $(window).height();
-                if(scroll >= yellow_top - windowHeight){
+                if(scroll >= y_top - windowHeight){
                     $('body').append(style_2);
                 }
             });
@@ -127,7 +179,7 @@
         }
 
         $(window).scroll(function(){
-            moveAnime();
+            moveAnime(blue_top, yellow_top);
         });
     });
 
@@ -224,6 +276,20 @@
 
     });
 
+
+    // jQuery(function(){
+    //     $(window).resize(br_add);
+
+    //     function br_add(){
+    //         let x = $(window).width();
+    //         let bp = 300;
+    //         if(x <= bp){
+    //             let comment = $('.error404::before');
+    //             comment.text().replace('は', 'は<br>');
+    //         }
+    //     }
+    // });
+
     // 最初のアニメーション
     jQuery(function(){
         $(window).on('load', function(){
@@ -236,29 +302,54 @@
         });
     });
 
+    // contact form 7 送信ボタン押下直後
     jQuery(function(){
+        let okWord = 'ありがとうございます' + '<br>' + 'ご指定のアドレスへ自動返信メールを送信しました';
+        let ngWord_1 = '入力内容に問題があります' + '<br>' + '確認して再度お試しください';
+        let ngWord_2 = 'メッセージの送信に失敗しました' + '<br>' + '後でまたお試しください';
+
+        let okText = $('.modal_content > span');
+        let modal = $('.modal');
+        let content = $('.modal_content');
+        let btn_cls = $('.btn_close');
+
+
         $(document).on('wpcf7mailsent', function(event){
-            Swal.fire({
-                title: '送信が完了しました。自動返信メールをお送りします。',
-                animation: `sentOk 1s linear fowards;
-                    @keyframes sentOk {
-                        0%{
-                            opacity: 0;                    
-                        }
-                        100%{
-                            opacity: 1;
-                        }
-                    }`,
-            });
+            okText.html(okWord);
+            modal.addClass('ok_modal');
+            content.css('outline','10px solid #6CA5E8');
+            btn_cls.css('background','#6CA5E8');
+            $('.ok_modal').fadeIn();
+            return false;
         });
         $(document).on('wpcf7invalid', function(event){
-            alert('入力内容に問題があります。確認して再度お試しください。');
+            okText.html(ngWord_1);
+            modal.addClass('ng_modal');
+            content.css('outline','10px solid rgb(250, 134, 134)');
+            btn_cls.css('background','rgb(250, 134, 134)');
+            $('.ng_modal').fadeIn();
+            return false;
+            
         });
         $(document).on('wpcf7spam', function(event){
-            alert('メッセージの送信に失敗しました。後でまたお試しください。');
+            okText.html(ngWord_2);
+            modal.addClass('ng_modal');
+            content.css('outline','10px solid rgb(250, 134, 134)');
+            btn_cls.css('background','rgb(250, 134, 134)');
+            $('.ng_modal').fadeIn();
+            return false;
         });
         $(document).on('wpcf7mailfailed', function(event){
-            alert('メッセージの送信に失敗しました。後でまたお試しください。');
+            okText.html(ngWord_2);
+            modal.addClass('ng_modal');
+            content.css('outline','10px solid rgb(250, 134, 134)');
+            btn_cls.css('background','rgb(250, 134, 134)');
+            $('.ng_modal').fadeIn();
+            return false;
+        });
+        $('.js-modal_close, .btn_close').on('click', function(){
+            $('.ok_modal, .ng_modal').fadeOut();
+            return false;
         });
 
     });

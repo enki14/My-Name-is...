@@ -1,117 +1,26 @@
 <?php get_header(); ?>
 <main>
-    <section class="title_area">
-        <h1><?php the_title(); ?><span><?php the_field('create_days'); ?></span></h1>
-    </section>
-    <article class="midashi_area">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/Group 136.png" alt="ポイントの見出し">
-        <p><?php the_field('point'); ?></p>
-    </article>
-    <?php 
-        for($i = 1; $i <= 3; $i++):
-            $detail = get_field("detail_$i");
-
-            $detail_img = 'detail_img'. $i;
-            $detail_title = 'detail_title'. $i;
-            $detail_desc = 'detail_desc'. $i;
-            if(empty($detail)): else:
-    ?>
-    <section class="sideByside">
-        <?php if($i % 2 == 0): ?>
-            <?php if(empty($detail[$detail_title]) && empty($detail[$detail_desc])): else: ?>
-                <article class="explain_side">
-                    <?php if(empty($detail[$detail_title])): else: ?>
-                        <h4><?php echo $detail[$detail_title] ?></h4>
-                    <?php endif; ?>
-                    <?php if(empty($detail[$detail_desc])): else: ?>
-                        <p><?php echo $detail[$detail_desc] ?></p>
-                    <?php endif; ?>
-                </article>
-            <?php endif; ?>
-            <?php if(empty($detail[$detail_img])): else: ?>
-                <div class="side_img">
-                    <img src="<?php echo $detail[$detail_img] ?>" alt="">
-                </div>
-            <?php endif; ?>
-        <?php else: ?>
-            <?php if(empty($detail[$detail_img])): else: ?>
-                <div class="side_img">
-                    <img src="<?php echo $detail[$detail_img] ?>" alt="">
-                </div>
-            <?php endif; ?>
-            <?php if(empty($detail[$detail_title]) && empty($detail[$detail_desc])): else: ?>
-                <article class="explain_side">
-                    <?php if(empty($detail[$detail_title])): else: ?>
-                        <h4><?php echo $detail[$detail_title] ?></h4>
-                    <?php endif; ?>
-                    <?php if(empty($detail[$detail_desc])): else: ?>
-                        <p><?php echo $detail[$detail_desc] ?></p>
-                    <?php endif; ?>
-                </article>
-            <?php endif; ?>
-        <?php endif; ?>
-    </section>
-    <?php endif; endfor; ?>
-    <div class="sideByside_2">
-    <?php 
-        for($i = 4; $i <= 5; $i++):
-            $detail = get_field("detail_$i");
-
-            $detail_img = 'detail_img'. $i;
-            $detail_title = 'detail_title'. $i;
-            $detail_desc = 'detail_desc'. $i;
-            if(empty($detail)): else:
-    ?>
-        <section class="vertical">
-            <?php if(empty($detail[$detail_img])): else: ?>
-                <div class="top_img">
-                    <img src="<?php echo $detail[$detail_img] ?>" alt="">
-                </div>
-            <?php endif; ?>
-            <?php if(empty($detail[$detail_title]) && empty($detail[$detail_desc])): else: ?>
-                <article class="explain_bottom">
-                    <?php if(empty($detail[$detail_title])): else: ?>
-                        <h4><?php echo $detail[$detail_title] ?></h4>
-                    <?php endif; ?>
-                    <?php if(empty($detail[$detail_desc])): else: ?>
-                        <p><?php echo $detail[$detail_desc] ?></p>
-                    <?php endif; ?>
-                </article>
-            <?php endif; ?>
-        </section>
-    <?php endif; endfor; ?>
+    <div class="cloudy_wrap">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/Group 147.png" 
+        class="cloud" alt="雲その１">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/Group 147.png" 
+        class="cloud" alt="雲その２">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/Group 147.png" 
+        class="cloud" alt="雲その３">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/Group 147.png" 
+        class="cloud" alt="雲その４">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/Group 147.png" 
+        class="cloud" alt="雲その５">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/Group 147.png" 
+        class="cloud" alt="雲その６">
     </div>
     <?php 
-        $url_set = get_field('url_set');
-        // get_sub_fieldはなぜか効かなかった
-        $url = $url_set['url'];
-        $url_text = $url_set['url_text'];
-        if(empty($url) && empty($url_text)): else:
+        $YesNo = get_field('YorN');
+        if($yesNo):
     ?>
-
-        <article class="url_area">
-        <?php if(empty($url)): else: ?>
-            <a href="<?php echo $url; ?>">このサイトを見る<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        <?php endif; ?>
-        <?php if(empty($url_text)): else: ?>
-            <p><?php echo $url_text; ?></p>
-        <?php endif; ?>
-        </article>
-    <?php endif; ?>
-    <?php 
-        $git_set = get_field('git_set');
-        $github = $git_set['github'];
-        $git_text = $git_set['git_text'];
-        if(empty($github) && empty($git_text)): else:
-    ?>
-        <article class="git_area">
-        <?php if(empty($github)): else: ?>
-            <a href="<?php echo $github; ?>">ソースコードを確認する<i class="fa-brands fa-github"></i></a>
-        <?php endif; ?>
-        <?php if(empty($git_text)): else: ?>
-            <p><?php echo $git_text; ?></p>
-        <?php endif; ?>
-        </article>
+        <?php get_template_part('single', 'copy'); ?>
+    <?php else: ?>
+        <?php get_template_part('single', 'original'); ?>
     <?php endif; ?>
 </main>
 <?php get_footer(); ?>

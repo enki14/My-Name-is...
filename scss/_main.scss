@@ -3,8 +3,24 @@
     main{
         .main_header{
             width: 1000px;
-            margin: 0 auto 25rem;
+            margin: 0 auto 15rem;
             text-align: center;
+
+            @include mq(tab){
+                width: 900px;
+            }
+
+            @include mq(tab_s){
+                width: 730px;
+            }
+
+            @include mq(sp){
+                width: 420px;
+            }
+
+            @include mq(sp_s){
+                width: 90%;
+            }
 
             .sns_aria{
                 @include table_layout(1rem, 100%);
@@ -17,64 +33,66 @@
                     a{
 
                         i{
-                            color: $main;
+                            color: $acsent;
                             
                             &:hover{
                                 transition: 1.0s;
-                                color: #b59133;
+                                color: $acsent_hover;
                             }
                         }
                     }
                 }
-            }
-
-            p{
-                font-size: 28px;
-            }
-
-            button{
-                @include btn_pattern(200px, 20px 30px, $acsent, 2.5px);
-                box-shadow: 1.5rem 1.5rem #323436;
-                border: none;
-                margin-top: 3rem;
-
-                img{
-                    width: 70px;
-                }
-
-                &:hover{
-                    transition: 1.0s;
-                    background: #b59133;
-                }
-
-                &:active{
-                    transition: 1s;
-                    box-shadow: 0 0 $white;
-                    position: relative;
-                    top: 1.5rem;
-                    left: 1.5rem;
-                }
-
             }
         }
 
         #training{
             margin-bottom: 25rem;
 
+            @include mq(sp_s){
+                margin-bottom: 15rem;
+            }
+
             h3{
                 width: 1000px;
                 margin: 0 auto;
                 text-align: left;
 
+                @include mq(tab){
+                    width: 900px;
+                }
+
+                @include mq(tab_s){
+                    width: 730px;
+                }
+
+                @include mq(sp){
+                    width: 420px;
+                }
+
+                @include mq(sp_s){
+                    width: 90%;
+                }
+
+
                 img{
                     padding-left: 3rem;
                     padding-bottom: 5rem;
                     width: 250px;
+
+                    @include mq(sp){
+                        width: 180px;
+                    }
+
+                    @include mq(sp_s){
+                        width: 140px;
+                    }
                 }
             }
 
             .one_post{
                 position: relative;
+
+                // 青帯・黄色帯のスタイルはfooter.phpのスクリプト内にある
 
                 article{
                     width: 1000px;
@@ -82,19 +100,111 @@
                     display: flex;
                     padding: 4rem;
 
+                    @include mq(tab){
+                        width: 900px;
+                    }
+
+                    @include mq(tab_s){
+                        width: 730px;
+                        padding: 4rem 0;
+                    }
+
+                    @include mq(sp){
+                        width: 420px;
+                        flex-direction: column;
+                    }
+
+                    @include mq(sp_s){
+                        width: 90%;
+                    }
+
                     .post_side{
                         z-index: 3;
-                        padding-top: 3rem;
+                        height: 170px;
+                        overflow-y: scroll;
+                        text-overflow: ellipsis;
+                        -ms-overflow-style: none;
+                        /* Firefox 対応 */
+                        scrollbar-width: none;
+
+                        @include mq(sp_s){
+                            margin-top: 2rem;
+                        }
+
+                        /* Chrome, Safari 対応 */
+                        &::-webkit-scrollbar {
+                            display:none;
+                        }
+
+                        .comment{
+                            content: '';
+                            position: absolute;
+                            display: inline-block;
+                            top: 2rem;
+                            right: 15rem;
+                            background: rgba(108, 165, 232, 0.6);
+                            width: 5rem;
+                            height: 5rem;
+                            border-radius: 50%;
+                            z-index: 5;
+
+                            .tail{
+                                position: relative;
+                                width: 100%;
+                                height: 100%;
+
+                                &::after{
+                                    content: "";
+                                    position: absolute;
+                                    border: 2.5rem solid transparent;
+                                    border-top: 2.5rem solid rgba(108, 165, 232, 0.6);
+                                    top: 3.5rem;
+                                    left: 50%;
+                                    margin-left: -2.5rem;
+                                
+                                }
+                            }
+
+                        }
+                        
+                        h4{
+                            margin-top: 0;
+
+                            @include mq(sp){
+                                text-align: center;
+                            }
+                            @include mq(sp_s){
+                                margin-bottom: 0;
+                                font-size: 18px;
+                            }
+                        }
 
                         a{
                             float: right;
                             padding-right: 3rem;
+                            color: $black;
                         }
                     }
 
                     img{
                         z-index: 3;
                         margin-right: 3rem;
+                        margin-left: 3rem;
+                        width: 40%;
+                        height: 40%;
+                        background-size: cover;
+
+                        @include mq(sp){
+                            width: 90%;
+                            height: 90%;
+                            margin-left: 0;
+                            margin-right: 0;
+                        }
+
+                        @include mq(sp_s){
+                            width: 100%;
+                            height: 100%;
+                        }
                     }
                 
                 }
@@ -115,7 +225,7 @@
                     content: '';
                     display: inline-block;
                     position: absolute;
-                    top: 0;
+                    top: -0.2rem;
                     left: 0;
                     width: 65vw;
                     height: 6.5rem;
@@ -128,7 +238,7 @@
                     content: '';
                     display: inline-block;
                     position: absolute;
-                    top: 0;
+                    top: -0.2rem;
                     left: 68vw;
                     width: 32vw;
                     height: 5rem;
@@ -155,12 +265,37 @@
                 padding: 10rem 0;
                 color: $white;
 
+                @include mq(tab){
+                    width: 900px;
+                }
+
+                @include mq(tab_s){
+                    width: 730px;
+                }
+
+                @include mq(sp){
+                    width: 420px;
+                }
+
+                @include mq(sp_s){
+                    width: 90%;
+                    padding-top: 5rem;
+                }
+
                 h3{
                     text-align: center;
                     padding-top: 3rem;
 
                     img{
                         width: 150px;
+
+                        @include mq(sp){
+                            width: 140px;
+                        }
+
+                        @include mq(sp_s){
+                            width: 110px;
+                        }
                     }
                 }
 
@@ -168,6 +303,10 @@
                     text-align: center;
                     padding-top: 3rem;
                     font-size: 2rem;
+
+                    @include mq(sp_s){
+                        font-size: 1.7rem;
+                    }
                 }
 
                 article{
@@ -176,29 +315,142 @@
                     z-index: 3;
                     margin-top: 5rem;
 
-                    ul{
-                        padding-top: 3rem;
-                        font-size: 2rem;
-                        li{
-                            list-style: none;
-                            position: relative;
+                    @include mq(sp){
+                        flex-direction: column;
+                    }
 
+                    .ab_basic{
+                        flex-basis: 50%;
+                        padding-left: 3rem;
+
+                        @include mq(tab_s){
+                            padding-left: 5rem;
+                        }
+
+                        @include mq(sp){
+                            padding-left: 2rem;
+                            padding-top: 4rem;
+                        }
+
+                        @include mq(sp_s){
+                            padding-left: 0;
+                            font-size: 1.7rem;
+                        }
+
+                        dl:nth-of-type(1){
+                            font-size: 2rem;
+                            margin-top: 3rem;
+    
                             .d_line{
-                                position: absolute;
-                                top: 0.5rem;
-                                width: 33px;
-                                display: inline-block;
-                                border-top: 1px solid $white;
-                                transform: rotate(115deg);
-                                transform-origin: 0 0;
-                                z-index: 3;
+                                position: relative;
+    
+                                &::before{
+                                    position: absolute;
+                                    top: 0.5rem;
+                                    width: 33px;
+                                    display: inline-block;
+                                    border-top: 1px solid $white;
+                                    transform: rotate(115deg);
+                                    transform-origin: 0 0;
+                                    z-index: 3;
+                                    content: '';
+                                }
+    
+                                dt{
+                                    float: left;
+                                    padding-right: 5rem;
+                                }
+    
+                                dd{
+                                    @include clearfix();
+
+                                    @include mq(sp_s){
+                                        margin-left: 0;
+                                        
+                                    }
+                                }
+
+                            }
+
+                            .d_line:nth-of-type(1){
+                                &::before{
+                                    left: 9rem;
+                                }
+                            }
+                            .d_line:nth-of-type(2){
+                                &::before{
+                                    left: 9rem;
+                                }
+                            }
+                            .d_line:nth-of-type(3){
+                                &::before{
+                                    left: 15rem;
+                                }
+
+                                dd{
+                                    letter-spacing: 2px;
+                                }
+                            }
+                            .d_line:nth-of-type(4){
+                                &::before{
+                                    left: 11rem;
+                                }
+                            }
+    
+                            @include mq(sp){
+                                padding-left: 0;
+                            }
+    
+                            @include mq(sp_s){
+                                .d_line{
+                                    &:nth-of-type(4) dt{
+                                        float: none;
+                                    }
+                                }
+                            }
+    
+                        }
+    
+                        dl:nth-of-type(2){
+                            margin-top: 5rem;
+                            letter-spacing: 2px;
+                            .d_line{
+
+                                @include mq(sp_s){
+                                    margin-bottom: 2rem;
+                                }
+
+                                dt{
+                                    float: left;
+                                    padding-right: 5rem;
+                                    font-size: 2rem;
+                                }
+                                dd{
+                                    padding-top: 0.3rem;
+                                    @include clearfix();
+    
+                                    @include mq(tab_s){
+                                        &:nth-of-type(2){
+                                            padding-top: 0.5rem;
+                                        }
+                                    }
+    
+                                    @include mq(sp_s){
+                                        margin-left: 0;
+                                        
+                                    }
+                                }
+
+                                &:nth-of-type(3) dd{
+                                    @include mq(sp_s){
+                                        font-size: 1.3rem
+                                    }
+                                }
                             }
                         }
-
-                        .list_space{
-                            height: 5rem;
-                        }
                     }
+
+                    
 
                     .about_img{
                         @include btn_pattern(260px, 20px 30px, url('../images/pc/image0.jpeg'), 2.5px);
@@ -206,7 +458,15 @@
                         background-size: cover;
                         box-shadow: 2.5rem 2.5rem #323436;
                         border: none;
-                        // margin-right: 5rem;
+                        
+                        @include mq(sp){
+                            padding: 0;
+                        }
+
+                        @include mq(sp_s){
+                            width: 240px;
+                            height: 330px;
+                        }
                         
                     }
 
@@ -217,9 +477,26 @@
                     margin: 0 auto;
                     padding: 7rem 0;
 
+                    @include mq(tab_s){
+                        width: 700px;
+                    }
+
+                    @include mq(sp){
+                        width: 420px;
+                    }
+
+                    @include mq(sp_s){
+                        width: 100%;
+                        padding-bottom: 2rem;
+                    }
+
                     p{
                         padding-top: 2rem;
                         font-size: 2rem;
+
+                        @include mq(sp_s){
+                            font-size: 1.7rem;
+                        }
                     }
 
                     
@@ -236,7 +513,7 @@
                     content: '';
                     display: inline-block;
                     position: absolute;
-                    top: 0;
+                    top: -0.2rem;
                     left: 0;
                     width: 65vw;
                     height: 6.5rem;
@@ -248,7 +525,7 @@
                     content: '';
                     display: inline-block;
                     position: absolute;
-                    top: 0;
+                    top: -0.2rem;
                     left: 68vw;
                     width: 32vw;
                     height: 5rem;
@@ -266,18 +543,55 @@
             margin: 0 auto;
             padding-top: 20rem;
 
+            @include mq(tab){
+                width: 900px;
+            }
+
+            @include mq(tab_s){
+                width: 730px;
+            }
+
+            @include mq(sp){
+                width: 420px;
+            }
+
+            @include mq(sp_s){
+                width: 90%;
+                padding-top: 15rem;
+            }
+
             h3{
                 text-align: center;
                 margin-bottom: 5rem;
 
                 img{
                     width: 180px;
+
+                    @include mq(sp){
+                        width: 170px;
+                    }
+
+                    @include mq(sp_s){
+                        width: 140px;
+                    }
                 }
             }
 
             .wpcf7{
                 width: 800px;
                 margin: 0 auto;
+
+                @include mq(tab_s){
+                    width: 730px;
+                }
+
+                @include mq(sp){
+                    width: 420px;
+                }
+
+                @include mq(sp_s){
+                    width: 90%;
+                }
 
                 form{
                     text-align: center;
@@ -288,6 +602,11 @@
 
                         &:nth-of-type(-n+3){
                             display: flex;
+
+                            @include mq(sp){
+                                height: 42px;
+                                margin: 2rem 0;
+                            }
                         }
 
                         &:nth-of-type(3){
@@ -300,6 +619,22 @@
                             z-index: 1;
                             left: -1.5rem;
                             top: 1.5rem;
+
+                            @include mq(tab_s){
+                                width: 730px;
+                                left: 0;
+                                background-size: contain;
+                            }
+
+                            @include mq(sp){
+                                width: 420px;
+                                top: 2.5rem;
+                            }
+
+                            @include mq(sp_s){
+                                width: 100%;
+                                top: 3rem;
+                            }
                         }
 
                         &:nth-of-type(4)::before{
@@ -308,6 +643,19 @@
                             z-index: 1;
                             left: -1.5rem;
                             top: 1.5rem;
+
+                            @include mq(tab_s){
+                                left: 0;
+                            }
+
+                            @include mq(sp){
+                                background-size: contain;
+                                height: 15px;
+                            }
+
+                            @include mq(sp_s){
+                                height: 12px;
+                            }
                         }
 
                         &:nth-of-type(4)::after{
@@ -316,10 +664,27 @@
                             z-index: 1;
                             right: 2rem;
                             bottom: 0;
+
+                            @include mq(tab_s){
+                                right: 0;
+                            }
+
+                            @include mq(sp){
+                                height: 4.5px;
+                                background-size: contain;
+                                right: -8rem;
+                            }
+
+                            @include mq(sp_s){
+                                height: 4px;
+                                right: -10rem;
+                            }
+
+
                         }
 
                         dt{
-                            
+
                             .c_name{
                                 // before要素の上に来るようにposition: relative;
                                 position: relative;
@@ -327,6 +692,22 @@
                                 z-index: 3;
                                 top: 1.5rem;
                                 background-size: 70px;
+
+                                @include mq(tab_s){
+                                    left: 1.2rem;
+                                }
+
+                                @include mq(sp){
+                                    background-size: 65%;
+                                    top: 1rem;
+                                    left: 1rem;
+                                }
+
+                                @include mq(sp_s){
+                                    background-size: 55%;
+                                    top: 2rem;
+                                }
+    
                             }
         
                             .c_email{
@@ -335,6 +716,22 @@
                                 z-index: 3;
                                 top: 1.1rem;
                                 background-size: 90px;
+
+                                @include mq(tab_s){
+                                    left: 1.2rem;
+                                }
+
+                                @include mq(sp){
+                                    background-size: 65%;
+                                    top: 0.7rem;
+                                    left: 1rem;
+                                }
+
+                                @include mq(sp_s){
+                                    background-size: 55%;
+                                    top: 2rem;
+                                }
+    
                             }
         
                             .c_title{
@@ -343,6 +740,22 @@
                                 z-index: 3;
                                 top: 1.1rem;
                                 background-size: 57px;
+
+                                @include mq(tab_s){
+                                    left: 1.2rem;
+                                }
+
+                                @include mq(sp){
+                                    background-size: 65%;
+                                    top: 0.7rem;
+                                    left: 1rem;
+                                }
+
+                                @include mq(sp_s){
+                                    background-size: 53%;
+                                    top: 1.8rem;
+                                }
+    
                             }
         
                             .c_message{
@@ -351,66 +764,111 @@
                                 z-index: 3; 
                                 top: 1.5rem;
                                 background-size: 100px;
+
+                                @include mq(tab_s){
+                                    left: 1.2rem;
+                                }
+
+                                @include mq(sp){
+                                    background-size: 70%;
+                                    top: 1rem;
+                                    left: 1rem;
+                                }
+
+                                @include mq(sp_s){
+                                    background-size: 65%;
+                                    top: 0.8rem;
+                                }
+    
                             }
 
                         }
 
                         dd{
-                            
+                            margin-left: 0;
+                            flex-basis: 100%;
+
+                            &:nth-of-type(-n+3){
+                                @include mq(sp_s){
+                                    text-indent: -2.3rem;
+                                }
+                            }
+
                             span{
+                                font-size: 16px;
+
+                                @include mq(sp){
+                                    font-size: 13px;
+                                }
+
                                 input{
-                                    width: 665px;
+                                    width: 100%;
                                     height: 42px;
                                     cursor: pointer;
                                     top: -6rem;
                                     letter-spacing: 0.1rem;
                                     font-size: 2rem;
+                                    border: none;
+                                    outline: none;
+                                    background: $white;
+                                    vertical-align: top;
 
                                     &:hover{
                                         background-color:rgba(0,153,255,0.2);
                                         transition: .3s;
                                     }
+
+                                    @include mq(sp_s){
+                                        text-indent: -1.3rem;
+                                    }
+
                                 }
 
                                 textarea{
-                                    width: 760px;
+                                    width: 100%;
                                     margin-top: 2rem;
                                     letter-spacing: 0.1rem;
                                     font-size: 2rem;
+                                    border: none;
+                                    outline: none;
+                                    background: $white;
 
                                     &:hover{
                                         background-color:rgba(0,153,255,0.2);
                                         transition: .3s;
+                                    }
+
+                                    @include mq(sp_s){
+                                        // width: 270px;
+                                        margin: 0 0 0 2.3rem;
                                     }
                                 }
                             }
 
                         }
 
-                        &:nth-of-type(1){
+                        &:nth-of-type(2){
                             dd{
                                 span{
                                     input{
-                                        width: 685px;
+                                        @include mq(sp_s){
+                                            // width: 180px;
+                                            text-indent: -1.8rem;
+                                        }
                                     }
                                 }
                             }
                             
                         }
 
-                        &:nth-of-type(3){
-                            dd{
-                                span{
-                                    input{
-                                        width: 695px;
-                                    }
-                                }
-                            }
-                        }
-
                         &:nth-of-type(4){
                             dt{
                                 text-align: left;
+
+                                @include mq(sp_s){
+                                    height: 42px;
+                                }
+                                
                             }
                         }
 
@@ -421,18 +879,46 @@
                         box-shadow: 1.5rem 1.5rem #323436;
                         border: none;
                         margin: 7rem auto;
+                        transition: 0.5s;
+
+                        @include mq(tab){
+                            width: 180px;
+                        }
+
+                        @include mq(sp){
+                            width: 130px;
+                        }
+
+                        @include mq(sp_s){
+                            width: 100px;
+                            margin: 4rem 0 7rem;
+                            padding: 17px 27px;
+
+                        }
 
                         &:hover{
-                            transition: 1.0s;
+                            transition: 0.5s;
                             background: #98c2f2;
                         }
 
                         &:active{
-                            transition: 1s;
+                            transition: 0.5s;
                             box-shadow: 0 0 $white;
                             position: relative;
-                            top: 1.5rem;
-                            left: 1.5rem;
+                            transform: translateX(1.5rem);
+                            transform: translateY(1.5rem);
+
+                        }
+
+                        .wpcf7-form-control{
+                            @include mq(sp){
+                                width: 70px;
+                            }
+
+                            @include mq(sp_s){
+                                width: 50px;
+                            }
+
                         }
                         
                     }
@@ -449,164 +935,618 @@
         }
     }
 
+
+    .modal{
+        // 送信ボタンのデザインはfooter.phpのスクリプト内
+
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        display: none;
+        z-index: 1000;
+
+        .modal_bg{
+            background: rgba(0,0,0,0.8);
+            height: 100vh;
+            position: absolute;
+            width: 100%;
+            
+        }
+
+        .modal_content{
+            position: absolute;
+            padding: 2rem 2rem 3rem 2rem;
+            top: 30%;
+            left: 40%;
+            width: 250px;
+            height: auto;
+            background: $white;
+            text-align: center;
+
+            @include mq(tab){
+                left: 36%;
+            }
+            @include mq(tab_s){
+                left: 32%;
+            }
+            @include mq(sp){
+                left: 23%;
+            }
+            @include mq(sp_s){
+                left: 14%;
+            }
+
+            .btn_close{
+                @include btn_pattern(100px, 5px 6px, '', 1.5px);
+                box-shadow: 0.5rem 0.5rem #323436;
+                color: $black;
+                font-weight: 700;
+                letter-spacing: 2;
+                margin-top: 1.5rem;
+            }
+        }
+    }
+
 }
 
 
 // カスタム投稿タイプ「制作物」内のmain
 .single-production{
+    color: #000;
 
     main{
-        width: 1000px;
-        margin: 0 auto;
-        padding-top: 20rem;
-        padding-bottom: 5rem;
+        background: rgba(108, 165, 232, 0.6);
+        position: relative;
 
-
-        .title_area{
-            h1{
-                text-align: center;
-            }
-
-            span{
-                font-size: 2.2rem;
-                font-weight: 700;
-                padding-left: 5rem;
-            }
-        }
-    
-        .midashi_area{
-            margin-top: 5rem;
-    
-            img{
-                width: 200px;
-            }
-
-            .midashi_url{
-                height: 6rem;
-            }
-
-            a{
-                display: block;
-                font-size: 1.6rem;
-                color: $black;
-            }
-    
-            p{
-                margin-top: 3rem;
-                font-size: 1.6rem;
-            }
-        }
-    
-        .sideByside{
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10rem;
-    
-            .side_img{
-                width: 400px;
-                height: 400px;
-    
-                img{
-                    border-radius: 5px;
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    
+        .cloudy_wrap{
+            width: 100%;
+            height: 100%;
+            
+            .cloud{
+                color: rgba(251, 255, 224, 0.6);
+                position: absolute;
+                width: 15rem;
+                height: auto;
+                content: '';
+                opacity: 0;
+                
+                &:nth-child(1){
+                    animation: oneCloud 20s ease-in 1.5s infinite; 
+                    top: 15%;
                 }
-            }
-    
-            &:nth-child(2n+1) .side_img img{
-                box-shadow: -2rem 3rem #323436;
-            }
-    
-            &:nth-child(2n) .side_img img{
-                box-shadow: 2rem 3rem #323436;
-            }
-
-    
-            .explain_side{
-                width: 510px;
-                padding-top: 3rem;
-            }
-        }
-    
-    
-        .sideByside_2{
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            margin-top: 15rem;
-    
-            .vertical{
-                &:nth-child(1) .top_img img{
-                    box-shadow: -2rem 3rem #323436;
+                &:nth-child(2){
+                    animation: twoCloud 20s ease-in 2s infinite; 
+                    top: 30%;
                 }
-        
-                &:nth-child(2) .top_img img{
-                    box-shadow: 2rem 3rem #323436;
+                &:nth-child(3){
+                    animation: threeCloud 20s ease-in 0.5s infinite;
+                    top: 90%; 
+                }
+                &:nth-child(4){
+                    animation: fourCloud 20s ease-in 1s infinite; 
+                    top: 65%;
+                }
+                &:nth-child(5){
+                    animation: fiveCloud 20s ease-in 2.5s infinite; 
+                    top: 50%;
+                }
+                &:nth-child(6){
+                    animation: sixCloud 20s ease-in 3s infinite;
+                    top: 80%; 
                 }
     
-                .top_img{
-                    width: 400px;
-                    height: 400px;
-                    margin-bottom: 3rem;
-
-                    img{
-                        border-radius: 5px;
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        border-bottom: 3rem;
+    
+    
+                @keyframes oneCloud {
+                    0%{
+                        transform: translateX(120vw);
+                        opacity: 0.5;
+                        
+                    }
+                    100%{
+                        transform: translateX(-20vw);
+                        opacity: 0.5;
                     }
                 }
-                .explain_bottom{
-                    width: 400px;
+                @keyframes twoCloud {
+                    0%{
+                        transform: translateX(120vw);
+                        opacity: 0.5;
+                    }
+                    100%{
+                        transform: translateX(-20vw);
+                        opacity: 0.5;
+                    }
+                }
+                @keyframes threeCloud {
+                    0%{
+                        transform: translateX(120vw);
+                        opacity: 0.5;
+                    }
+                    100%{
+                        transform: translateX(-20vw);
+                        opacity: 0.5;
+                    }
+                }
+                @keyframes fourCloud {
+                    0%{
+                        transform: translateX(120vw);
+                        opacity: 0.5;
+                    }
+                    100%{
+                        transform: translateX(-20vw);
+                        opacity: 0.5;
+                    }
+                }
+                @keyframes fiveCloud {
+                    0%{
+                        transform: translateX(120vw);
+                        opacity: 0.5;
+                    }
+                    100%{
+                        transform: translateX(-20vw);
+                        opacity: 0.5;
+                    }
+                }
+                @keyframes sixCloud {
+                    0%{
+                        transform: translateX(120vw);
+                        opacity: 0.5;
+                    }
+                    100%{
+                        transform: translateX(-20vw);
+                        opacity: 0.5;
+                    }
+                }
+                
+            }
+
+        }
+        
+        
+        
+        
+
+        .main_wrap{
+            width: 1000px;
+            margin: 0 auto;
+            padding-top: 16rem;
+            padding-bottom: 5rem;
+            text-shadow: 2px 2px 3px $main;
+
+            @include mq(tab){
+                width: 900px;
+            }
+    
+            @include mq(tab_s){
+                width: 730px;
+            }
+
+            @include mq(sp){
+                width: 420px;
+            }
+
+            @include mq(sp_s){
+                width: 90%;
+                padding-top: 10rem;
+            }
+    
+            .title_area{
+                h1{
+                    text-align: center;
+
+                    @include mq(sp){
+                        font-size: 2rem;
+                    }
+                    
+                }
+    
+                span{
+                    font-size: 2.2rem;
+                    font-weight: 700;
+                    padding-left: 5rem;
+
+                    @include mq(sp){
+                        padding-left: 2rem;
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        
+            .midashi_area{
+                padding: 2rem 5rem;
+                position: relative;
+                border: 3px solid $acsent;
+                // 画像の切り抜きみたいな影として使える
+                filter: drop-shadow(2px 2px 3px $main);
+                text-shadow: none;
+
+                @include mq(sp){
+                    padding: 2rem 1rem;
+                }
+
+                &::after{
+                    position: absolute;
+                    display: inline-block;
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    top: 1.5rem;
+                    left: 1.5rem;
+                    border: 3px solid rgba(239,186,48,0.2);
+
+                    @include mq(tab_s){
+                        left: 1rem;
+                    }
+                }
+        
+                img{
+                    width: 200px;
+
+                    @include mq(sp){
+                        width: 170px;
+                    }
+
+                    @include mq(sp_s){
+                        width: 150px;
+                    }
+
+                }
+    
+                .midashi_url{
+                    height: 6rem;
+                }
+    
+                a{
+                    display: block;
+                    font-size: 1.6rem;
+                    color: $black;
+                }
+        
+                p{
+                    margin-top: 3rem;
+                    font-size: 1.6rem;
+                }
+            }
+        
+            .sideByside{
+                padding: 0 2rem;
+                display: flex;
+                justify-content: space-around;
+                margin-top: 10rem;
+
+                @include mq(tab_s){
+                    justify-content: space-between;
+                }
+
+                @include mq(sp){
+                    &:nth-child(2n+1){
+                        flex-direction: column;
+                    }
+
+                    &:nth-child(2n){
+                        flex-direction: column-reverse;
+                    }
+                }
+
+                @include mq(sp_s){
+                    padding: 0;
+                }
+
+                .side_img_wrap{
+                    width: 300px;
+                    height: 300px;
+                    position: relative;
+
+                    @include mq(tab_s){
+                        width: 250px;
+                        height: 250px;
+                    }
+
+                    .side_img{
+                        width: 100%;
+                        height: 100%;
+                        overflow: hidden;
+                        
+            
+                        img{
+                            border-radius: 5px;
+                            width: 100%;
+                            height: 100%;
+                            transition: 0.5s;
+                            object-fit: cover;
+                            z-index: 2;
+        
+                            &:hover{
+                                transform: scale(1.2);
+                            }
+
+                            @include mq(sp_s){
+                                width: 95%;
+                                height: 95%;
+                            }
+                            
+                        }
+                    }
+                }
+        
+                
+        
+                &:nth-child(2n+1) .side_img_wrap::after{
+                    content: '';
+                    background: $black;
+                    position: absolute;
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    top: 3rem;
+                    right: 2rem;
+                    z-index: -1;
+                    border-radius: 5px;
+
+                    @include mq(sp_s){
+                        width: 97%;
+                        height: 95%;
+                    }
+                }
+        
+                &:nth-child(2n){
+                    
+                    // .side_img_wrap .side_img img:nth-child(1){
+                    //     display: none;
+                    // }
+
+                    // .side_img_wrap .side_img img:nth-child(2){
+                    //     display: block;
+                    // }
+
+                    .side_img_wrap::after{
+                        content: '';
+                        background: $black;
+                        position: absolute;
+                        display: inline-block;
+                        width: 100%;
+                        height: 100%;
+                        top: 3rem;
+                        left: 2rem;
+                        z-index: -1;
+                        border-radius: 5px;
+
+                        @include mq(sp_s){
+                            width: 97%;
+                            height: 95%;
+                        }
+    
+                    }
+                } 
+    
+        
+                .explain_side{
+                    width: 510px;
                     padding-top: 3rem;
+                    z-index: 2;
+
+                    @include mq(tab_s){
+                        width: 390px;
+                        padding-top: 0;
+                    }
+
+                    @include mq(sp_s){
+                        width: 100%;
+                    }
 
 
+    
+                    h4{
+                        position: relative;
+
+                        @include mq(sp){
+                            margin-top: 4rem;
+                        }
+    
+                        &::before{
+                            position: absolute;
+                            content: '';
+                            display: inline-block;
+                            top: -3rem;
+                            border: 3px solid $acsent;
+                            border-radius: 3px;
+                            background: $acsent;
+                            width: 10rem;
+                            box-shadow: 2px 2px 3px $main;
+    
+                            @include mq(sp){
+                                top: 5rem;
+                                width: 8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        
+        
+            .sideByside_2{
+                padding: 0 2rem;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 20rem;
+
+                @include mq(sp){
+                    margin-top: 10rem;
+                    flex-direction: column;
+                }
+
+                @include mq(sp_s){
+                    padding: 0;
+                }
+        
+                .vertical{
+
+                    @include mq(sp){
+                        margin-bottom: 10rem;
+                    }
+
+                    .top_img_wrap{
+                        width: 300px;
+                        height: 300px;
+                        position: relative;
+
+                        @include mq(tab_s){
+                            width: 250px;
+                            height: 250px;
+                        }
+
+                        .top_img{
+                            width: 100%;
+                            height: 100%;
+                            margin-bottom: 3rem;
+                            overflow: hidden;
+        
+                            img{
+                                border-radius: 5px;
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                border-bottom: 3rem;
+                                transition: 0.5s;
+
+                                @include mq(sp_s){
+                                    width: 95%;
+                                    height: 95%;
+                                }
+
+                                &:hover{
+                                    transform: scale(1.2);
+                                }
+                            }
+                        }
+                    }
+
+                    &:nth-child(1){
+                        margin-left: 4rem;
+
+                        @include mq(tab_s){
+                            margin-left: 0;
+                        }
+
+                        .top_img_wrap::after{
+                            content: '';
+                            background: $black;
+                            position: absolute;
+                            display: inline-block;
+                            width: 100%;
+                            height: 100%;
+                            top: 3rem;
+                            right: 2rem;
+                            z-index: -1;
+                            border-radius: 5px;
+
+                            @include mq(sp_s){
+                                width: 97%;
+                                height: 95%;
+                            }
+                        }
+                    } 
+            
+                    &:nth-child(2){
+                        margin-right: 4rem;
+
+                        @include mq(tab_s){
+                            margin-right: 0;
+                        }
+
+                        .top_img_wrap::after{
+                            content: '';
+                            background: $black;
+                            position: absolute;
+                            display: inline-block;
+                            width: 100%;
+                            height: 100%;
+                            top: 3rem;
+                            left: 2rem;
+                            z-index: -1;
+                            border-radius: 5px;
+
+                            @include mq(sp_s){
+                                width: 97%;
+                                height: 95%;
+                            }
+    
+                        }
+                    } 
+        
+                    .explain_bottom{
+                        width: 300px;
+                        margin-top: 6rem;
+                        z-index: 2;
+                        position: relative;
+
+                        @include mq(tab_s){
+                            width: 270px;
+                        }
+
+                        @include mq(sp){
+                            width: 100%;
+                            margin-top: 4rem;
+                        }
+    
+                        h4{
+                            padding-left: 2.5rem;
+                            border-left: 3px solid $acsent;
+                            filter: drop-shadow(2px 2px 3px $main);
+                        }
+
+                        p{
+                            margin-top: 2rem;
+                        }
+    
+    
+                    }
+                }
+            }
+    
+            .url_area{
+                text-align: right;
+                margin-top: 5rem;
+                a{
+                    
+                    padding-right: 3rem;
+                    text-decoration: none;
+                    font-weight: 700;
+                    color: $black;
+    
+                    i{
+                        padding-left: 0.3rem;
+                    }
+                }
+    
+                p{
+                    padding-right: 3rem;
+                }
+            }
+    
+            .git_area{
+                text-align: right;
+                margin-top: 2rem;
+                a{
+                    
+                    padding-right: 3rem;
+                    text-decoration: none;
+                    font-weight: 700;
+                    color: $black;
+    
+                    i{
+                        padding-left: 0.3rem;
+                    }
+                }
+    
+                p{
+                    padding-right: 3rem;
                 }
             }
         }
 
-        .url_area{
-            text-align: right;
-            margin-top: 5rem;
-            a{
-                
-                padding-right: 3rem;
-                text-decoration: none;
-                font-weight: 700;
-                color: $black;
-
-                i{
-                    padding-left: 0.3rem;
-                }
-            }
-
-            p{
-                padding-right: 3rem;
-            }
-        }
-
-        .git_area{
-            text-align: right;
-            margin-top: 2rem;
-            a{
-                
-                padding-right: 3rem;
-                text-decoration: none;
-                font-weight: 700;
-                color: $black;
-
-                i{
-                    padding-left: 0.3rem;
-                }
-            }
-
-            p{
-                padding-right: 3rem;
-            }
-        }
     }
 }
+

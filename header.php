@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Name is...</title>
     <?php wp_head(); ?>
 </head>
@@ -11,13 +12,11 @@
     <?php if(is_home() || is_front_page()): ?>
         <?php wp_nav_menu(array('theme_location'=>'header-navigation')); ?>
         <div class="h_wrap">
-            <h1>
-                <p class="p_1">ようこそ<br>のりまきさん家へ</p>
-                <p class="p_2">このサイトは<br>私のweb制作における作品集<br>および成長日記となります</p>
-                <p class="p_3">ホームページを立ち上げたい<br>代わりに作ってほしい</p>
-                <p class="p_4">などのご依頼がありましたら<br>どうぞご気軽にお問い合わせください</p>
-                <p class="p_5">ようこそ<br>のりまきさん家へ</p>
-            </h1>
+            <p class="p_1">ようこそ<br>のりまきさん家へ</p>
+            <p class="p_2">このサイトは<br>私のweb制作における作品集<br>および成長日記となります</p>
+            <p class="p_3">ホームページを立ち上げたい<br>代わりに作ってほしい</p>
+            <p class="p_4">などのご依頼がありましたら<br>どうぞご気軽にお問い合わせください</p>
+            <p class="p_5">ようこそ<br>のりまきさん家へ</p>
         </div>
     <?php elseif(is_singular('production')): ?>
         <div class="ph_wrap">
@@ -30,3 +29,4 @@
         </div>
     <?php endif; ?>
     </header>
+    

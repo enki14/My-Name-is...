@@ -1,7 +1,5 @@
 <?PHP 
     function theme_enqueue_styles(){
-        // ressはリセットcss
-        wp_enqueue_style('ress', '//unpkg.com/ress/dist/ress.min.css', array(), false, 'all');
         wp_enqueue_style('style', get_template_directory_uri(), array(), false, 'all');
         wp_enqueue_style('my_styles', get_template_directory_uri().'/css/mystyle.css', array(), '', 'all');
         wp_enqueue_style('my_drawer', '//cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css', '', '3.2.2', 'all');
@@ -17,7 +15,6 @@
         array(), '5.2.0');
         wp_enqueue_script('drawer', '//cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js',
         array(), '3.2.2');
-        wp_enqueue_script('sweet_alert', '//cdn.jsdelivr.net/npm/sweetalert2@8', array('jquery'), '');
         wp_enqueue_script('kitcode', '//kit.fontawesome.com/38f9c31fea.js', array(), '');
     }
     add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');

@@ -21,68 +21,36 @@
                 </a>
             </li>
         </ul>
-        <p>取得した認証情報から<br>画像を閲覧することができます</p>
-        <button><img src="<?php echo get_template_directory_uri(); ?>/images/22/Auth.png" alt="認証"></button>
     </section>
     <section id="training">
         <h3>
             <img src="<?php echo get_template_directory_uri(); ?>/images/34/Training.png" alt="トレーニング">
         </h3>
-        <div class="one_post">
-            <article>
-                <?php 
-                    $args = array(
-                        'post_type' => 'production',
-                        'posts_per_page' => '-1'
-                    );
+        <?php 
+            $args = array(
+                'post_type' => 'production',
+                'posts_per_page' => '-1'
+            );
 
-                    $pro = new WP_Query($args);
-                    if($pro->have_posts()): while($pro->have_posts()): $pro->the_post();
-                        the_field('excerpt'). '<br>';
-                    endwhile; endif;
-                    wp_reset_postdata();
-                ?>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/pc/books.png" alt="本">
-                <div class="post_side">
-                    <h4>プライベートポータルサイト</h4>
-                    <p>スーパーマーケットのポイントカード情報を提供するための自主運営のサイトを製作しました</p>
-                    <a href="">詳しく確認する<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </article>
-        </div>
+            $pro = new WP_Query($args);
+            if($pro->have_posts()): while($pro->have_posts()): $pro->the_post();
+                $header_img = get_field('header_img');
+        ?>
         <div class="one_post">
             <article>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/pc/books.png" alt="本">
+                <img src="<?php echo esc_url($header_img['url']) ?>" alt="<?php echo esc_attr($header_img['alt']) ?>">
                 <div class="post_side">
-                    <h4>有名ブログサイト模写</h4>
-                    <p>某エンジニア系ブログサイトのトップページ、カテゴリーページ、投稿ページの模写制作です。
-                    オリジナルのソースコードは基本閲覧なしで制作しています。</p>
-                    <a href="">詳しく確認する<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <h4><?php the_title() ?></h4>
+                    <p><?php the_field('excerpt') ?></p>
+                    <a href="<?php the_permalink() ?>">詳しく確認する<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <div class="comment"><i></i><div class="tail"></div></div>
                 </div>
             </article>
         </div>
-        <div class="one_post">
-            <article>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/pc/books.png" alt="本">
-                <div class="post_side">
-                    <h4>LPページ模写　～その１～</h4>
-                    <p>携帯電話の料金ブランドをタイアップしたLPページになります。
-                    こちらもソースコードの閲覧なしで制作しています。</p>
-                    <a href="">詳しく確認する<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </article>
-        </div>
-        <div class="one_post">
-            <article>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/pc/books.png" alt="本">
-                <div class="post_side">
-                    <h4>LPページ模写　～その２～</h4>
-                    <p>関東にある女子大学の入学案内ページを模写しました。
-                    コードの閲覧なしで制作しています。</p>
-                    <a href="">詳しく確認する<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </article>
-        </div>
+        <?php        
+            endwhile; endif;
+            wp_reset_postdata();
+        ?>
     </section>
     <section id="about">
         <div class="about_top">
@@ -99,29 +67,33 @@
             </p>
             <article>
                 <div class="about_img"></div>
-                <ul>
-                    <li>サイト&emsp;&emsp;
-                        <span class='d_line'></span>
-                        &emsp;&emsp;My Name is...
-                    </li>
-                    <li>所在地&emsp;&emsp;
-                        <span class='d_line'></span>
-                        &emsp;&emsp;東京都中野区
-                    </li>
-                    <li>お問い合わせ&emsp;&emsp;
-                        <span class='d_line'></span>
-                        &emsp;&emsp;jyakarisuto.gmail.com
-                    </li>
-                    <li>事業内容&emsp;&emsp;
-                        <span class='d_line'></span>
-                        &emsp;&emsp;コーディング、CMS導入等
-                    </li>
-                    <li class="list_space"></li>
-                    <li>Callisto&nbsp;no&nbsp;suna</li>
-                    <li>Twitter&emsp;&emsp;&emsp;@RBtIpvNr6OkIKiX </li>
-                    <li>Facebook&emsp;&emsp;&emsp;https://www.facebook.com/jyakarisuto</li>
-                </ul>
-
+                <div class="ab_basic">
+                    <dl>
+                        <div class="d_line">
+                            <dt>サイト</dt><dd>おにぎりさん</dd>
+                        </div>
+                        <div class="d_line">
+                            <dt>所在地</dt><dd>東京都中野区</dd>
+                        </div>
+                        <div class="d_line">
+                            <dt>お問い合わせ</dt><dd>jyakarisuto.gmail.com</dd>
+                        </div>
+                        <div class="d_line">
+                            <dt>事業内容</dt><dd>コーディング、CMS導入等</dd>
+                        </div>
+                    </dl>
+                    <dl>
+                        <div class="d_line">
+                            <dt>Callisto no suna</dt><dd></dd>
+                        </div>
+                        <div class="d_line">
+                            <dt>Twitter</dt><dd>@RBtIpvNr6OkIKiX</dd>
+                        </div>
+                        <div class="d_line">
+                            <dt>Facebook</dt><dd>https://www.facebook.com/jyakarisuto</dd>
+                        </div>
+                    </dl>
+                </div>
             </article>
             <div class="profile_aria">
                 <h4>自己紹介</h4>
@@ -141,5 +113,13 @@
         </h3>
         <?php echo do_shortcode('[contact-form-7 id="50" title="お問い合わせ"]'); ?>
     </section>
+    <div class="modal">
+        <div class="modal_bg js-modal_close">
+            <div class="modal_content">
+                <span></span>
+                <button class="btn_close">OK</button>
+            </div>
+        </div>
+    </div>
 </main>
 <?php get_footer(); ?>
