@@ -1,10 +1,23 @@
+<?php 
+$YesNo = get_field('YorN');
+if($YesNo == 1){
+    for($i = 1; $i <= 5; $i++){
+        $detail = get_field('detail_'. $i);
+        $detail_img = 'detail_img'. $i;
+        $url = $detail[$detail_img];
+        if(!empty($img)){
+            return basic_auth();
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Name is...</title>
+    <link rel="shortcut icon" href="<?php echo esc_url(get_template_directory_uri() .'/images/pc/Exclude.png') ?>">
     <?php wp_head(); ?>
 </head>
 <body <?php body_class() ?>>

@@ -92,8 +92,6 @@
             .one_post{
                 position: relative;
 
-                // 青帯・黄色帯のスタイルはfooter.phpのスクリプト内にある
-
                 article{
                     width: 1000px;
                     margin: 0 auto;
@@ -136,32 +134,37 @@
                             display:none;
                         }
 
-                        .comment{
-                            content: '';
+                        .updown{
                             position: absolute;
-                            display: inline-block;
-                            top: 2rem;
-                            right: 15rem;
-                            background: rgba(108, 165, 232, 0.6);
+                            top: 3rem;
+                            right: 18rem;
                             width: 5rem;
                             height: 5rem;
+                            background: linear-gradient(45deg, rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.2));
                             border-radius: 50%;
                             z-index: 5;
+                            display: none;
+                            transition: 0.5s;
+                            animation: updown 2s ease-in-out infinite;
 
-                            .tail{
-                                position: relative;
-                                width: 100%;
-                                height: 100%;
+                            &::before{
+                                content: "\f338";
+                                font-family: FontAwesome;
+                                color: rgba(251,255,224,0.8);
+                                display: inline-block;
+                                padding: 1rem 2.1rem;
+                            }
 
-                                &::after{
-                                    content: "";
-                                    position: absolute;
-                                    border: 2.5rem solid transparent;
-                                    border-top: 2.5rem solid rgba(108, 165, 232, 0.6);
-                                    top: 3.5rem;
-                                    left: 50%;
-                                    margin-left: -2.5rem;
-                                
+
+                            @keyframes updown {
+                                0%{
+                                    top: 3rem;
+                                }
+                                50%{
+                                    top: 6rem;
+                                }
+                                100%{
+                                    top: 3rem;
                                 }
                             }
 
@@ -1549,4 +1552,7 @@
 
     }
 }
+
+
+
 

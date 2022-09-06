@@ -14,7 +14,7 @@
                 </a>
             </li>
             <li class="ssins">
-                <a href="#" title="<?php echo get_the_title(); ?>"
+                <a href="https://www.instagram.com/jyakarisuto?ref=badge" title="<?php echo get_the_title(); ?>"
                 target="_blank" rel="nofollow noopener">
                     <i class="fa-brands fa-instagram fa-lg"></i>
                 </a>
@@ -23,165 +23,49 @@
     <p>copyright, My Name is...</p>
     </div>
 </footer>
-
 <?php if(is_home() || is_front_page()): ?>
 <div class="start">
     <div class="moon_wrap">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/Ellipse 16.png" alt="月光">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/images/pc/Ellipse 16.png'); ?>" alt="月光">
     </div>
-    <img src="<?php echo get_template_directory_uri(); ?>/images/pc/norimaki.png" 
+    <img src="<?php echo esc_url(get_template_directory_uri() . '/images/pc/norimaki.png'); ?>" 
     class="norimakisan" alt="のりまきさんのロゴ">
     <div class="cloudy_area">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/Group 147.png" 
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/images/pc/Group 147.png'); ?>" 
         class="cloudy" alt="雲その１">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/Group 147.png" 
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/images/pc/Group 147.png'); ?>" 
         class="cloudy" alt="雲その２">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/pc/Group 147.png" 
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/images/pc/Group 147.png'); ?>" 
         class="cloudy" alt="雲その３">
     </div>
 </div>
 <script>
 
-    // 帯がにゅーっと出てくる奴
-    jQuery(function(){
-        let blue_band = $('.one_post:nth-of-type(4n+1)');
-        let yellow_band = $('.one_post:nth-of-type(4n+3)');
-        let blue_top = blue_band.offset().top;
-        let yellow_top = yellow_band.offset().top;
+    // $(function(){
+    //     let side_p = getElementsByClassName('post_side');
+    //     let updown = getElementsByClassName('updown');
+    //     let moji = "postSide_";
+    //     for(let i = 1; i <= updown.length; i++){
+    //         side_p[i].addEventListener('mouseover',
+    //             // side_p[i].attr('id', moji[i]);
+    //             function(){
+    //                 updown.css({
+    //                     'display': 'block'
+    //                 });
+    //             }
+    //         );
+    //         side_p[i].addEventListener('mouseleave',
+    //             function(){
+    //                 $('.updown').css({
+    //                     'display': 'none',
+    //                     'transition': '0.5s'
+    //                 });
+    //             }
+    //         );
+    //     }
+
         
-        // 疑似要素のスタイルをまるっと指定する
-        let blue_css = `
-            .one_post:nth-of-type(4n+1)::before{
-                position: absolute;
-                content: "";
-                display: inline-block;
-                background: #6CA5E8 repeat-x;
-                border-radius: 128px 0 0 128px;
-                top: 0;
-                width: 100%;
-                height: 256px;
-                z-index: 1;
-                animation: slideIn 1.5s ease-in-out forwards; 
-            }
-
-            @keyframes slideIn {
-                0%{
-                    transform: translateX(95vw);
-                    opacity: 1;
-                }
-                100%{
-                    transform: translateX(2vw);
-                    opacity: 1;
-                }
-            }
-            
-            @media screen and (max-width: 920px){
-                @keyframes slideIn {
-                    0%{
-                        transform: translateX(95vw);
-                        opacity: 1;
-                    }
-                    100%{
-                        transform: translateX(0);
-                        opacity: 1;
-                    }
-                }
-            }
-
-            @media screen and (max-width: 720px){
-                .one_post:nth-of-type(4n+1)::before{
-                    height: 260px;
-                }
-            }
-        `;
-        // styleタグにblue_cssの記述をセットする
-        let style = $('<style>');
-        style.text(blue_css);
-
-        let yellow_css = `
-            .one_post:nth-of-type(4n+3)::before{
-                position: absolute;
-                content: "";
-                display: inline-block;
-                background: #EFBA30 repeat-x;
-                border-radius: 0 128px 128px 0;
-                top: 0;
-                width: 100%;
-                height: 256px;
-                z-index: 1;
-                animation: slideOut 1.5s ease-in-out forwards; 
-            }
-
-            @keyframes slideOut {
-                0%{
-                    transform: translateX(-95vw);
-                    opacity: 1;
-                }
-                100%{
-                    transform: translateX(-5vw);
-                    opacity: 1;
-                }
-            }
-
-            @media screen and (max-width: 920px){
-                @keyframes slideOut {
-                    0%{
-                        transform: translateX(-95vw);
-                        opacity: 1;
-                    }
-                    100%{
-                        transform: translateX(0);
-                        opacity: 1;
-                    }
-                }
-            }
-
-            @media screen and (max-width: 720px){
-                .one_post:nth-of-type(4n+3)::before{
-                    height: 260px;
-                }
-            }
-
-            @media screen and (max-width: 420px){
-                @keyframes slideOut {
-                    0%{
-                        transform: translateX(-95vw);
-                        opacity: 1;
-                    }
-                    100%{
-                        transform: translateX(-3vw);
-                        opacity: 1;
-                    }
-                }
-            }
-        `;
-        let style_2 = $('<style>');
-        style_2.text(yellow_css);
-
-
-        function moveAnime(b_top, y_top){
-            blue_band.each(function(){
-                let scroll = $(window).scrollTop();
-                let windowHeight = $(window).height();
-                if(scroll >= b_top - windowHeight){
-                    $('body').append(style);
-                }
-            });
-
-            yellow_band.each(function(){
-                let scroll = $(window).scrollTop();
-                let windowHeight = $(window).height();
-                if(scroll >= y_top - windowHeight){
-                    $('body').append(style_2);
-                }
-            });
-
-        }
-
-        $(window).scroll(function(){
-            moveAnime(blue_top, yellow_top);
-        });
-    });
+    // });
 
 
     // #about内の山形に変化するアニメーション
@@ -275,20 +159,6 @@
         });
 
     });
-
-
-    // jQuery(function(){
-    //     $(window).resize(br_add);
-
-    //     function br_add(){
-    //         let x = $(window).width();
-    //         let bp = 300;
-    //         if(x <= bp){
-    //             let comment = $('.error404::before');
-    //             comment.text().replace('は', 'は<br>');
-    //         }
-    //     }
-    // });
 
     // 最初のアニメーション
     jQuery(function(){

@@ -15,7 +15,7 @@
                 </a>
             </li>
             <li class="ssins">
-                <a href="#" title="<?php echo get_the_title(); ?>"
+                <a href="https://www.instagram.com/jyakarisuto?ref=badge" title="<?php echo get_the_title(); ?>"
                 target="_blank" rel="nofollow noopener">
                     <i class="fa-brands fa-instagram fa-xl"></i>
                 </a>
@@ -24,7 +24,7 @@
     </section>
     <section id="training">
         <h3>
-            <img src="<?php echo get_template_directory_uri(); ?>/images/34/Training.png" alt="トレーニング">
+            <img src="<?php echo esc_url(get_template_directory_uri() .'/images/34/Training.png'); ?>" alt="トレーニング">
         </h3>
         <?php 
             $args = array(
@@ -43,7 +43,7 @@
                     <h4><?php the_title() ?></h4>
                     <p><?php the_field('excerpt') ?></p>
                     <a href="<?php the_permalink() ?>">詳しく確認する<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    <div class="comment"><i></i><div class="tail"></div></div>
+                    <div class="updown"></div>
                 </div>
             </article>
         </div>
@@ -59,7 +59,7 @@
         </div>
         <div class="about_wrap">
             <h3>
-                <img src="<?php echo get_template_directory_uri(); ?>/images/34/About.png" alt="about">
+                <img src="<?php echo esc_url(get_template_directory_uri() .'/images/34/About.png'); ?>" alt="about">
             </h3>
             <p class="a_overview">
                 こちらは私、カリストの砂の案件獲得用ポートフォリオサイトとなっております。
@@ -109,7 +109,7 @@
     </section>
     <section id="contact">
         <h3>
-            <img src="<?php echo get_template_directory_uri(); ?>/images/34/Contact.png" alt="contact">
+            <img src="<?php echo esc_url(get_template_directory_uri() .'/images/34/Contact.png'); ?>" alt="contact">
         </h3>
         <?php echo do_shortcode('[contact-form-7 id="50" title="お問い合わせ"]'); ?>
     </section>
