@@ -40,34 +40,6 @@
     </div>
 </div>
 <script>
-
-    // $(function(){
-    //     let side_p = getElementsByClassName('post_side');
-    //     let updown = getElementsByClassName('updown');
-    //     let moji = "postSide_";
-    //     for(let i = 1; i <= updown.length; i++){
-    //         side_p[i].addEventListener('mouseover',
-    //             // side_p[i].attr('id', moji[i]);
-    //             function(){
-    //                 updown.css({
-    //                     'display': 'block'
-    //                 });
-    //             }
-    //         );
-    //         side_p[i].addEventListener('mouseleave',
-    //             function(){
-    //                 $('.updown').css({
-    //                     'display': 'none',
-    //                     'transition': '0.5s'
-    //                 });
-    //             }
-    //         );
-    //     }
-
-        
-    // });
-
-
     // #about内の山形に変化するアニメーション
     jQuery(function(){
         let a_top = $('.about_top');

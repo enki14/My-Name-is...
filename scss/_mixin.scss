@@ -40,7 +40,7 @@ $breakpoint: (
     > li{
         display: table-cell;
         vertical-align: middle;
-        padding: 0 #{$margin / 2};
+        padding: 0 math.div($margin, 2);
         &:first-child{
             padding-left: 0;
         }

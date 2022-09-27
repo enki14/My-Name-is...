@@ -1,5 +1,4 @@
-@import "_mixin";
-@import "_header";
-@import "_main";
-@import "_footer";
-// @import "_single";
+// @import "_mixin";
+@use "header";
+@use "main";
+@use "footer";

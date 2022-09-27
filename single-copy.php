@@ -21,7 +21,6 @@ Template Post Type: production
             $detail_img_mo = 'detail_img'. $i . '_mosaic';
             $detail_title = 'detail_title'. $i;
             $detail_desc = 'detail_desc'. $i;
-            var_dump($detail[$detail_img]);
 
             $url = $detail[$detail_img]['url'];
             $alt = $detail[$detail_img]['alt'];

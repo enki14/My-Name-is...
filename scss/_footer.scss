@@ -1,31 +1,33 @@
+@use "mixin";
+
 .home{
 
     footer{
-        background: $black;
+        background: mixin.$black;
     
         .f_wrap{
             width: 1000px;
             margin: 0 auto;
             padding: 1rem 0 2rem 0;
 
-            @include mq(tab){
+            @include mixin.mq(tab){
                 width: 900px;
             }
 
-            @include mq(tab_s){
+            @include mixin.mq(tab_s){
                 width: 730px;
             }
 
-            @include mq(sp){
+            @include mixin.mq(sp){
                 width: 420px;
             }
 
-            @include mq(sp_s){
+            @include mixin.mq(sp_s){
                 width: 90%;
             }
     
             .sns_aria{
-                @include table_layout(1rem, 100%);
+                @include mixin.table_layout(1rem, 100%);
         
                 li{
                     float: left;
@@ -35,7 +37,7 @@
                     a{
         
                         i{
-                            color: $white;
+                            color: mixin.$white;
                             
                             &:hover{
                                 transition: 1.0s;
@@ -48,7 +50,7 @@
         
             p{
                 text-align: center;
-                color: $white;
+                color: mixin.$white;
                 font-size: 1.6rem;
                 letter-spacing: 2px;
                 margin-bottom: 0;
@@ -59,7 +61,7 @@
     .start{
         height: 100vh;
         width: 100vw;
-        background: $main;
+        background: mixin.$main;
         z-index: 9000;
         position: fixed;
         // top: 0, left: 0, これ大事！
@@ -70,22 +72,22 @@
             width: 1000px;
             margin: 0 auto;
 
-            @include mq(tab){
+            @include mixin.mq(tab){
                 width: 800px;
             }
 
-            @include mq(tab_s){
+            @include mixin.mq(tab_s){
                 position: absolute;
                 width: 730px;
                 top: 7vh;
                 left: 5vw;
             }
 
-            @include mq(sp){
+            @include mixin.mq(sp){
                 top: 4vh;
             }
 
-            @include mq(sp_s){
+            @include mixin.mq(sp_s){
                 width: 90%;
             }
     
@@ -95,7 +97,7 @@
                 width: 15rem;
                 animation: moonOut 1s linear 2.5s both;
 
-                @include mq(sp){
+                @include mixin.mq(sp){
                     width: 12rem;
                 }
             }
@@ -117,7 +119,7 @@
             animation: norimaki 1.5s linear 3s both;
             z-index: 9999;
 
-            @include mq(sp){
+            @include mixin.mq(sp){
                 width: 250px;
             }
 
@@ -137,21 +139,21 @@
     
         .cloudy_area{
 
-            @include mq(tab){
+            @include mixin.mq(tab){
                 position: absolute;
                 top: 30rem;
             }
 
-            @include mq(tab_s){
+            @include mixin.mq(tab_s){
                 position: absolute;
                 top: 40vh;
             }
 
-            @include mq(sp){
+            @include mixin.mq(sp){
                 top: 55vh;
             }
 
-            @include mq(sp_s){
+            @include mixin.mq(sp_s){
                 top: 50vh;
                 left: -5rem;
             }
@@ -161,7 +163,7 @@
                 width: 15rem;
                 display: block;
 
-                @include mq(sp_s){
+                @include mixin.mq(sp_s){
                     width: 12rem;
                 }
 
@@ -221,31 +223,31 @@
 // カスタム投稿タイプ「制作物」内のfooter
 .single-production{
     footer{
-        background: $black;
+        background: mixin.$black;
     
         .f_wrap{
             width: 1000px;
             margin: 0 auto;
             padding: 1rem 0 2rem 0;
 
-            @include mq(tab){
+            @include mixin.mq(tab){
                 width: 900px;
             }
 
-            @include mq(tab_s){
+            @include mixin.mq(tab_s){
                 width: 730px;
             }
 
-            @include mq(sp){
+            @include mixin.mq(sp){
                 width: 420px;
             }
 
-            @include mq(sp_s){
+            @include mixin.mq(sp_s){
                 width: 90%;
             }
     
             .sns_aria{
-                @include table_layout(1rem, 100%);
+                @include mixin.table_layout(1rem, 100%);
         
                 li{
                     float: left;
@@ -255,7 +257,7 @@
                     a{
         
                         i{
-                            color: $white;
+                            color: mixin.$white;
                             
                             &:hover{
                                 transition: 1.0s;
@@ -268,7 +270,7 @@
         
             p{
                 text-align: center;
-                color: $white;
+                color: mixin.$white;
                 font-size: 1.6rem;
                 letter-spacing: 2px;
             }

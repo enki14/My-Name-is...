@@ -100,50 +100,11 @@
     add_action('init', 'copyCode_post');
 
 
-    // フィルターフックtemplate_includeで、他の処理よりも一番に認証を行う
-    function production_template( $template ) {
-        // $copy_temp = locate_template( array( 'single-copy.php' ) );
-        $yesNo = get_field('YorN');
-        if($yesNo){
-            return basic_auth();
-        }
-        return $template;
-    }
-    add_filter( 'template_include', 'production_template', 99);
-    
-    // // ユーザー名、パスワードの暗号化と認証設定
-    function basic_auth(){
-        $hashed_user = "m1kfDGkLDoDfI";  //別途 crypt 関数を使って作成しておく
-        $hashed_password = "i/b3VZ7dsxl7Q";  //同上
-        // ダイアログで入力された値をcrypt()でハッシュ化する
-        // $_SERVER['PHP_AUTH_USER']、$_SERVER['PHP_AUTH_PW']は自動生成されたデコードの値
-        if (isset($_SERVER['PHP_AUTH_USER']) and isset($_SERVER['PHP_AUTH_PW'])){
-          if (crypt($_SERVER['PHP_AUTH_USER'], $hashed_user) == $hashed_user && crypt($_SERVER['PHP_AUTH_PW'], $hashed_password) == $hashed_password){
-            return;
-          }
-        }else{
-            // Webブラウザに対して認証用ダイアログの表示をさせるための指示
-            header('WWW-Authenticate: Basic realm="Restricted Area"');
-            // ユーザー認証に失敗した場合の401通知
-            $redirect = header('HTTP/1.0 401 Unauthorized');
-            header('Content-type: text/html; charset='.mb_internal_encoding());
-            // ダイアログのキャンセルボタンを押したときの通知
-            // die("location: front-page.php");
-            if($redirect){
-                header('location: front-page.php');
-            }
-            
-            
-        }
-        
-    }
-
-
     // OGP設定
     function my_meta_ogp(){
         if (is_front_page() || is_home() || is_singular()) {
  
-            $ogp_image = get_template_directory_uri() . '/pc/DSC_0011 (1).JPG';
+            $ogp_image = get_template_directory_uri() . '/pc/Exclude.png';
             $twitter_site = 'RBtIpvNr6OkIKiX';
             $twitter_card = 'summary_large_image';
             $facebook_app_id = '586095538608500';

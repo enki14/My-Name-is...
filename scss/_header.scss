@@ -1,7 +1,9 @@
+@use "mixin";
+
 .home{
 
     header{
-        @include background_url('pc/DSC_0011 (1).JPG', 100vw, 100vh, no-repeat);
+        @include mixin.background_url('pc/DSC_0011 (1).JPG', 100vw, 100vh, no-repeat);
         position: relative;
         background-size: cover;
         
@@ -14,20 +16,20 @@
             // 要素がabsoluteの場合は重なり具合を意識する
             z-index: 3;
 
-            @include mq(sp){
+            @include mixin.mq(sp){
                 top: 0.3vh;
                 right: 3rem;
                 width: 60%;
             }
 
-            @include mq(sp_s){
+            @include mixin.mq(sp_s){
                 width: 100%;
                 right: 0;
             }
 
             ul{
 
-                @include mq(sp_s){
+                @include mixin.mq(sp_s){
                     width: 80%;
                     padding-left: 3.5rem;
                 }
@@ -43,10 +45,10 @@
                         text-align: left;
 
                         a img{
-                            @include mq(sp){
+                            @include mixin.mq(sp){
                                 width: 90px;
                             }
-                            @include mq(sp_s){
+                            @include mixin.mq(sp_s){
                                 width: 80px;
                             }
                         }
@@ -58,10 +60,10 @@
                         a img{
                             width: 100px;
 
-                            @include mq(sp){
+                            @include mixin.mq(sp){
                                 width: 70px;
                             }
-                            @include mq(sp_s){
+                            @include mixin.mq(sp_s){
                                 width: 60px;
                             }
                         }
@@ -70,10 +72,10 @@
                         text-align: right;
                         a img{
 
-                            @include mq(sp){
+                            @include mixin.mq(sp){
                                 width: 90px;
                             }
-                            @include mq(sp_s){
+                            @include mixin.mq(sp_s){
                                 width: 80px;
                             }
                         }
@@ -89,19 +91,19 @@
             height: 100%;
             margin: 0 auto;
 
-            @include mq(tab){
+            @include mixin.mq(tab){
                 width: 900px;
             }
 
-            @include mq(tab_s){
+            @include mixin.mq(tab_s){
                 width: 730px;
             }
 
-            @include mq(sp){
+            @include mixin.mq(sp){
                 width: 420px;
             }
 
-            @include mq(sp_s){
+            @include mixin.mq(sp_s){
                 width: 90%;
             }
     
@@ -110,24 +112,24 @@
                 width: 600px;
                 left: 0;
                 bottom: 38%;
-                @include font_pattern(34px, $white, 500);
+                @include mixin.font_pattern(34px, mixin.$white, 500);
                 text-align: center;
 
-                @include mq(tab){
+                @include mixin.mq(tab){
                     left: -5rem;
                 }
 
-                @include mq(tab_s){
+                @include mixin.mq(tab_s){
                     left: 0;
                 }
 
-                @include mq(sp){
+                @include mixin.mq(sp){
                     top: 30vh;
                     font-size: 24px;
                     width: 420px;
                 }
                 
-                @include mq(sp_s){
+                @include mixin.mq(sp_s){
                     top: 35vh;
                     font-size: 17px;
                     left: 5%;
@@ -196,38 +198,38 @@
 
     header{
         height: 400px;
-        background: $main;
+        background: mixin.$main;
         position: relative;
 
-        @include mq(tab_s){
+        @include mixin.mq(tab_s){
             height: 320px;
         }
 
-        @include mq(sp){
+        @include mixin.mq(sp){
             height: 200px;
         }
 
-        @include mq(sp_s){
+        @include mixin.mq(sp_s){
             height: 170px;
         }
 
         &::before{
-            @include background_url('pc/Group 147.png', 80%, 80%, no-repeat);
+            @include mixin.background_url('pc/Group 147.png', 80%, 80%, no-repeat);
             top: 10%;
             left: 15vw;
             z-index: 2;
             background-size: contain;
             position: absolute;
 
-            @include mq(tab_s){
+            @include mixin.mq(tab_s){
                 top: 18%;
             }
 
-            @include mq(sp){
+            @include mixin.mq(sp){
                 left: 10vw;
             }
 
-            @include mq(sp_s){
+            @include mixin.mq(sp_s){
                 left: 5vw;
                 width: 90%;
             }
@@ -239,20 +241,20 @@
             margin: 0 auto;
             position: relative;
 
-            @include mq(tab){
+            @include mixin.mq(tab){
                 width: 900px;
             }
             
 
-            @include mq(tab_s){
+            @include mixin.mq(tab_s){
                 width: 730px;
             }
 
-            @include mq(sp){
+            @include mixin.mq(sp){
                 width: 420px;
             }
 
-            @include mq(sp_s){
+            @include mixin.mq(sp_s){
                 width: 90%;
             }
     
@@ -267,22 +269,22 @@
                 background-size: cover;
                 z-index: 3;
 
-                @include mq(tab){
+                @include mixin.mq(tab){
                     left: 0;
                 }
 
-                @include mq(tab_s){
+                @include mixin.mq(tab_s){
                     left: 4%;
                     width: 650px;
                 }
 
-                @include mq(sp){
+                @include mixin.mq(sp){
                     left: 0;
                     width: 400px;
                     top: 25%;
                 }
 
-                @include mq(sp_s){
+                @include mixin.mq(sp_s){
                     width: 100%;
                     top: 20%;
                 }
@@ -302,20 +304,20 @@
         right: 10vw;      
         content: 'お探しのページは見つかりませんでした';
         font-size: 2.7rem;  
-        color: $white;
+        color: mixin.$white;
         z-index: 3;
 
-        @include mq(tab_s){
+        @include mixin.mq(tab_s){
             font-weight: 700;
             top: 25vh;
         }
         
-        @include mq(sp){
+        @include mixin.mq(sp){
             top: 20vh;
             right: 6vw;
             
         }
-        @include mq(sp_s){
+        @include mixin.mq(sp_s){
             top: 25vh;
             right: 11vw;
             font-size: 1.6rem;
@@ -330,17 +332,17 @@
         left: 4vw; 
         content: 'copyright, My Name is...';
         font-size: 1.6rem;
-        color: $white;
+        color: mixin.$white;
         letter-spacing: 0.3rem;
 
-        @include mq(sp_s){
+        @include mixin.mq(sp_s){
             left: 10vw;
             font-size: 1.4rem;
         }
     }
 
     header{
-        @include background_url('pc/IMG_0076.JPG', 100vw, 100vh, no-repeat);
+        @include mixin.background_url('pc/IMG_0076.JPG', 100vw, 100vh, no-repeat);
         position: relative;
         background-size: cover;
 
@@ -348,12 +350,12 @@
             width: 100%;
             height: 100%;
 
-            @include mq(tab_s){
+            @include mixin.mq(tab_s){
                 background: rgba(0, 0, 0, 0.3);
             }
 
             a{
-                @include btn_pattern(130px, 20px, $main, 2.5px);
+                @include mixin.btn_pattern(130px, 20px, mixin.$main, 2.5px);
                 box-shadow: 1.5rem 1.5rem #323436;
                 border: none;
                 position: absolute;
@@ -367,13 +369,13 @@
                 content: '';
                 text-decoration: none;
                 font-weight: bold;
-                color: $black;
+                color: mixin.$black;
                 font-size: 1.8rem;
                 letter-spacing: 0.1rem;
                 transition: 0.5s;
 
 
-                @include mq(sp_s){
+                @include mixin.mq(sp_s){
                     width: 90px;
                     height: 34.5px;
                 }
@@ -385,7 +387,7 @@
     
                 &:active{
                     transition: 0.5s;
-                    box-shadow: 0 0 $white;
+                    box-shadow: 0 0 mixin.$white;
                     top: 1.5rem;
                     left: 1.5rem;
 
