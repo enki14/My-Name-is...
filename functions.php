@@ -61,45 +61,6 @@
     }
     add_action('init', 'create_post_type');
 
-
-    function original_post(){
-        $post_supports = [
-            'title', 'editor', 'thumbnail', 'revisions'
-        ];
-
-        register_post_type('original', 
-            array(
-                'label' => 'オリジナル作品',
-                'public' => true,
-                'has_archive' => true,
-                'hierarchical' => true,
-                'menu_position' => 5,
-                'supports' => $post_supports
-            )
-        );
-    }
-    add_action('init', 'original_post');
-
-
-    function copyCode_post(){
-        $post_supports = [
-            'title', 'editor', 'thumbnail', 'revisions'
-        ];
-
-        register_post_type('copyCode', 
-            array(
-                'label' => '模写コーディング',
-                'public' => true,
-                'has_archive' => true,
-                'hierarchical' => true,
-                'menu_position' => 5,
-                'supports' => $post_supports
-            )
-        );
-    }
-    add_action('init', 'copyCode_post');
-
-
     // OGP設定
     function my_meta_ogp(){
         if (is_front_page() || is_home() || is_singular()) {

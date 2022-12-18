@@ -2141,6 +2141,30 @@ body a {
 .single-production main .main_wrap .git_area p {
   padding-right: 3rem;
 }
+.single-production main .history_back {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  line-height: 80px;
+  text-align: center;
+  right: 100px;
+  bottom: 80px;
+  background: #EFBA30;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 0.3rem;
+}
+.single-production main .history_back:hover {
+  background: #b59133;
+}
 
 .home footer {
   background: #323436;
