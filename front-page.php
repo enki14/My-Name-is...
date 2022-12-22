@@ -62,21 +62,21 @@
                 <img src="<?php echo esc_url(get_template_directory_uri() .'/images/34/About.png'); ?>" alt="about">
             </h3>
             <p class="a_overview">
-                こちらは私、カリストの砂の案件獲得用ポートフォリオサイトとなっております。
-                主に、これまでのサイト制作を発信し、また今後も新しい練習素材やお仕事での制作物を可能な限り更新していくものとなります。
+                このサイトは、私カリストの砂のポートフォリオ集となります。
+                主に、これまでのサイト制作を発信し、また今後も新しい練習素材を更新していくものとなります。
             </p>
             <article>
                 <div class="about_img"></div>
                 <div class="ab_basic">
                     <dl>
                         <div class="d_line">
-                            <dt>サイト</dt><dd>おにぎりさん</dd>
+                            <dt>サイト</dt><dd>UKIGUMO-X</dd>
                         </div>
                         <div class="d_line">
                             <dt>所在地</dt><dd>東京都中野区</dd>
                         </div>
                         <div class="d_line">
-                            <dt>お問い合わせ</dt><dd>jyakarisuto.gmail.com</dd>
+                            <dt>お問い合わせ</dt><dd>jyakarisuto@gmail.com</dd>
                         </div>
                         <div class="d_line">
                             <dt>事業内容</dt><dd>コーディング、CMS導入等</dd>
@@ -84,7 +84,7 @@
                     </dl>
                     <dl>
                         <div class="d_line">
-                            <dt>Callisto no suna</dt><dd></dd>
+                            <dt>カリストの砂</dt><dd></dd>
                         </div>
                         <div class="d_line">
                             <dt>Twitter</dt><dd>@RBtIpvNr6OkIKiX</dd>

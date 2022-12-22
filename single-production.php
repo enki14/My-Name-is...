@@ -124,7 +124,7 @@
 
             <article class="url_area">
             <?php if(empty($url)): else: ?>
-                <a href="<?php echo esc_url($url); ?>">このサイトを見る<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="<?php echo esc_url($url); ?>" target="_blank">このサイトを見る<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
             <?php endif; ?>
             <?php if(empty($url_text)): else: ?>
                 <p><?php echo $url_text; ?></p>
@@ -139,7 +139,7 @@
         ?>
             <article class="git_area">
             <?php if(empty($github)): else: ?>
-                <a href="<?php echo esc_url($github); ?>">ソースコードを確認する<i class="fa-brands fa-github"></i></a>
+                <a href="<?php echo esc_url($github); ?>" target="_blank">ソースコードを確認する<i class="fa-brands fa-github"></i></a>
             <?php endif; ?>
             <?php if(empty($git_text)): else: ?>
                 <p><?php echo $git_text; ?></p>

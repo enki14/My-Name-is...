@@ -27,17 +27,19 @@
             }
     
             .sns_aria{
-                @include mixin.table_layout(1rem, 100%);
-        
+                display: flex;
+                justify-content: space-around;
+                margin: 0 auto;
+                box-sizing: border-box;
+                padding: 0;
+                    
                 li{
-                    float: left;
                     list-style: none;
-                    padding-right: 1rem;
         
                     a{
         
                         i{
-                            color: mixin.$white;
+                            color: mixin.$main;
                             
                             &:hover{
                                 transition: 1.0s;
@@ -51,9 +53,10 @@
             p{
                 text-align: center;
                 color: mixin.$white;
-                font-size: 1.6rem;
+                font-size: 2rem;
                 letter-spacing: 2px;
                 margin-bottom: 0;
+                margin-top: 3rem;
             }
         }
     }
@@ -67,6 +70,8 @@
         // top: 0, left: 0, これ大事！
         top: 0;
         left: 0;
+
+
     
         .moon_wrap{
             width: 1000px;
@@ -78,9 +83,9 @@
 
             @include mixin.mq(tab_s){
                 position: absolute;
-                width: 730px;
+                width: 650px;
                 top: 7vh;
-                left: 5vw;
+                left: 10vw;
             }
 
             @include mixin.mq(sp){
@@ -88,18 +93,24 @@
             }
 
             @include mixin.mq(sp_s){
+                top: 2vh;
                 width: 90%;
             }
     
             img{
                 left: 10rem;
-                margin: 10rem 0;
+                margin: 7rem 0;
                 width: 15rem;
                 animation: moonOut 1s linear 2.5s both;
 
-                @include mixin.mq(sp){
-                    width: 12rem;
+                @include mixin.mq(tab){
+                    width: 13rem;
                 }
+
+                @include mixin.mq(sp){
+                    width: 13rem;
+                }
+                
             }
     
             @keyframes moonOut {
@@ -111,7 +122,7 @@
     
         .norimakisan{
             position: fixed;
-            top: 0;
+            top: -5rem;
             left: 0;
             right: 0;
             bottom: 0;
@@ -122,6 +133,10 @@
             @include mixin.mq(sp){
                 width: 250px;
             }
+            @include mixin.mq(sp){
+                width: 200px;
+            }
+
 
         }
     
@@ -138,23 +153,14 @@
         }
     
         .cloudy_area{
-
-            @include mixin.mq(tab){
-                position: absolute;
-                top: 30rem;
-            }
-
-            @include mixin.mq(tab_s){
-                position: absolute;
-                top: 40vh;
-            }
-
+            position: absolute;
+            top: 40vh;
+            
             @include mixin.mq(sp){
-                top: 55vh;
+                top: 50vh;
             }
 
             @include mixin.mq(sp_s){
-                top: 50vh;
                 left: -5rem;
             }
 
@@ -162,6 +168,7 @@
                 margin-bottom: 5rem;
                 width: 15rem;
                 display: block;
+                opacity: 0;
 
                 @include mixin.mq(sp_s){
                     width: 12rem;

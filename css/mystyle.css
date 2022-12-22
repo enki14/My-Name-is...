@@ -50,7 +50,7 @@ body a {
 }
 @media all and (max-width: 720px) {
   .home header .menu-my-menu-container {
-    top: 0.3vh;
+    top: 3rem;
     right: 3rem;
     width: 60%;
   }
@@ -117,63 +117,55 @@ body a {
 }
 .home header .h_wrap {
   position: relative;
-  width: 1000px;
+  width: 900px;
   height: 100%;
   margin: 0 auto;
 }
 @media all and (max-width: 1200px) {
   .home header .h_wrap {
-    width: 900px;
+    width: 800px;
   }
 }
 @media all and (max-width: 920px) {
   .home header .h_wrap {
-    width: 730px;
-  }
-}
-@media all and (max-width: 720px) {
-  .home header .h_wrap {
-    width: 420px;
-  }
-}
-@media all and (max-width: 420px) {
-  .home header .h_wrap {
-    width: 90%;
+    width: 100%;
   }
 }
 .home header .h_wrap p {
   position: absolute;
-  width: 600px;
+  width: 100%;
   left: 0;
-  bottom: 38%;
+  bottom: 37%;
   font-size: 34px;
   color: #FBFFE0;
   font-weight: 500;
-  text-align: center;
+  text-align: left;
 }
 @media all and (max-width: 1200px) {
   .home header .h_wrap p {
-    left: -5rem;
+    bottom: 30%;
   }
 }
 @media all and (max-width: 920px) {
   .home header .h_wrap p {
-    left: 0;
+    text-align: center;
+    bottom: auto;
+    top: 35%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0 3rem;
   }
 }
 @media all and (max-width: 720px) {
   .home header .h_wrap p {
-    top: 30vh;
+    top: 38%;
     font-size: 24px;
-    width: 420px;
   }
 }
 @media all and (max-width: 420px) {
   .home header .h_wrap p {
     top: 35vh;
-    font-size: 17px;
-    left: 5%;
-    width: 90%;
+    font-size: 22px;
   }
 }
 .home header .h_wrap .p_1 {
@@ -189,12 +181,20 @@ body a {
           animation: fadeHeader 5s ease-in-out 14s both;
 }
 .home header .h_wrap .p_4 {
-  -webkit-animation: fadeHeader 5s ease-in-out 19s both;
-          animation: fadeHeader 5s ease-in-out 19s both;
+  bottom: 40%;
+  -webkit-animation: fadeHeader_2 5s ease-in-out 19s both;
+          animation: fadeHeader_2 5s ease-in-out 19s both;
 }
-.home header .h_wrap .p_5 {
-  -webkit-animation: fadeHeader_2 1s ease-in-out 24s both;
-          animation: fadeHeader_2 1s ease-in-out 24s both;
+@media all and (max-width: 920px) {
+  .home header .h_wrap .p_4 {
+    bottom: 35%;
+  }
+}
+@media all and (max-width: 420px) {
+  .home header .h_wrap .p_4 {
+    bottom: auto;
+    top: 40%;
+  }
 }
 @-webkit-keyframes fadeHeader {
   0% {
@@ -331,7 +331,6 @@ body a {
   display: inline-block;
   width: 900px;
   height: auto;
-  content: "";
   background-size: cover;
   z-index: 3;
 }
@@ -360,51 +359,6 @@ body a {
   }
 }
 
-.error404::before {
-  position: absolute;
-  display: inline-block;
-  top: 10vh;
-  right: 10vw;
-  content: "お探しのページは見つかりませんでした";
-  font-size: 2.7rem;
-  color: #FBFFE0;
-  z-index: 3;
-}
-@media all and (max-width: 920px) {
-  .error404::before {
-    font-weight: 700;
-    top: 25vh;
-  }
-}
-@media all and (max-width: 720px) {
-  .error404::before {
-    top: 20vh;
-    right: 6vw;
-  }
-}
-@media all and (max-width: 420px) {
-  .error404::before {
-    top: 25vh;
-    right: 11vw;
-    font-size: 1.6rem;
-  }
-}
-.error404::after {
-  position: absolute;
-  display: inline-block;
-  bottom: 15vh;
-  left: 4vw;
-  content: "copyright, My Name is...";
-  font-size: 1.6rem;
-  color: #FBFFE0;
-  letter-spacing: 0.3rem;
-}
-@media all and (max-width: 420px) {
-  .error404::after {
-    left: 10vw;
-    font-size: 1.4rem;
-  }
-}
 .error404 header {
   content: "";
   display: inline-block;
@@ -422,6 +376,44 @@ body a {
 @media all and (max-width: 920px) {
   .error404 header .dark {
     background: rgba(0, 0, 0, 0.3);
+  }
+}
+.error404 header .dark .not_page {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 30%;
+  width: 100%;
+  position: relative;
+}
+.error404 header .dark .not_page p {
+  position: absolute;
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+  display: block;
+  bottom: 10rem;
+  right: 10vw;
+  font-size: 2.7rem;
+  text-align: center;
+  color: #FBFFE0;
+  z-index: 3;
+}
+@media all and (max-width: 920px) {
+  .error404 header .dark .not_page p {
+    font-size: 2.4rem;
+    padding: 0 3rem;
+    bottom: 0;
+    right: auto;
+  }
+}
+@media all and (max-width: 420px) {
+  .error404 header .dark .not_page p {
+    font-size: 2.2rem;
   }
 }
 .error404 header .dark a {
@@ -469,6 +461,22 @@ body a {
   top: 1.5rem;
   left: 1.5rem;
 }
+.error404::after {
+  position: absolute;
+  display: inline-block;
+  bottom: 15vh;
+  left: 6vw;
+  content: "copyright, UKIGUMO-X";
+  font-size: 2rem;
+  color: #FBFFE0;
+  letter-spacing: 0.3rem;
+}
+@media all and (max-width: 420px) {
+  .error404::after {
+    left: 10vw;
+    font-size: 1.4rem;
+  }
+}
 
 .home main .main_header {
   width: 1000px;
@@ -482,43 +490,39 @@ body a {
 }
 @media all and (max-width: 920px) {
   .home main .main_header {
-    width: 730px;
-  }
-}
-@media all and (max-width: 720px) {
-  .home main .main_header {
-    width: 420px;
-  }
-}
-@media all and (max-width: 420px) {
-  .home main .main_header {
     width: 90%;
   }
 }
 .home main .main_header .sns_aria {
-  display: table;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
   margin: 0 auto;
-  width: 100%;
-  border-collapse: collapse;
+  padding: 5rem;
 }
-.home main .main_header .sns_aria > li {
-  display: table-cell;
-  vertical-align: middle;
-  padding: 0 0.5rem;
-}
-.home main .main_header .sns_aria > li:first-child {
-  padding-left: 0;
-}
-.home main .main_header .sns_aria > li:last-child {
-  padding-right: 0;
+@media all and (max-width: 720px) {
+  .home main .main_header .sns_aria {
+    padding: 5rem 0;
+  }
 }
 .home main .main_header .sns_aria li {
-  float: left;
   list-style: none;
-  padding-right: 1rem;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 2.5rem;
+  background: #6CA5E8;
+  -webkit-box-shadow: 5px 5px #323436;
+          box-shadow: 5px 5px #323436;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 5rem;
 }
 .home main .main_header .sns_aria li a i {
-  color: #EFBA30;
+  color: #323436;
 }
 .home main .main_header .sns_aria li a i:hover {
   -webkit-transition: 1s;
@@ -561,16 +565,11 @@ body a {
 .home main #training h3 img {
   padding-left: 3rem;
   padding-bottom: 5rem;
-  width: 250px;
-}
-@media all and (max-width: 720px) {
-  .home main #training h3 img {
-    width: 180px;
-  }
+  width: 180px;
 }
 @media all and (max-width: 420px) {
   .home main #training h3 img {
-    width: 140px;
+    width: 150px;
   }
 }
 .home main #training .one_post {
@@ -587,18 +586,18 @@ body a {
 }
 @media all and (max-width: 1200px) {
   .home main #training .one_post article {
-    width: 900px;
+    width: 80vw;
   }
 }
 @media all and (max-width: 920px) {
   .home main #training .one_post article {
-    width: 730px;
+    width: 85vw;
     padding: 4rem 0;
   }
 }
 @media all and (max-width: 720px) {
   .home main #training .one_post article {
-    width: 420px;
+    width: 75vw;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -608,18 +607,26 @@ body a {
 }
 @media all and (max-width: 420px) {
   .home main #training .one_post article {
-    width: 90%;
+    width: 90vw;
   }
 }
 .home main #training .one_post article .post_side {
   z-index: 3;
   height: 170px;
+  width: 57%;
   overflow-y: scroll;
   text-overflow: ellipsis;
   -ms-overflow-style: none;
   /* Firefox 対応 */
   scrollbar-width: none;
   /* Chrome, Safari 対応 */
+}
+@media all and (max-width: 720px) {
+  .home main #training .one_post article .post_side {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 2rem;
+  }
 }
 @media all and (max-width: 420px) {
   .home main #training .one_post article .post_side {
@@ -680,6 +687,7 @@ body a {
 @media all and (max-width: 720px) {
   .home main #training .one_post article .post_side h4 {
     text-align: center;
+    margin-bottom: 1.5rem;
   }
 }
 @media all and (max-width: 420px) {
@@ -705,8 +713,7 @@ body a {
   .home main #training .one_post article img {
     width: 90%;
     height: 90%;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0 auto;
   }
 }
 @media all and (max-width: 420px) {
@@ -1031,28 +1038,23 @@ body a {
   background: #6CA5E8;
 }
 .home main #contact {
-  width: 1000px;
+  width: 800px;
   margin: 0 auto;
   padding-top: 20rem;
 }
-@media all and (max-width: 1200px) {
-  .home main #contact {
-    width: 900px;
-  }
-}
 @media all and (max-width: 920px) {
   .home main #contact {
-    width: 730px;
+    width: 630px;
   }
 }
 @media all and (max-width: 720px) {
   .home main #contact {
-    width: 420px;
+    width: 75vw;
   }
 }
 @media all and (max-width: 420px) {
   .home main #contact {
-    width: 90%;
+    width: 90vw;
     padding-top: 15rem;
   }
 }
@@ -1074,23 +1076,8 @@ body a {
   }
 }
 .home main #contact .wpcf7 {
-  width: 800px;
+  width: 100%;
   margin: 0 auto;
-}
-@media all and (max-width: 920px) {
-  .home main #contact .wpcf7 {
-    width: 730px;
-  }
-}
-@media all and (max-width: 720px) {
-  .home main #contact .wpcf7 {
-    width: 420px;
-  }
-}
-@media all and (max-width: 420px) {
-  .home main #contact .wpcf7 {
-    width: 90%;
-  }
 }
 .home main #contact .wpcf7 form {
   text-align: center;
@@ -1117,33 +1104,33 @@ body a {
 .home main #contact .wpcf7 form dl:nth-of-type(-n+3)::before {
   content: "";
   display: inline-block;
-  width: 790px;
+  width: 100%;
   height: 30px;
   background: url("../images/pc/Group 130.png");
   background-repeat: no-repeat;
   position: absolute;
   z-index: 1;
-  left: -1.5rem;
+  left: 0;
   top: 1.5rem;
 }
 @media all and (max-width: 920px) {
   .home main #contact .wpcf7 form dl:nth-of-type(-n+3)::before {
-    width: 730px;
     left: 0;
     background-size: contain;
   }
 }
 @media all and (max-width: 720px) {
   .home main #contact .wpcf7 form dl:nth-of-type(-n+3)::before {
-    width: 420px;
     top: 2.5rem;
   }
 }
 @media all and (max-width: 420px) {
   .home main #contact .wpcf7 form dl:nth-of-type(-n+3)::before {
-    width: 100%;
     top: 3rem;
   }
+}
+.home main #contact .wpcf7 form dl:nth-of-type(4) {
+  margin-top: 3.5rem;
 }
 .home main #contact .wpcf7 form dl:nth-of-type(4)::before {
   content: "";
@@ -1154,7 +1141,7 @@ body a {
   background-repeat: no-repeat;
   position: absolute;
   z-index: 1;
-  left: -1.5rem;
+  left: 0;
   top: 1.5rem;
 }
 @media all and (max-width: 920px) {
@@ -1165,7 +1152,7 @@ body a {
 @media all and (max-width: 720px) {
   .home main #contact .wpcf7 form dl:nth-of-type(4)::before {
     background-size: contain;
-    height: 15px;
+    height: 20px;
   }
 }
 @media all and (max-width: 420px) {
@@ -1213,6 +1200,7 @@ body a {
   background-repeat: no-repeat;
   z-index: 3;
   top: 1.5rem;
+  left: 2rem;
   background-size: 70px;
 }
 @media all and (max-width: 920px) {
@@ -1223,8 +1211,7 @@ body a {
 @media all and (max-width: 720px) {
   .home main #contact .wpcf7 form dl dt .c_name {
     background-size: 65%;
-    top: 1rem;
-    left: 1rem;
+    top: 2rem;
   }
 }
 @media all and (max-width: 420px) {
@@ -1243,18 +1230,14 @@ body a {
   background-repeat: no-repeat;
   z-index: 3;
   top: 1.1rem;
+  left: 2rem;
   background-size: 90px;
-}
-@media all and (max-width: 920px) {
-  .home main #contact .wpcf7 form dl dt .c_email {
-    left: 1.2rem;
-  }
 }
 @media all and (max-width: 720px) {
   .home main #contact .wpcf7 form dl dt .c_email {
     background-size: 65%;
-    top: 0.7rem;
-    left: 1rem;
+    top: 1.8rem;
+    left: 1.5rem;
   }
 }
 @media all and (max-width: 420px) {
@@ -1273,18 +1256,14 @@ body a {
   background-repeat: no-repeat;
   z-index: 3;
   top: 1.1rem;
+  left: 2rem;
   background-size: 57px;
-}
-@media all and (max-width: 920px) {
-  .home main #contact .wpcf7 form dl dt .c_title {
-    left: 1.2rem;
-  }
 }
 @media all and (max-width: 720px) {
   .home main #contact .wpcf7 form dl dt .c_title {
     background-size: 65%;
-    top: 0.7rem;
-    left: 1rem;
+    top: 1.7rem;
+    left: 1.5rem;
   }
 }
 @media all and (max-width: 420px) {
@@ -1303,18 +1282,14 @@ body a {
   background-repeat: no-repeat;
   z-index: 3;
   top: 1.5rem;
+  left: 2rem;
   background-size: 100px;
-}
-@media all and (max-width: 920px) {
-  .home main #contact .wpcf7 form dl dt .c_message {
-    left: 1.2rem;
-  }
 }
 @media all and (max-width: 720px) {
   .home main #contact .wpcf7 form dl dt .c_message {
     background-size: 70%;
-    top: 1rem;
-    left: 1rem;
+    top: 1.3rem;
+    left: 1.4rem;
   }
 }
 @media all and (max-width: 420px) {
@@ -1328,6 +1303,12 @@ body a {
   -webkit-flex-basis: 100%;
       -ms-flex-preferred-size: 100%;
           flex-basis: 100%;
+  padding-left: 3rem;
+}
+@media all and (max-width: 420px) {
+  .home main #contact .wpcf7 form dl dd {
+    padding-left: 0;
+  }
 }
 @media all and (max-width: 420px) {
   .home main #contact .wpcf7 form dl dd:nth-of-type(-n+3) {
@@ -2148,7 +2129,7 @@ body a {
   border-radius: 50%;
   line-height: 80px;
   text-align: center;
-  right: 100px;
+  right: 5%;
   bottom: 80px;
   background: #EFBA30;
   -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
@@ -2164,6 +2145,14 @@ body a {
 }
 .single-production main .history_back:hover {
   background: #b59133;
+}
+@media all and (max-width: 720px) {
+  .single-production main .history_back {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    bottom: 60px;
+  }
 }
 
 .home footer {
@@ -2195,29 +2184,23 @@ body a {
   }
 }
 .home footer .f_wrap .sns_aria {
-  display: table;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
   margin: 0 auto;
-  width: 100%;
-  border-collapse: collapse;
-}
-.home footer .f_wrap .sns_aria > li {
-  display: table-cell;
-  vertical-align: middle;
-  padding: 0 0.5rem;
-}
-.home footer .f_wrap .sns_aria > li:first-child {
-  padding-left: 0;
-}
-.home footer .f_wrap .sns_aria > li:last-child {
-  padding-right: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
 }
 .home footer .f_wrap .sns_aria li {
-  float: left;
   list-style: none;
-  padding-right: 1rem;
 }
 .home footer .f_wrap .sns_aria li a i {
-  color: #FBFFE0;
+  color: #6CA5E8;
 }
 .home footer .f_wrap .sns_aria li a i:hover {
   -webkit-transition: 1s;
@@ -2227,9 +2210,10 @@ body a {
 .home footer .f_wrap p {
   text-align: center;
   color: #FBFFE0;
-  font-size: 1.6rem;
+  font-size: 2rem;
   letter-spacing: 2px;
   margin-bottom: 0;
+  margin-top: 3rem;
 }
 .home .start {
   height: 100vh;
@@ -2252,9 +2236,9 @@ body a {
 @media all and (max-width: 920px) {
   .home .start .moon_wrap {
     position: absolute;
-    width: 730px;
+    width: 650px;
     top: 7vh;
-    left: 5vw;
+    left: 10vw;
   }
 }
 @media all and (max-width: 720px) {
@@ -2264,19 +2248,25 @@ body a {
 }
 @media all and (max-width: 420px) {
   .home .start .moon_wrap {
+    top: 2vh;
     width: 90%;
   }
 }
 .home .start .moon_wrap img {
   left: 10rem;
-  margin: 10rem 0;
+  margin: 7rem 0;
   width: 15rem;
   -webkit-animation: moonOut 1s linear 2.5s both;
           animation: moonOut 1s linear 2.5s both;
 }
+@media all and (max-width: 1200px) {
+  .home .start .moon_wrap img {
+    width: 13rem;
+  }
+}
 @media all and (max-width: 720px) {
   .home .start .moon_wrap img {
-    width: 12rem;
+    width: 13rem;
   }
 }
 @-webkit-keyframes moonOut {
@@ -2291,7 +2281,7 @@ body a {
 }
 .home .start .norimakisan {
   position: fixed;
-  top: 0;
+  top: -5rem;
   left: 0;
   right: 0;
   bottom: 0;
@@ -2303,6 +2293,11 @@ body a {
 @media all and (max-width: 720px) {
   .home .start .norimakisan {
     width: 250px;
+  }
+}
+@media all and (max-width: 720px) {
+  .home .start .norimakisan {
+    width: 200px;
   }
 }
 @-webkit-keyframes norimaki {
@@ -2327,26 +2322,17 @@ body a {
     opacity: 1;
   }
 }
-@media all and (max-width: 1200px) {
-  .home .start .cloudy_area {
-    position: absolute;
-    top: 30rem;
-  }
-}
-@media all and (max-width: 920px) {
-  .home .start .cloudy_area {
-    position: absolute;
-    top: 40vh;
-  }
+.home .start .cloudy_area {
+  position: absolute;
+  top: 40vh;
 }
 @media all and (max-width: 720px) {
   .home .start .cloudy_area {
-    top: 55vh;
+    top: 50vh;
   }
 }
 @media all and (max-width: 420px) {
   .home .start .cloudy_area {
-    top: 50vh;
     left: -5rem;
   }
 }
@@ -2354,6 +2340,7 @@ body a {
   margin-bottom: 5rem;
   width: 15rem;
   display: block;
+  opacity: 0;
 }
 @media all and (max-width: 420px) {
   .home .start .cloudy_area .cloudy {
@@ -2511,4 +2498,4 @@ body a {
   color: #FBFFE0;
   font-size: 1.6rem;
   letter-spacing: 2px;
-}/*# sourceMappingURL=mystyle.css.map */
+}

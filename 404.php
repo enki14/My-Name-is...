@@ -10,6 +10,9 @@
 <body <?php body_class() ?>>
     <header>
         <div class="dark">
+            <div class="not_page">
+                <p>お探しのページは見つかりませんでした。</p>
+            </div>
             <a href="<?php echo esc_url(home_url()); ?>">TOPへ戻る</a>
         </div>
     </header>

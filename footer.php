@@ -20,7 +20,7 @@
                 </a>
             </li>
         </ul>
-    <p>copyright, My Name is...</p>
+    <p>copyright, UKIGUMO-X</p>
     </div>
 </footer>
 <?php if(is_home() || is_front_page()): ?>
@@ -28,8 +28,8 @@
     <div class="moon_wrap">
         <img src="<?php echo esc_url(get_template_directory_uri() . '/images/pc/Ellipse 16.png'); ?>" alt="月光">
     </div>
-    <img src="<?php echo esc_url(get_template_directory_uri() . '/images/pc/norimaki.png'); ?>" 
-    class="norimakisan" alt="のりまきさんのロゴ">
+    <img src="<?php echo esc_url(get_template_directory_uri() . '/images/ukigumo.png'); ?>" 
+    class="norimakisan" alt="うきぐものロゴ">
     <div class="cloudy_area">
         <img src="<?php echo esc_url(get_template_directory_uri() . '/images/pc/Group 147.png'); ?>" 
         class="cloudy" alt="雲その１">
@@ -131,18 +131,19 @@
         });
 
     });
+    
 
-    // 最初のアニメーション
-    jQuery(function(){
-        $(window).on('load', function(){
-            setTimeout(() => {
-                $('.start').fadeIn(300);
-            }, 500);
-            setTimeout(() => {
-                $('.start').fadeOut(500);
-            }, 5000);
-        });
+    // 最初のアニメーション   
+    jQuery(window).on('load', function(){
+        setTimeout(() => {
+            $('.start').fadeIn(300);
+        }, 500);
+        setTimeout(() => {
+            $('.start').fadeOut(500);
+        }, 5000);
+        return;
     });
+   
 
     // contact form 7 送信ボタン押下直後
     jQuery(function(){

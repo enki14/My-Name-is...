@@ -4,7 +4,6 @@
     add_theme_support('title-tag');
 
     function theme_enqueue_styles(){
-        wp_enqueue_style('style', get_template_directory_uri(), array(), false, 'all');
         wp_enqueue_style('my_styles', get_template_directory_uri().'/css/mystyle.css', array(), '', 'all');
         wp_enqueue_style('awesome_css', '//use.fontawesome.com/releases/v5.15.4/css/all.css', array('my_styles'), '5.15.4', 'all');
         wp_enqueue_style('my_drawer', '//cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css', '', '3.2.2', 'all');

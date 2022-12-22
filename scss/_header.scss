@@ -17,12 +17,13 @@
             z-index: 3;
 
             @include mixin.mq(sp){
-                top: 0.3vh;
+                top: 3rem;
                 right: 3rem;
                 width: 60%;
             }
 
             @include mixin.mq(sp_s){
+                // top: 3vh;
                 width: 100%;
                 right: 0;
             }
@@ -87,53 +88,46 @@
     
         .h_wrap{
             position: relative;
-            width: 1000px;
+            width: 900px;
             height: 100%;
             margin: 0 auto;
 
             @include mixin.mq(tab){
-                width: 900px;
+                width: 800px;
             }
 
             @include mixin.mq(tab_s){
-                width: 730px;
+                width: 100%;
             }
-
-            @include mixin.mq(sp){
-                width: 420px;
-            }
-
-            @include mixin.mq(sp_s){
-                width: 90%;
-            }
-    
+            
             p{
                 position: absolute;
-                width: 600px;
+                width: 100%;
                 left: 0;
-                bottom: 38%;
+                bottom: 37%;
                 @include mixin.font_pattern(34px, mixin.$white, 500);
-                text-align: center;
+                text-align: left;
 
                 @include mixin.mq(tab){
-                    left: -5rem;
+                    bottom: 30%;
                 }
 
                 @include mixin.mq(tab_s){
-                    left: 0;
+                    text-align: center;
+                    bottom: auto;
+                    top: 35%;
+                    box-sizing: border-box;
+                    padding: 0 3rem;
                 }
 
                 @include mixin.mq(sp){
-                    top: 30vh;
+                    top: 38%;
                     font-size: 24px;
-                    width: 420px;
                 }
                 
                 @include mixin.mq(sp_s){
                     top: 35vh;
-                    font-size: 17px;
-                    left: 5%;
-                    width: 90%;
+                    font-size: 22px;
                 }
 
             }
@@ -148,11 +142,18 @@
                 animation: fadeHeader 5s ease-in-out 14s both;
             }
             .p_4{
-                animation: fadeHeader 5s ease-in-out 19s both;
+                bottom: 40%;
+                animation: fadeHeader_2 5s ease-in-out 19s both;
+
+                @include mixin.mq(tab_s){
+                    bottom: 35%;
+                }
+                @include mixin.mq(sp_s){
+                    bottom: auto;
+                    top: 40%;
+                }
             }
-            .p_5{
-                animation: fadeHeader_2 1s ease-in-out 24s both;
-            }        
+                
             
     
             @keyframes fadeHeader {
@@ -265,7 +266,6 @@
                 display: inline-block;
                 width: 900px;
                 height: auto;
-                content: '';
                 background-size: cover;
                 z-index: 3;
 
@@ -297,50 +297,6 @@
 
 .error404{
 
-    &::before{
-        position: absolute;
-        display: inline-block;
-        top: 10vh;
-        right: 10vw;      
-        content: 'お探しのページは見つかりませんでした';
-        font-size: 2.7rem;  
-        color: mixin.$white;
-        z-index: 3;
-
-        @include mixin.mq(tab_s){
-            font-weight: 700;
-            top: 25vh;
-        }
-        
-        @include mixin.mq(sp){
-            top: 20vh;
-            right: 6vw;
-            
-        }
-        @include mixin.mq(sp_s){
-            top: 25vh;
-            right: 11vw;
-            font-size: 1.6rem;
-
-        }
-    }
-
-    &::after{
-        position: absolute;
-        display: inline-block;
-        bottom: 15vh;
-        left: 4vw; 
-        content: 'copyright, My Name is...';
-        font-size: 1.6rem;
-        color: mixin.$white;
-        letter-spacing: 0.3rem;
-
-        @include mixin.mq(sp_s){
-            left: 10vw;
-            font-size: 1.4rem;
-        }
-    }
-
     header{
         @include mixin.background_url('pc/IMG_0076.JPG', 100vw, 100vh, no-repeat);
         position: relative;
@@ -352,6 +308,39 @@
 
             @include mixin.mq(tab_s){
                 background: rgba(0, 0, 0, 0.3);
+            }
+
+            .not_page{
+                display: flex;
+                justify-content: center;
+                height: 30%;
+                width: 100%;
+                position: relative;
+
+                p{
+                    position: absolute;
+                    font-weight: 700;
+                    letter-spacing: 0.3rem;
+                    display: block;
+                    bottom: 10rem;
+                    right: 10vw;
+                    font-size: 2.7rem;  
+                    text-align: center;
+                    color: mixin.$white;
+                    z-index: 3;
+            
+                    @include mixin.mq(tab_s){
+                        font-size: 2.4rem;
+                        padding: 0 3rem;
+                        bottom: 0;
+                        right: auto;
+                    }
+
+                    @include mixin.mq(sp_s){
+                        font-size: 2.2rem;
+                    }
+
+                }
             }
 
             a{
@@ -398,5 +387,19 @@
         
     }
 
-    
+    &::after{
+        position: absolute;
+        display: inline-block;
+        bottom: 15vh;
+        left: 6vw; 
+        content: 'copyright, UKIGUMO-X';
+        font-size: 2rem;
+        color: mixin.$white;
+        letter-spacing: 0.3rem;
+
+        @include mixin.mq(sp_s){
+            left: 10vw;
+            font-size: 1.4rem;
+        }
+    }
 }
