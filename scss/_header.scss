@@ -248,11 +248,11 @@
             
 
             @include mixin.mq(tab_s){
-                width: 730px;
+                width: 700px;
             }
 
             @include mixin.mq(sp){
-                width: 420px;
+                width: 76%;
             }
 
             @include mixin.mq(sp_s){
@@ -280,12 +280,11 @@
 
                 @include mixin.mq(sp){
                     left: 0;
-                    width: 400px;
+                    width: 100%;
                     top: 25%;
                 }
 
                 @include mixin.mq(sp_s){
-                    width: 100%;
                     top: 20%;
                 }
     

@@ -33,11 +33,14 @@
             );
 
             $pro = new WP_Query($args);
-            if($pro->have_posts()): while($pro->have_posts()): $pro->the_post();
+            if($pro->have_posts()): while($pro->have_posts()): $pro->the_post(); $counter++;
                 $header_img = get_field('header_img');
         ?>
         <div class="one_post">
             <article>
+                <?php if ($counter <= 1): ?>
+                    <p class="new_tag">NEW</p>
+                <?php endif; ?>
                 <img src="<?php echo esc_url($header_img['url']) ?>" alt="<?php echo esc_attr($header_img['alt']) ?>">
                 <div class="post_side">
                     <h4><?php the_title() ?></h4>
