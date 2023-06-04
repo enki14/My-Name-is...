@@ -116,13 +116,13 @@
         </h3>
         <?php echo do_shortcode('[contact-form-7 id="50" title="お問い合わせ"]'); ?>
     </section>
-    <div class="modal">
+    <!-- <div class="modal">
         <div class="modal_bg js-modal_close">
             <div class="modal_content">
                 <span></span>
                 <button class="btn_close">OK</button>
             </div>
         </div>
-    </div>
+    </div> -->
 </main>
 <?php get_footer(); ?>

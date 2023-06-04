@@ -147,7 +147,7 @@
 
     // contact form 7 送信ボタン押下直後
     jQuery(function(){
-        let okWord = 'ありがとうございます' + '<br>' + 'ご指定のアドレスへ自動返信メールを送信しました';
+    //     let okWord = 'ありがとうございます' + '<br>' + 'ご指定のアドレスへ自動返信メールを送信しました';
         let ngWord_1 = '入力内容に問題があります' + '<br>' + '確認して再度お試しください';
         let ngWord_2 = 'メッセージの送信に失敗しました' + '<br>' + '後でまたお試しください';
 
@@ -157,14 +157,14 @@
         let btn_cls = $('.btn_close');
 
 
-        $(document).on('wpcf7mailsent', function(event){
-            okText.html(okWord);
-            modal.addClass('ok_modal');
-            content.css('outline','10px solid #6CA5E8');
-            btn_cls.css('background','#6CA5E8');
-            $('.ok_modal').fadeIn();
-            return false;
-        });
+    //     $(document).on('wpcf7mailsent', function(event){
+    //         okText.html(okWord);
+    //         modal.addClass('ok_modal');
+    //         content.css('outline','10px solid #6CA5E8');
+    //         btn_cls.css('background','#6CA5E8');
+    //         $('.ok_modal').fadeIn();
+    //         return false;
+    //     });
         $(document).on('wpcf7invalid', function(event){
             okText.html(ngWord_1);
             modal.addClass('ng_modal');

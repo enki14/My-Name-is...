@@ -1,0 +1,120 @@
+@use "mixin";
+
+.p-btnArea{
+    display: flex;
+    justify-content: center;
+    margin: 8rem auto 10rem;
+
+    .btn-submit{
+        @include mixin.btn_pattern(auto, 20px 30px, mixin.$main, 2.5px);
+        box-shadow: 1.5rem 1.5rem #323436;
+        border: none;
+        transition: 0.5s;
+        margin-left: 12rem;
+
+        // @include mixin.mq(tab){
+        //     width: 180px;
+        // }
+
+        @include mixin.mq(sp){
+            margin-left: 6rem;
+        }
+
+        @include mixin.mq(sp_s){
+            // width: 100px;
+            // margin: 4rem 0 7rem;
+            // padding: 17px 27px;
+
+        }
+
+        &:hover{
+            transition: 0.5s;
+            background: #98c2f2;
+        }
+
+        &:active{
+            transition: 0.5s;
+            box-shadow: 0 0 mixin.$white;
+            position: relative;
+            transform: translateX(1.5rem);
+            transform: translateY(1.5rem);
+
+        }
+
+        .wpcf7-form-control{
+            @include mixin.mq(sp){
+                width: 70px;
+            }
+
+            @include mixin.mq(sp_s){
+                width: 50px;
+            }
+
+        }
+        
+    }
+
+    .backbtn_wrapper{
+        margin: auto 0;
+        .wpcf7-previous{
+            @include mixin.btn_pattern(auto, 16px 30px, #849cb8, 2.5px);
+            box-shadow: 1rem 1rem #323436;
+            border: none;
+            transition: 0.5s;
+    
+            @include mixin.mq(sp_s){
+                padding: 12px 26px;
+    
+            }
+    
+            &:hover{
+                transition: 0.5s;
+                background: #98c2f2;
+            }
+    
+            &:active{
+                transition: 0.5s;
+                box-shadow: 0 0 mixin.$white;
+                position: relative;
+                transform: translateX(1.5rem);
+                transform: translateY(1.5rem);
+    
+            }
+    
+            .wpcf7-form-control{
+                @include mixin.mq(sp){
+                    width: 70px;
+                }
+    
+                @include mixin.mq(sp_s){
+                    width: 50px;
+                }
+    
+            }
+        }
+    
+    }
+}
+
+.home .p-btnArea .btn-submit{
+    margin-left: 0;
+}
+
+.page-id-1989 .p-btnArea .btn-submit{
+    margin-left: 0;
+    padding: 3rem;
+    @include mixin.mq(sp_s){
+        padding: 2.6rem;
+    }
+    a{
+        text-decoration: none;
+        font-size: 1.8rem;
+        font-weight: 700;
+        font-family: "HGSKyokashotai", "Yu Mincho Light", "YuMincho", "Yu Mincho", "游明朝体", YuGothic, "Yu Gothic", sans-serif;
+        letter-spacing: 0.05mm;
+        color: #323436;
+        @include mixin.mq(sp_s){
+            font-size: 1.6rem;
+        }
+    }
+}

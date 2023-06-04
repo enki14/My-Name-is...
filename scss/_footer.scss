@@ -1,286 +1,238 @@
 @use "mixin";
 
-.home{
 
-    footer{
-        background: mixin.$black;
-    
-        .f_wrap{
-            width: 1000px;
+footer{
+    background: mixin.$black;
+
+    .f_wrap{
+        width: 1000px;
+        margin: 0 auto;
+        padding: 1rem 0 2rem 0;
+
+        @include mixin.mq(tab){
+            width: 900px;
+        }
+
+        @include mixin.mq(tab_s){
+            width: 700px;
+        }
+
+        @include mixin.mq(sp){
+            width: 86%;
+        }
+
+        @include mixin.mq(sp_s){
+            width: 90%;
+        }
+
+        .sns_aria{
+            display: flex;
+            justify-content: space-around;
             margin: 0 auto;
-            padding: 1rem 0 2rem 0;
-
-            @include mixin.mq(tab){
-                width: 900px;
-            }
-
-            @include mixin.mq(tab_s){
-                width: 700px;
-            }
-
-            @include mixin.mq(sp){
-                width: 86%;
-            }
-
-            @include mixin.mq(sp_s){
-                width: 90%;
-            }
+            box-sizing: border-box;
+            padding: 0;
+                
+            li{
+                list-style: none;
     
-            .sns_aria{
-                display: flex;
-                justify-content: space-around;
-                margin: 0 auto;
-                box-sizing: border-box;
-                padding: 0;
-                    
-                li{
-                    list-style: none;
-        
-                    a{
-        
-                        i{
-                            color: mixin.$main;
-                            
-                            &:hover{
-                                transition: 1.0s;
-                                color: #b59133;
-                            }
+                a{
+    
+                    i{
+                        color: mixin.$main;
+                        
+                        &:hover{
+                            transition: 1.0s;
+                            color: #b59133;
                         }
                     }
                 }
             }
-        
-            p{
-                text-align: center;
-                color: mixin.$white;
-                font-size: 2rem;
-                letter-spacing: 2px;
-                margin-bottom: 0;
-                margin-top: 3rem;
-            }
-        }
-    }
-    
-    .start{
-        height: 100vh;
-        width: 100vw;
-        background: mixin.$main;
-        z-index: 9000;
-        position: fixed;
-        // top: 0, left: 0, これ大事！
-        top: 0;
-        left: 0;
-
-
-    
-        .moon_wrap{
-            width: 1000px;
-            margin: 0 auto;
-
-            @include mixin.mq(tab){
-                width: 800px;
-            }
-
-            @include mixin.mq(tab_s){
-                position: absolute;
-                width: 650px;
-                top: 7vh;
-                left: 10vw;
-            }
-
-            @include mixin.mq(sp){
-                top: 4vh;
-            }
-
-            @include mixin.mq(sp_s){
-                top: 2vh;
-                width: 90%;
-            }
-    
-            img{
-                left: 10rem;
-                margin: 7rem 0;
-                width: 15rem;
-                animation: moonOut 1s linear 2.5s both;
-
-                @include mixin.mq(tab){
-                    width: 13rem;
-                }
-
-                @include mixin.mq(sp){
-                    width: 13rem;
-                }
-                
-            }
-    
-            @keyframes moonOut {
-                100%{
-                    opacity: 0;
-                }
-            }
         }
     
-        .norimakisan{
-            position: fixed;
-            top: -5rem;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto;
-            animation: norimaki 1.5s linear 3s both;
-            z-index: 9999;
-
-            @include mixin.mq(sp){
-                width: 250px;
-            }
-            @include mixin.mq(sp){
-                width: 200px;
-            }
-
-
+        p{
+            text-align: center;
+            color: mixin.$white;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            margin-bottom: 0;
+            margin-top: 3rem;
         }
-    
-        @keyframes norimaki {
-            0%{
-                opacity: 0;
-            }
-            50%{
-                opacity: 0.5;
-            }
-            100%{
-                opacity: 1;
-            }
-        }
-    
-        .cloudy_area{
-            position: absolute;
-            top: 40vh;
-            
-            @include mixin.mq(sp){
-                top: 50vh;
-            }
-
-            @include mixin.mq(sp_s){
-                left: -5rem;
-            }
-
-            .cloudy{
-                margin-bottom: 5rem;
-                width: 15rem;
-                display: block;
-                opacity: 0;
-
-                @include mixin.mq(sp_s){
-                    width: 12rem;
-                }
-
-                &:nth-child(1){
-                    animation: oneIn 2.5s linear 1s both; 
-                    left: 50vw;
-
-                }
-                &:nth-child(2){
-                    animation: twoIn 2.5s linear 1s both; 
-                    left: 20vw;
-                }
-                &:nth-child(3){
-                    animation: threeIn 2.5s linear 1s both;
-                    left: 70vw; 
-                }
-    
-    
-                @keyframes oneIn {
-                    0%{
-                        transform: translateX(50vw);
-                        opacity: 1;
-                    }
-                    100%{
-                        transform: translateX(70vw);
-                        opacity: 0;
-                    }
-                }
-                @keyframes twoIn {
-                    0%{
-                        transform: translateX(20vw);
-                        opacity: 1;
-                    }
-                    100%{
-                        transform: translateX(40vw);
-                        opacity: 0;
-                    }
-                }
-                @keyframes threeIn {
-                    0%{
-                        transform: translateX(70vw);
-                        opacity: 1;
-                    }
-                    100%{
-                        transform: translateX(90vw);
-                        opacity: 0;
-                    }
-                }
-                
-            }
-        }
-        
     }
 }
 
+.page-id-1987,
+.page-id-1989{
+    .wrapper{
+        min-height: 100vh;
+        position: relative;
+        footer{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }    
+    }
+}
 
-// カスタム投稿タイプ「制作物」内のfooter
-.single-production{
-    footer{
-        background: mixin.$black;
-    
-        .f_wrap{
-            width: 1000px;
-            margin: 0 auto;
-            padding: 1rem 0 2rem 0;
+.start{
+    height: 100vh;
+    width: 100vw;
+    background: mixin.$main;
+    z-index: 9000;
+    position: fixed;
+    // top: 0, left: 0, これ大事！
+    top: 0;
+    left: 0;
+
+
+
+    .moon_wrap{
+        width: 1000px;
+        margin: 0 auto;
+
+        @include mixin.mq(tab){
+            width: 800px;
+        }
+
+        @include mixin.mq(tab_s){
+            position: absolute;
+            width: 650px;
+            top: 7vh;
+            left: 10vw;
+        }
+
+        @include mixin.mq(sp){
+            top: 4vh;
+        }
+
+        @include mixin.mq(sp_s){
+            top: 2vh;
+            width: 90%;
+        }
+
+        img{
+            left: 10rem;
+            margin: 7rem 0;
+            width: 15rem;
+            animation: moonOut 1s linear 2.5s both;
 
             @include mixin.mq(tab){
-                width: 900px;
-            }
-
-            @include mixin.mq(tab_s){
-                width: 730px;
+                width: 13rem;
             }
 
             @include mixin.mq(sp){
-                width: 420px;
+                width: 13rem;
             }
+            
+        }
 
-            @include mixin.mq(sp_s){
-                width: 90%;
-            }
-    
-            .sns_aria{
-                @include mixin.table_layout(1rem, 100%);
-        
-                li{
-                    float: left;
-                    list-style: none;
-                    padding-right: 1rem;
-        
-                    a{
-        
-                        i{
-                            color: mixin.$white;
-                            
-                            &:hover{
-                                transition: 1.0s;
-                                color: #b59133;
-                            }
-                        }
-                    }
-                }
-            }
-        
-            p{
-                text-align: center;
-                color: mixin.$white;
-                font-size: 1.6rem;
-                letter-spacing: 2px;
+        @keyframes moonOut {
+            100%{
+                opacity: 0;
             }
         }
     }
+
+    .norimakisan{
+        position: fixed;
+        top: -5rem;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        animation: norimaki 1.5s linear 3s both;
+        z-index: 9999;
+
+        @include mixin.mq(sp){
+            width: 250px;
+        }
+        @include mixin.mq(sp){
+            width: 200px;
+        }
+
+
+    }
+
+    @keyframes norimaki {
+        0%{
+            opacity: 0;
+        }
+        50%{
+            opacity: 0.5;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+    .cloudy_area{
+        position: absolute;
+        top: 40vh;
+        
+        @include mixin.mq(sp){
+            top: 50vh;
+        }
+
+        @include mixin.mq(sp_s){
+            left: -5rem;
+        }
+
+        .cloudy{
+            margin-bottom: 5rem;
+            width: 15rem;
+            display: block;
+            opacity: 0;
+
+            @include mixin.mq(sp_s){
+                width: 12rem;
+            }
+
+            &:nth-child(1){
+                animation: oneIn 2.5s linear 1s both; 
+                left: 50vw;
+
+            }
+            &:nth-child(2){
+                animation: twoIn 2.5s linear 1s both; 
+                left: 20vw;
+            }
+            &:nth-child(3){
+                animation: threeIn 2.5s linear 1s both;
+                left: 70vw; 
+            }
+
+
+            @keyframes oneIn {
+                0%{
+                    transform: translateX(50vw);
+                    opacity: 1;
+                }
+                100%{
+                    transform: translateX(70vw);
+                    opacity: 0;
+                }
+            }
+            @keyframes twoIn {
+                0%{
+                    transform: translateX(20vw);
+                    opacity: 1;
+                }
+                100%{
+                    transform: translateX(40vw);
+                    opacity: 0;
+                }
+            }
+            @keyframes threeIn {
+                0%{
+                    transform: translateX(70vw);
+                    opacity: 1;
+                }
+                100%{
+                    transform: translateX(90vw);
+                    opacity: 0;
+                }
+            }
+            
+        }
+    }
+    
 }
