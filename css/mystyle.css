@@ -1008,12 +1008,13 @@ body a {
 }
 .home main #about .about_wrap article .about_img {
   padding: 20px 30px;
-  background: url("../images/pc/image0.jpeg");
+  background: url("../images/pc/original.jpg");
   border-radius: 2.5px;
   text-align: center;
   width: 260px;
   height: 350px;
   background-size: cover;
+  background-position: 20%;
   -webkit-box-shadow: 2.5rem 2.5rem #323436;
           box-shadow: 2.5rem 2.5rem #323436;
   border: none;
@@ -1575,6 +1576,9 @@ body a {
   margin-top: 1.5rem;
 }
 
+.page-id-1987 {
+  margin-top: -4.6rem;
+}
 .page-id-1987 #contact {
   width: 800px;
   margin: 0 auto;
@@ -1717,6 +1721,9 @@ body a {
   background: pink;
 }
 
+.page-id-1989 {
+  margin-top: -4.6rem;
+}
 .page-id-1989 #contact {
   width: 800px;
   margin: 0 auto;

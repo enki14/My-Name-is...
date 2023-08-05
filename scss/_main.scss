@@ -507,9 +507,10 @@
                     
 
                     .about_img{
-                        @include mixin.btn_pattern(260px, 20px 30px, url('../images/pc/image0.jpeg'), 2.5px);
+                        @include mixin.btn_pattern(260px, 20px 30px, url('../images/pc/original.jpg'), 2.5px);
                         height: 350px;
                         background-size: cover;
+                        background-position: 20%;
                         box-shadow: 2.5rem 2.5rem #323436;
                         border: none;
                         
@@ -998,6 +999,7 @@
 
 
 .page-id-1987{
+    margin-top: -4.6rem;
     #contact{
         width: 800px;
         margin: 0 auto;
@@ -1133,6 +1135,7 @@
 }
 
 .page-id-1989{
+    margin-top: -4.6rem;
     #contact{
         width: 800px;
         margin: 0 auto;

@@ -31,6 +31,7 @@
                 'post_type' => 'production',
                 'posts_per_page' => '-1'
             );
+            $counter = 0;
 
             $pro = new WP_Query($args);
             if($pro->have_posts()): while($pro->have_posts()): $pro->the_post(); $counter++;
@@ -82,7 +83,7 @@
                             <dt>お問い合わせ</dt><dd>jyakarisuto@gmail.com</dd>
                         </div>
                         <div class="d_line">
-                            <dt>事業内容</dt><dd>コーディング、CMS導入等</dd>
+                            <dt>制作事例</dt><dd>webデザイン、コーディング、CMS導入</dd>
                         </div>
                     </dl>
                     <dl>
@@ -100,7 +101,7 @@
             </article>
             <div class="profile_aria">
                 <h4>自己紹介</h4>
-                <p class="profile">個人的なサイト運営からプログラミングやホームページ作成に興味を持ち、3年の月日を経て今に至ります。
+                <p class="profile">個人的なサイト運営からプログラミングやホームページ作成に興味を持ち、4年の月日を経て今に至ります。
                 現在は都内の介護施設に勤務。その傍ら専業のフリーランスを目指し
                 10年20年を見据えて質の良い開発のために日々精進しております。</p>
             </div>

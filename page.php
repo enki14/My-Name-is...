@@ -14,7 +14,7 @@
         <header>
             <section id="contact">
                 <h3>
-                    <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/confirm.png'); ?>" alt="確認">
+                    <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/Confirm.png'); ?>" alt="確認">
                 </h3>
                 <?php echo do_shortcode('[contact-form-7 id="1992" title="お問い合わせ確認"]'); ?>
             </section>
@@ -25,7 +25,7 @@
         <header>
             <section id="contact">
                 <h3>
-                    <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/completion.png'); ?>" alt="完了">
+                    <img src="<?php echo esc_url(get_template_directory_uri() .'/images/pc/Completion.png'); ?>" alt="完了">
                 </h3>
                 <div class="thanks">
                     <p>お問い合わせありがとうございました。</p>
