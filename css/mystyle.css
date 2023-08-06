@@ -36,10 +36,10 @@ body a {
   display: inline-block;
   width: 100vw;
   height: 100vh;
-  background: url("../images/pc/DSC_0011 (1).JPG");
+  background: url("../images/pc/bandai_san.jpg");
   background-repeat: no-repeat;
-  position: relative;
   background-size: cover;
+  position: relative;
 }
 .home header .menu-my-menu-container {
   position: absolute;

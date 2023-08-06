@@ -3,11 +3,10 @@
 .home{
 
     header{
-        @include mixin.background_url('pc/DSC_0011 (1).JPG', 100vw, 100vh, no-repeat);
-        position: relative;
+        @include mixin.background_url('pc/bandai_san.jpg', 100vw, 100vh, no-repeat);
         background-size: cover;
-        
-    
+        position: relative;
+
         .menu-my-menu-container{
             position: absolute;
             top: 5rem;
@@ -187,7 +186,6 @@
             }
     
         }
-        
     }
 }
 

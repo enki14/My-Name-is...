@@ -22,23 +22,23 @@ if($YesNo == 1){
 </head>
 <body <?php body_class() ?>>
     <header>
-    <?php if(is_home() || is_front_page()): ?>
-        <?php wp_nav_menu(array('theme_location'=>'header-navigation')); ?>
-        <div class="h_wrap">
-            <p class="p_1">ようこそ<br>浮雲の間へ</p>
-            <p class="p_2">このサイトは<br>私のweb制作におけるポートフォリオ集となります</p>
-            <p class="p_3">コーディングなどのご依頼がありましたら<br>どうぞご気軽にお問い合わせください</p>
-            <p class="p_4">by, カリストの砂</p>
-        </div>
-    <?php elseif(is_singular('production')): ?>
-        <div class="ph_wrap">
-            <?php 
-                $header_img = get_field('header_img');
-                if(!empty($header_img)): 
-            ?>
-                <img src="<?php echo esc_url($header_img['url']); ?>" alt="<?php echo esc_attr($header_img['alt']); ?>">
-            <?php endif; ?>
-        </div>
-    <?php endif; ?>
+        <?php if(is_home() || is_front_page()): ?>
+            <?php wp_nav_menu(array('theme_location'=>'header-navigation')); ?>
+            <div class="h_wrap">
+                <p class="p_1">ようこそ<br>浮雲の間へ</p>
+                <p class="p_2">このサイトは<br>私のweb制作におけるポートフォリオ集となります</p>
+                <p class="p_3">コーディングなどのご依頼がありましたら<br>どうぞご気軽にお問い合わせください</p>
+                <p class="p_4">by, カリストの砂</p>
+            </div>
+        <?php elseif(is_singular('production')): ?>
+            <div class="ph_wrap">
+                <?php 
+                    $header_img = get_field('header_img');
+                    if(!empty($header_img)): 
+                ?>
+                    <img src="<?php echo esc_url($header_img['url']); ?>" alt="<?php echo esc_attr($header_img['alt']); ?>">
+                <?php endif; ?>
+            </div>
+        <?php endif; ?>
     </header>
     
