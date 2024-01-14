@@ -12,19 +12,8 @@
         transition: 0.5s;
         margin-left: 12rem;
 
-        // @include mixin.mq(tab){
-        //     width: 180px;
-        // }
-
         @include mixin.mq(sp){
             margin-left: 6rem;
-        }
-
-        @include mixin.mq(sp_s){
-            // width: 100px;
-            // margin: 4rem 0 7rem;
-            // padding: 17px 27px;
-
         }
 
         &:hover{
@@ -100,7 +89,7 @@
     margin-left: 0;
 }
 
-.page-id-1989 .p-btnArea .btn-submit{
+.thanks_body .p-btnArea .btn-submit{
     margin-left: 0;
     padding: 3rem;
     @include mixin.mq(sp_s){
@@ -110,7 +99,6 @@
         text-decoration: none;
         font-size: 1.8rem;
         font-weight: 700;
-        font-family: "HGSKyokashotai", "Yu Mincho Light", "YuMincho", "Yu Mincho", "游明朝体", YuGothic, "Yu Gothic", sans-serif;
         letter-spacing: 0.05mm;
         color: #323436;
         @include mixin.mq(sp_s){

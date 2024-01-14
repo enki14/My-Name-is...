@@ -117,4 +117,18 @@
         }
     }
     add_action('wp_head', 'my_meta_ogp');
+
+    // コンタクト確認ページと送信完了ページのbodyにclassを付与
+    // 参考：https://tcd-theme.com/2023/11/wp-body-class.html　「条件に応じてクラスを追加」
+    add_filter('body_class', function($classes){
+        if(is_page('contact-confirm') || is_page('contact-thanks')){
+            $classes[] = 'page_contact';
+            if(is_page('contact-confirm')){
+                $classes[] = 'confirm_body';
+            }elseif(is_page('contact-thanks')){
+                $classes[] = 'thanks_body';
+            }
+        }
+        return $classes;
+    });
 ?>

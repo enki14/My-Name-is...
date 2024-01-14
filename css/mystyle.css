@@ -1576,57 +1576,57 @@ body a {
   margin-top: 1.5rem;
 }
 
-.page-id-1987 {
+.confirm_body {
   margin-top: -4.6rem;
 }
-.page-id-1987 #contact {
+.confirm_body #contact {
   width: 800px;
   margin: 0 auto;
   padding-top: 8rem;
 }
 @media all and (max-width: 920px) {
-  .page-id-1987 #contact {
+  .confirm_body #contact {
     width: 630px;
   }
 }
 @media all and (max-width: 720px) {
-  .page-id-1987 #contact {
+  .confirm_body #contact {
     width: 75vw;
   }
 }
 @media all and (max-width: 420px) {
-  .page-id-1987 #contact {
+  .confirm_body #contact {
     width: 90vw;
     padding-top: 6rem;
   }
 }
-.page-id-1987 #contact h3 {
+.confirm_body #contact h3 {
   text-align: center;
   margin-bottom: 5rem;
 }
-.page-id-1987 #contact h3 img {
+.confirm_body #contact h3 img {
   width: 180px;
 }
 @media all and (max-width: 720px) {
-  .page-id-1987 #contact h3 img {
+  .confirm_body #contact h3 img {
     width: 170px;
   }
 }
 @media all and (max-width: 420px) {
-  .page-id-1987 #contact h3 img {
+  .confirm_body #contact h3 img {
     width: 140px;
   }
 }
-.page-id-1987 #contact .wpcf7 {
+.confirm_body #contact .wpcf7 {
   width: 80%;
   margin: 0 auto;
 }
 @media all and (max-width: 720px) {
-  .page-id-1987 #contact .wpcf7 {
+  .confirm_body #contact .wpcf7 {
     width: 100%;
   }
 }
-.page-id-1987 #contact .wpcf7 form dl {
+.confirm_body #contact .wpcf7 form dl {
   position: relative;
   margin-top: 3rem;
   display: -webkit-box;
@@ -1635,11 +1635,11 @@ body a {
   display: flex;
 }
 @media all and (max-width: 420px) {
-  .page-id-1987 #contact .wpcf7 form dl {
+  .confirm_body #contact .wpcf7 form dl {
     margin-top: 2rem;
   }
 }
-.page-id-1987 #contact .wpcf7 form dl:nth-of-type(-n+3)::after {
+.confirm_body #contact .wpcf7 form dl:nth-of-type(-n+3)::after {
   content: "";
   position: absolute;
   bottom: -1rem;
@@ -1649,38 +1649,38 @@ body a {
   border-radius: 2px;
   background: #EFBA30;
 }
-.page-id-1987 #contact .wpcf7 form dl dt {
+.confirm_body #contact .wpcf7 form dl dt {
   position: relative;
   width: 25%;
   font-size: 2rem;
   letter-spacing: 0.05mm;
 }
 @media all and (max-width: 920px) {
-  .page-id-1987 #contact .wpcf7 form dl dt {
+  .confirm_body #contact .wpcf7 form dl dt {
     width: 30%;
   }
 }
 @media all and (max-width: 720px) {
-  .page-id-1987 #contact .wpcf7 form dl dt {
+  .confirm_body #contact .wpcf7 form dl dt {
     width: 35%;
     font-size: 1.6rem;
   }
 }
 @media all and (max-width: 420px) {
-  .page-id-1987 #contact .wpcf7 form dl dt {
+  .confirm_body #contact .wpcf7 form dl dt {
     font-size: 1.4rem;
   }
 }
-.page-id-1987 #contact .wpcf7 form dl dt label {
+.confirm_body #contact .wpcf7 form dl dt label {
   padding-left: 2rem;
   font-weight: 700;
 }
 @media all and (max-width: 720px) {
-  .page-id-1987 #contact .wpcf7 form dl dt label {
+  .confirm_body #contact .wpcf7 form dl dt label {
     padding-left: 8px;
   }
 }
-.page-id-1987 #contact .wpcf7 form dl dt::after {
+.confirm_body #contact .wpcf7 form dl dt::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -1691,11 +1691,11 @@ body a {
   background: #EFBA30;
 }
 @media all and (max-width: 720px) {
-  .page-id-1987 #contact .wpcf7 form dl dt::after {
+  .confirm_body #contact .wpcf7 form dl dt::after {
     right: 0.8rem;
   }
 }
-.page-id-1987 #contact .wpcf7 form dl dd {
+.confirm_body #contact .wpcf7 form dl dd {
   margin-left: 0;
   -webkit-flex-basis: 100%;
       -ms-flex-preferred-size: 100%;
@@ -1703,74 +1703,74 @@ body a {
   font-size: 20px;
 }
 @media all and (max-width: 720px) {
-  .page-id-1987 #contact .wpcf7 form dl dd {
+  .confirm_body #contact .wpcf7 form dl dd {
     font-size: 1.6rem;
     padding-left: 1.2rem;
   }
 }
 @media all and (max-width: 420px) {
-  .page-id-1987 #contact .wpcf7 form dl dd {
+  .confirm_body #contact .wpcf7 form dl dd {
     padding-left: 0;
     font-size: 1.4rem;
   }
 }
-.page-id-1987 #contact .wpcf7 form .wpcf7-response-output {
+.confirm_body #contact .wpcf7 form .wpcf7-response-output {
   display: none;
 }
-.page-id-1987 #contact .wpcf7 .wpcf7-not-valid {
+.confirm_body #contact .wpcf7 .wpcf7-not-valid {
   background: pink;
 }
 
-.page-id-1989 {
+.thanks_body {
   margin-top: -4.6rem;
 }
-.page-id-1989 #contact {
+.thanks_body #contact {
   width: 800px;
   margin: 0 auto;
   padding-top: 8rem;
 }
 @media all and (max-width: 920px) {
-  .page-id-1989 #contact {
+  .thanks_body #contact {
     width: 630px;
   }
 }
 @media all and (max-width: 720px) {
-  .page-id-1989 #contact {
+  .thanks_body #contact {
     width: 75vw;
   }
 }
 @media all and (max-width: 420px) {
-  .page-id-1989 #contact {
+  .thanks_body #contact {
     width: 90vw;
     padding-top: 6rem;
   }
 }
-.page-id-1989 #contact h3 {
+.thanks_body #contact h3 {
   text-align: center;
   margin-bottom: 5rem;
 }
-.page-id-1989 #contact h3 img {
+.thanks_body #contact h3 img {
   width: 240px;
 }
 @media all and (max-width: 720px) {
-  .page-id-1989 #contact h3 img {
+  .thanks_body #contact h3 img {
     width: 170px;
   }
 }
 @media all and (max-width: 420px) {
-  .page-id-1989 #contact h3 img {
+  .thanks_body #contact h3 img {
     width: 140px;
   }
 }
-.page-id-1989 #contact .thanks {
+.thanks_body #contact .thanks {
   text-align: center;
 }
-.page-id-1989 #contact .thanks p {
+.thanks_body #contact .thanks p {
   font-size: 2rem;
   font-weight: 700;
 }
 @media all and (max-width: 420px) {
-  .page-id-1989 #contact .thanks p {
+  .thanks_body #contact .thanks p {
     font-size: 1.6rem;
   }
 }
@@ -2841,25 +2841,24 @@ footer .f_wrap p {
   margin-left: 0;
 }
 
-.page-id-1989 .p-btnArea .btn-submit {
+.thanks_body .p-btnArea .btn-submit {
   margin-left: 0;
   padding: 3rem;
 }
 @media all and (max-width: 420px) {
-  .page-id-1989 .p-btnArea .btn-submit {
+  .thanks_body .p-btnArea .btn-submit {
     padding: 2.6rem;
   }
 }
-.page-id-1989 .p-btnArea .btn-submit a {
+.thanks_body .p-btnArea .btn-submit a {
   text-decoration: none;
   font-size: 1.8rem;
   font-weight: 700;
-  font-family: "HGSKyokashotai", "Yu Mincho Light", "YuMincho", "Yu Mincho", "游明朝体", YuGothic, "Yu Gothic", sans-serif;
   letter-spacing: 0.05mm;
   color: #323436;
 }
 @media all and (max-width: 420px) {
-  .page-id-1989 .p-btnArea .btn-submit a {
+  .thanks_body .p-btnArea .btn-submit a {
     font-size: 1.6rem;
   }
 }
