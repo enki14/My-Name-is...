@@ -2853,6 +2853,7 @@ footer .f_wrap p {
 .thanks_body .p-btnArea .btn-submit a {
   text-decoration: none;
   font-size: 1.8rem;
+  font-family: "HGSKyokashotai", "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", "Yu Mincho Light", "YuMincho", "Yu Mincho", "游明朝体", "MS Mincho", "YuGothic", "Yu Gothic", sans-serif;
   font-weight: 700;
   letter-spacing: 0.05mm;
   color: #323436;

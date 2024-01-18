@@ -146,6 +146,14 @@
             <?php endif; ?>
             </article>
         <?php endif; ?>
+        <?php 
+            $design = get_field('design');
+            if(empty($design)): else:
+        ?>
+            <article class="design_area">
+                <a href="<?php echo esc_url($design); ?>" target="_blank">デザインを確認する<i class="fa-solid fa-pen-ruler"></i></a>
+            </article>
+        <?php endif; ?>
     </div>
     <a href="<?php echo esc_url(home_url('/')) ?>" class="history_back">TOP</a>
 </main>
