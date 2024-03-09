@@ -3,7 +3,7 @@
 .home{
 
     header{
-        @include mixin.background_url('pc/bandai_san.jpg', 100vw, 100vh, no-repeat);
+        @include mixin.background_url('pc/mainvisual.jpg', 100vw, 100vh, no-repeat);
         background-size: cover;
         position: relative;
 
@@ -34,51 +34,62 @@
                     padding-left: 3.5rem;
                 }
 
-                li{
+                .menu_list{
                     list-style: none;
-        
-                    a img{
-                        width: 130px;
+
+                    a{
+                        font-family: "Inria Sans", "Inika";
+                        font-size: clamp(2rem, 1.564rem + 2.18vw * .625, 3.2rem);
+                        text-decoration: none;
+                        line-height: 160%;
+                        letter-spacing: 2px;
+                        text-shadow: 2px 1px 1px #14355c;
+                        color: #6CA5E8;
+
                     }
+        
+                    // a img{
+                    //     width: 130px;
+                    // }
         
                     &:nth-child(1){
                         text-align: left;
 
-                        a img{
-                            @include mixin.mq(sp){
-                                width: 90px;
-                            }
-                            @include mixin.mq(sp_s){
-                                width: 80px;
-                            }
-                        }
+                        // a img{
+                        //     @include mixin.mq(sp){
+                        //         width: 90px;
+                        //     }
+                        //     @include mixin.mq(sp_s){
+                        //         width: 80px;
+                        //     }
+                        // }
                         
                     }
                     &:nth-child(2){
                         text-align: center;
         
-                        a img{
-                            width: 100px;
+                        // a img{
+                        //     width: 100px;
 
-                            @include mixin.mq(sp){
-                                width: 70px;
-                            }
-                            @include mixin.mq(sp_s){
-                                width: 60px;
-                            }
-                        }
+                        //     @include mixin.mq(sp){
+                        //         width: 70px;
+                        //     }
+                        //     @include mixin.mq(sp_s){
+                        //         width: 60px;
+                        //     }
+                        // }
                     }
                     &:nth-child(3){
                         text-align: right;
-                        a img{
+                        // a img{
 
-                            @include mixin.mq(sp){
-                                width: 90px;
-                            }
-                            @include mixin.mq(sp_s){
-                                width: 80px;
-                            }
-                        }
+                        //     @include mixin.mq(sp){
+                        //         width: 90px;
+                        //     }
+                        //     @include mixin.mq(sp_s){
+                        //         width: 80px;
+                        //     }
+                        // }
                     }
                 }
             }
@@ -104,8 +115,9 @@
                 width: 100%;
                 left: 0;
                 bottom: 37%;
-                @include mixin.font_pattern(34px, mixin.$white, 500);
+                @include mixin.font_pattern(34px, mixin.$white, 700);
                 text-align: left;
+                text-shadow: 2px 1px 1px #54585c;
 
                 @include mixin.mq(tab){
                     bottom: 30%;
@@ -160,13 +172,13 @@
                     
                     opacity: 0;
                 }
-                10%{
+                5%{
                     opacity: 0.5;
                 }
                 30%{
                     opacity: 1;
                 }
-                90%{
+                95%{
                     opacity: 0.5;
                 }
                 100%{
@@ -214,7 +226,7 @@
         }
 
         @include mixin.mq(sp_s){
-            height: 170px;
+            height: 40vh;;
         }
 
         &::before{
@@ -288,7 +300,7 @@
                 }
 
                 @include mixin.mq(sp_s){
-                    top: 20%;
+                    top: 48%;
                 }
     
             }

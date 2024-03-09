@@ -22,10 +22,8 @@
             </li>
         </ul>
     </section>
-    <section id="training">
-        <h3>
-            <img src="<?php echo esc_url(get_template_directory_uri() .'/images/34/Training.png'); ?>" alt="トレーニング">
-        </h3>
+    <section class="top_section" id="training">
+        <h3>Training</h3>
         <?php 
             $args = array(
                 'post_type' => 'production',
@@ -56,15 +54,13 @@
             wp_reset_postdata();
         ?>
     </section>
-    <section id="about">
+    <section class="top_section" id="about">
         <div class="about_top">
             <div class="top_mountain">
             </div>
         </div>
         <div class="about_wrap">
-            <h3>
-                <img src="<?php echo esc_url(get_template_directory_uri() .'/images/34/About.png'); ?>" alt="about">
-            </h3>
+            <h3>About</h3>
             <p class="a_overview">
                 このサイトは、私カリストの砂のポートフォリオ集となります。
                 主に、これまでのサイト制作を発信し、また今後も新しい練習素材を更新していくものとなります。
@@ -111,19 +107,9 @@
             </div>
         </div>
     </section>
-    <section id="contact">
-        <h3>
-            <img src="<?php echo esc_url(get_template_directory_uri() .'/images/34/Contact.png'); ?>" alt="contact">
-        </h3>
+    <section class="top_section" id="contact">
+        <h3>Contact</h3>
         <?php echo do_shortcode('[contact-form-7 id="50" title="お問い合わせ"]'); ?>
     </section>
-    <!-- <div class="modal">
-        <div class="modal_bg js-modal_close">
-            <div class="modal_content">
-                <span></span>
-                <button class="btn_close">OK</button>
-            </div>
-        </div>
-    </div> -->
 </main>
 <?php get_footer(); ?>

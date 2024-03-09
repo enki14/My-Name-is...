@@ -6,7 +6,7 @@
     main{
         .main_header{
             width: 1000px;
-            margin: 0 auto 15rem;
+            margin: 0 auto 8rem;
             text-align: center;
 
             @include mixin.mq(tab){
@@ -15,6 +15,10 @@
 
             @include mixin.mq(tab_s){
                 width: 90%;
+            }
+
+            @include mixin.mq(sp_s){
+                margin-bottom: 4rem;
             }
 
             .sns_aria{
@@ -32,7 +36,7 @@
                     height: 5rem;
                     width: 5rem;
                     border-radius: 2.5rem;
-                    background: #6CA5E8;
+                    background: mixin.$acsent;
                     box-shadow: 5px 5px #323436;
                     box-sizing: border-box;
                     line-height: 5rem;
@@ -52,17 +56,27 @@
             }
         }
 
-        #training{
-            margin-bottom: 25rem;
-
-            @include mixin.mq(sp_s){
-                margin-bottom: 15rem;
+        .top_section{
+            margin: 0 auto 8rem;
+            h3{
+                font-family: "Inria Sans", "Inika";
+                font-size: clamp(2.8rem, 2.073rem + 3.64vw * .625, 4.8rem);
+                line-height: 160%;
+                letter-spacing: 1.6px;
+                margin: 0 auto 4.8rem;
             }
+
+
+        }
+
+
+        #training{
 
             h3{
                 width: 1000px;
-                margin: 0 auto;
-                text-align: left;
+                margin: 0 auto 4.8rem;
+                text-align: center;
+                color: #323436;
 
                 @include mixin.mq(tab){
                     width: 900px;
@@ -316,7 +330,7 @@
             .about_wrap{
                 width: 1000px;
                 margin: 0 auto;
-                padding: 10rem 0;
+                padding: 8rem 0;
                 color: mixin.$white;
 
                 @include mixin.mq(tab){
@@ -333,12 +347,11 @@
 
                 @include mixin.mq(sp_s){
                     width: 90%;
-                    padding-top: 5rem;
+                    padding-bottom: 2.4rem;
                 }
 
                 h3{
                     text-align: center;
-                    padding-top: 3rem;
 
                     img{
                         width: 150px;
@@ -355,8 +368,9 @@
 
                 .a_overview{
                     text-align: center;
-                    padding-top: 3rem;
                     font-size: 2rem;
+                    width: 88%;
+                    margin: 0 auto;
 
                     @include mixin.mq(sp_s){
                         font-size: 1.7rem;
@@ -369,12 +383,12 @@
                     z-index: 3;
                     margin-top: 5rem;
 
-                    @include mixin.mq(sp){
+                    @include mixin.mq(tab_s){
                         flex-direction: column;
                     }
 
                     .ab_basic{
-                        flex-basis: 50%;
+                        flex-basis: 58%;
                         padding-left: 3rem;
 
                         @include mixin.mq(tab_s){
@@ -397,6 +411,10 @@
     
                             .d_line{
                                 position: relative;
+                                display: flex;
+                                justify-content: start;
+                                flex-wrap: wrap;
+                                margin-bottom: 1.6rem;
     
                                 &::before{
                                     position: absolute;
@@ -417,11 +435,6 @@
     
                                 dd{
                                     @include mixin.clearfix();
-
-                                    @include mixin.mq(sp_s){
-                                        margin-left: 0;
-                                        
-                                    }
                                 }
 
                             }
@@ -457,6 +470,7 @@
     
                             @include mixin.mq(sp_s){
                                 .d_line{
+                                    flex-direction: column;
                                     &:nth-of-type(4) dt{
                                         float: none;
                                     }
@@ -469,9 +483,14 @@
                             margin-top: 5rem;
                             letter-spacing: 2px;
                             .d_line{
+                                display: flex;
+                                justify-content: start;
+                                flex-wrap: wrap;
+                                margin-bottom: 1.6rem;
 
                                 @include mixin.mq(sp_s){
                                     margin-bottom: 2rem;
+                                    flex-direction: column;
                                 }
 
                                 dt{
@@ -489,10 +508,6 @@
                                         }
                                     }
     
-                                    @include mixin.mq(sp_s){
-                                        margin-left: 0;
-                                        
-                                    }
                                 }
 
                                 &:nth-of-type(3) dd{
@@ -514,13 +529,16 @@
                         box-shadow: 2.5rem 2.5rem #323436;
                         border: none;
                         
-                        @include mixin.mq(sp){
-                            padding: 0;
+                        @include mixin.mq(tab_s){
+                            padding-bottom: 2.4rem;
+                            width: 64%;
+                            aspect-ratio: 1 / 1;
+                            height: auto;
+                            margin: 0 auto;
                         }
 
                         @include mixin.mq(sp_s){
-                            width: 240px;
-                            height: 330px;
+                            aspect-ratio: 2 / 2.3;
                         }
                         
                     }
@@ -530,7 +548,7 @@
                 .profile_aria{
                     width: 800px;
                     margin: 0 auto;
-                    padding: 7rem 0;
+                    padding: 8rem 0 4rem;
 
                     @include mixin.mq(tab_s){
                         width: 700px;
@@ -542,11 +560,10 @@
 
                     @include mixin.mq(sp_s){
                         width: 100%;
-                        padding-bottom: 2rem;
+                        padding: 4rem 0;
                     }
 
                     p{
-                        padding-top: 2rem;
                         font-size: 2rem;
 
                         @include mixin.mq(sp_s){
@@ -595,8 +612,7 @@
 
         #contact{
             width: 800px;
-            margin: 0 auto;
-            padding-top: 20rem;
+            padding-top: 8rem;
 
             @include mixin.mq(tab_s){
                 width: 630px;
@@ -608,12 +624,12 @@
 
             @include mixin.mq(sp_s){
                 width: 90vw;
-                padding-top: 15rem;
+                padding-top: 4.8rem;
             }
 
             h3{
                 text-align: center;
-                margin-bottom: 5rem;
+                color: #323436;
 
                 img{
                     width: 180px;
@@ -637,25 +653,21 @@
 
                     dl{
                         position: relative;
-                        margin-top: 2.5rem;
-
-                        &:not(:nth-of-type(4)) dt{
-                            width: 25%;
-                            @include mixin.mq(tab_s){
-                                width: 30%;
-                            }
-                        }
-                        &:nth-of-type(4) dt{
-                            width: 100%;
-                            text-align: left;
-                        }
+                        margin-top: 2.4rem;
+                        margin-bottom: 4rem;
+                        display: grid;
+                        grid-template-columns: 150px auto;
 
                         &:nth-of-type(-n+3){
-                            display: flex;
+                            
 
                             @include mixin.mq(sp){
-                                height: 42px;
                                 margin: 2rem 0;
+                                grid-template-columns: 120px auto;
+                            }
+
+                            @include mixin.mq(sp_s){
+                                grid-template-columns: 80px auto;
                             }
                         }
 
@@ -664,7 +676,7 @@
                             position: absolute;
                             z-index: 1;
                             left: 0;
-                            top: 1.5rem;
+                            top: 3.2rem;
                             
 
                             @include mixin.mq(tab_s){
@@ -689,6 +701,8 @@
 
                         &:nth-of-type(4){
                             margin-top: 3.5rem;
+                            grid-template-columns: 100%;
+                            grid-template-rows: auto;
 
                             &::before{
                                 @include mixin.background_url('pc/line_short.png', 27.1%, 29px, no-repeat);
@@ -696,7 +710,7 @@
                                 position: absolute;
                                 z-index: 1;
                                 left: 0;
-                                top: 1.5rem;
+                                top: 3.2rem;
     
                                 @include mixin.mq(tab_s){
                                     background-size: contain;
@@ -741,101 +755,23 @@
                         }
 
                         dt{
-                            
-                            
-                            .c_name{
-                                // before要素の上に来るようにposition: relative;
-                                position: relative;
-                                @include mixin.background_url('pc/name.png', 73px, 19px, no-repeat);
-                                z-index: 3;
-                                top: 1rem;
-                                left: 1rem;
-
-                                @include mixin.mq(tab_s){
-                                    left: 1.2rem;
-                                }
-
-                                @include mixin.mq(sp){
-                                    @include mixin.background_url('sp/name.png', 50px, 12px, no-repeat);
-                                    top: 1rem;
-                                    left: 1rem;
-                                }
-
-                                @include mixin.mq(sp_s){
-                                    @include mixin.background_url('sp_s/name.png', 41px, 10px, no-repeat);
-                                    top: 1rem;
-                                    left: 0;
-                                }
-    
-                            }
-        
-                            .c_email{
-                                position: relative;
-                                @include mixin.background_url('pc/address.png', 102px, 24px, no-repeat);
-                                z-index: 3;
-                                top: 0.6rem;
-                                left: 2rem;
-
-                                @include mixin.mq(sp){
-                                    @include mixin.background_url('sp/address.png', 69px, 17px, no-repeat);
-                                    top: 1rem;
-                                    left: 1.6rem;
-                                }
-
-                                @include mixin.mq(sp_s){
-                                    @include mixin.background_url('sp_s/address.png', 57px, 14px, no-repeat);
-                                    top: 1rem;
-                                    left: 6px;
-                                }
-    
-                            }
-        
-                            .c_title{
-                                position: relative;
-                                @include mixin.background_url('pc/title.png', 65px, 25px, no-repeat);
-                                z-index: 3;
-                                top: 0.5rem;
-                                left: 3px;
-
-                                @include mixin.mq(sp){
-                                    @include mixin.background_url('sp/title.png', 44px, 17px, no-repeat);
-                                    top: 1rem;
-                                    left: 4px;
-                                }
-
-                                @include mixin.mq(sp_s){
-                                    @include mixin.background_url('sp_s/title.png', 36px, 14px, no-repeat);
-                                    top: 1rem;
-                                    left: -4px;
-                                }
-    
-                            }
-        
-                            .c_message{
-                                position: relative;
-                                @include mixin.background_url('pc/message.png', 110px, 24px, no-repeat);
-                                z-index: 3; 
-                                top: 1.2rem;
-                                left: 4.6rem;
-
-                                @include mixin.mq(tab_s){
-                                    left: 3.6rem;
-                                }
-
-                                @include mixin.mq(sp){
-                                    @include mixin.background_url('sp/message.png', 75px, 17px, no-repeat);
-                                    top: 4px;
-                                    left: 2.6rem;
-                                }
-
-                                @include mixin.mq(sp_s){
-                                    @include mixin.background_url('sp_s/message.png', 61px, 14px, no-repeat);
-                                    top: 0;
-                                    left: 1.6rem;
-                                }
-    
+                            padding-left: 4.8rem;
+                            text-align: left;
+                            label{
+                                font-family: "HGSKyokashotai", "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", "Yu Mincho Light", "YuMincho", "Yu Mincho", "游明朝体", "MS Mincho", "YuGothic", "Yu Gothic", sans-serif;
+                                font-size: clamp(2rem, 1.564rem + 2.18vw * .625, 3.2rem);
+                                line-height: 160%;
+                                letter-spacing: 3px;
+                                color: #999999;
                             }
 
+                            @include mixin.mq(sp){
+                                padding-left: 3.2rem;
+                            }
+
+                            @include mixin.mq(sp_s){
+                                padding-left: 2rem;
+                            }
                         }
 
                         dd{
@@ -855,6 +791,8 @@
                                 font-size: 16px;
                                 display: block;
                                 height: 100%;
+                                width: 96%;
+                                
 
                                 @include mixin.mq(sp){
                                     font-size: 13px;
@@ -866,13 +804,12 @@
                                     cursor: pointer;
                                     top: -6rem;
                                     letter-spacing: 0.1rem;
-                                    font-size: 1.6rem;
                                     text-indent: 1rem;
                                     border: none;
                                     outline: none;
                                     background: mixin.$white;
                                     vertical-align: top;
-
+                                    font-size: clamp(1.4rem, 1.182rem + 1.09vw* .625, 2rem);
                                     &:hover{
                                         background-color:rgba(0,153,255,0.2);
                                         transition: .3s;
@@ -882,19 +819,17 @@
                                         text-indent: 0.6rem;
                                     }
 
-                                    @include mixin.mq(sp_s){
-                                        font-size: 1.2rem;
-                                    }
-
                                 }
 
                                 textarea{
                                     width: 100%;
                                     letter-spacing: 0.1rem;
-                                    font-size: 2rem;
+                                    line-height: 160%;
+                                    font-size: clamp(1.4rem, 1.182rem + 1.09vw * .625, 2rem);
                                     border: none;
                                     outline: none;
-                                    margin-top: 2rem;
+                                    margin-top: 4rem;
+                                    margin-bottom: 2.4rem;
                                     cursor: pointer;
                                     background: mixin.$white;
 
@@ -908,8 +843,7 @@
                                     }
 
                                     @include mixin.mq(sp_s){
-                                        font-size: 1.4rem;
-                                        margin-top: 0;
+                                        margin-top: 3.2rem;
                                     }
 
                                 }
@@ -925,6 +859,14 @@
                                     height: 42px;
                                 }
                                 
+                            }
+                            dd span{
+                                padding-left: 4.8rem;
+                                width: 89%;
+
+                                @include mixin.mq(sp){
+                                    padding-left: 3.2rem;
+                                }
                             }
                         }
 
@@ -1019,7 +961,12 @@
 
         h3{
             text-align: center;
-            margin-bottom: 5rem;
+            font-family: "Inria Sans", "Inika";
+            font-size: clamp(2.8rem, 2.073rem + 3.64vw * .625, 4.8rem);
+            line-height: 160%;
+            letter-spacing: 1.6px;
+            margin: 0 auto 4.8rem;
+            color: mixin.$main;
 
             img{
                 width: 180px;
@@ -1155,7 +1102,12 @@
 
         h3{
             text-align: center;
-            margin-bottom: 5rem;
+            font-family: "Inria Sans", "Inika";
+            font-size: clamp(2.8rem, 2.073rem + 3.64vw * .625, 4.8rem);
+            line-height: 160%;
+            letter-spacing: 1.6px;
+            margin: 0 auto 4.8rem;
+            color: mixin.$acsent;
 
             img{
                 width: 240px;
@@ -1292,6 +1244,70 @@
                         opacity: 0.5;
                     }
                 }
+
+                @include mixin.mq(sp){
+                    @keyframes oneCloud{
+                        0%{
+                            transform: translateX(120vw);
+                            opacity: 0.5;
+                        }
+                        100%{
+                            transform: translateX(-40vw);
+                            opacity: 0.5;
+                        }
+                    }
+                    @keyframes twoCloud{
+                        0%{
+                            transform: translateX(120vw);
+                            opacity: 0.5;
+                        }
+                        100%{
+                            transform: translateX(-40vw);
+                            opacity: 0.5;
+                        }
+                    }
+                    @keyframes threeCloud{
+                        0%{
+                            transform: translateX(120vw);
+                            opacity: 0.5;
+                        }
+                        100%{
+                            transform: translateX(-40vw);
+                            opacity: 0.5;
+                        }
+                    }
+                    @keyframes fourCloud{
+                        0%{
+                            transform: translateX(120vw);
+                            opacity: 0.5;
+                        }
+                        100%{
+                            transform: translateX(-40vw);
+                            opacity: 0.5;
+                        }
+                    }
+                    @keyframes fiveCloud{
+                        0%{
+                            transform: translateX(120vw);
+                            opacity: 0.5;
+                        }
+                        100%{
+                            transform: translateX(-40vw);
+                            opacity: 0.5;
+                        }
+                    }
+                    @keyframes sixCloud{
+                        0%{
+                            transform: translateX(120vw);
+                            opacity: 0.5;
+                        }
+                        100%{
+                            transform: translateX(-40vw);
+                            opacity: 0.5;
+                        }
+                    }
+
+                }
                 
             }
 
@@ -1305,7 +1321,7 @@
             width: 1000px;
             margin: 0 auto;
             padding-top: 16rem;
-            padding-bottom: 5rem;
+            padding-bottom: 12rem;
             text-shadow: 2px 2px 3px mixin.$main;
 
             @include mixin.mq(tab){
@@ -1326,7 +1342,9 @@
             }
     
             .title_area{
+                padding-bottom: 4rem;
                 h1{
+                    margin-bottom: 0;
                     text-align: center;
 
                     @include mixin.mq(sp){
@@ -1335,13 +1353,14 @@
                     
                 }
     
-                span{
-                    font-size: 2.2rem;
+                p{
+                    font-size: 2.4rem;
+                    text-align: right;
+                    padding-right: 8rem;
                     font-weight: 700;
-                    padding-left: 5rem;
+                    margin: 0;
 
                     @include mixin.mq(sp){
-                        padding-left: 2rem;
                         font-size: 1.8rem;
                     }
                 }
@@ -1374,17 +1393,46 @@
                     }
                 }
         
-                img{
-                    width: 200px;
+                // img{
+                //     width: 200px;
 
-                    @include mixin.mq(sp){
-                        width: 170px;
+                //     @include mixin.mq(sp){
+                //         width: 170px;
+                //     }
+
+                //     @include mixin.mq(sp_s){
+                //         width: 150px;
+                //     }
+
+                // }
+
+                h3{
+                    width: 180px;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    .span_header{
+                        font-family: "HGSKyokashotai", "Hiragino Mincho ProN", "ヒラギノ明朝 ProN", "Yu Mincho Light", "YuMincho", "Yu Mincho", "游明朝体", "MS Mincho", "YuGothic", "Yu Gothic", sans-serif;
+                        letter-spacing: 3px;
+                        font-size: clamp(2.8rem, 2.073rem + 3.64vw * .625, 4.8rem);
+                        line-height: 160%;
+                        letter-spacing: 1.6px;
+                        margin: 0 auto 4.8rem;
+                        color: #5d6266;
+                        position: relative;
+                        text-align: center;
+                        display: block;
+                        z-index: 5;
+                        &::after{
+                            @include mixin.background_url('pc/point_btm.png', '180px', '17.4px', no-repeat);
+                            position: absolute;
+                            bottom: 8px;
+                            left: 0;
+                            background-size: cover;
+                            z-index: -1;
+                        }
                     }
-
-                    @include mixin.mq(sp_s){
-                        width: 150px;
-                    }
-
+                    
+                    
                 }
     
                 .midashi_url{
@@ -1408,6 +1456,7 @@
                 display: flex;
                 justify-content: space-around;
                 margin-top: 10rem;
+                column-gap: 2.4rem;
 
                 @include mixin.mq(tab_s){
                     justify-content: space-between;
@@ -1433,8 +1482,8 @@
                     position: relative;
 
                     @include mixin.mq(tab_s){
-                        width: 250px;
-                        height: 250px;
+                        width: 64%;
+                        height: 100%;
                     }
 
                     .side_img{
@@ -1453,6 +1502,11 @@
         
                             &:hover{
                                 transform: scale(1.2);
+                            }
+
+                            @include mixin.mq(tab_s){
+                                height: auto;
+                                aspect-ratio: 1 / 1;
                             }
 
                             @include mixin.mq(sp_s){
@@ -1513,7 +1567,7 @@
                     z-index: 2;
 
                     @include mixin.mq(tab_s){
-                        width: 390px;
+                        width: 100%;
                         padding-top: 0;
                     }
 
@@ -1554,206 +1608,210 @@
             }
         
         
-            .sideByside_2{
-                padding: 0 2rem;
-                display: flex;
-                justify-content: space-between;
-                margin-top: 20rem;
+            // .sideByside_2{
+            //     padding: 0 2rem;
+            //     display: flex;
+            //     justify-content: space-between;
+            //     margin-top: 20rem;
 
-                @include mixin.mq(sp){
-                    margin-top: 10rem;
-                    flex-direction: column;
-                }
+            //     @include mixin.mq(sp){
+            //         margin-top: 10rem;
+            //         flex-direction: column;
+            //     }
 
-                @include mixin.mq(sp_s){
-                    padding: 0;
-                }
+            //     @include mixin.mq(sp_s){
+            //         padding: 0;
+            //     }
         
-                .vertical{
+            //     .vertical{
 
-                    @include mixin.mq(sp){
-                        margin-bottom: 10rem;
-                    }
+            //         @include mixin.mq(sp){
+            //             margin-bottom: 10rem;
+            //         }
 
-                    .top_img_wrap{
-                        width: 300px;
-                        height: 300px;
-                        position: relative;
+            //         .top_img_wrap{
+            //             width: 300px;
+            //             height: 300px;
+            //             position: relative;
 
-                        @include mixin.mq(tab_s){
-                            width: 250px;
-                            height: 250px;
-                        }
+            //             @include mixin.mq(tab_s){
+            //                 width: 250px;
+            //                 height: 250px;
+            //             }
 
-                        .top_img{
-                            width: 100%;
-                            height: 100%;
-                            margin-bottom: 3rem;
-                            overflow: hidden;
+            //             .top_img{
+            //                 width: 100%;
+            //                 height: 100%;
+            //                 margin-bottom: 3rem;
+            //                 overflow: hidden;
         
-                            img{
-                                border-radius: 5px;
-                                width: 100%;
-                                height: 100%;
-                                object-fit: cover;
-                                border-bottom: 3rem;
-                                transition: 0.5s;
+            //                 img{
+            //                     border-radius: 5px;
+            //                     width: 100%;
+            //                     height: 100%;
+            //                     object-fit: cover;
+            //                     border-bottom: 3rem;
+            //                     transition: 0.5s;
 
-                                @include mixin.mq(sp_s){
-                                    width: 95%;
-                                    height: 95%;
-                                }
+            //                     @include mixin.mq(sp_s){
+            //                         width: 95%;
+            //                         height: 95%;
+            //                     }
 
-                                &:hover{
-                                    transform: scale(1.2);
-                                }
-                            }
-                        }
-                    }
+            //                     &:hover{
+            //                         transform: scale(1.2);
+            //                     }
+            //                 }
+            //             }
+            //         }
 
-                    &:nth-child(1){
-                        margin-left: 4rem;
+            //         &:nth-child(1){
+            //             margin-left: 4rem;
 
-                        @include mixin.mq(tab_s){
-                            margin-left: 0;
-                        }
+            //             @include mixin.mq(tab_s){
+            //                 margin-left: 0;
+            //             }
 
-                        .top_img_wrap::after{
-                            content: '';
-                            background: mixin.$black;
-                            position: absolute;
-                            display: inline-block;
-                            width: 100%;
-                            height: 100%;
-                            top: 3rem;
-                            right: 2rem;
-                            z-index: -1;
-                            border-radius: 5px;
+            //             .top_img_wrap::after{
+            //                 content: '';
+            //                 background: mixin.$black;
+            //                 position: absolute;
+            //                 display: inline-block;
+            //                 width: 100%;
+            //                 height: 100%;
+            //                 top: 3rem;
+            //                 right: 2rem;
+            //                 z-index: -1;
+            //                 border-radius: 5px;
 
-                            @include mixin.mq(sp_s){
-                                width: 97%;
-                                height: 95%;
-                            }
-                        }
-                    } 
+            //                 @include mixin.mq(sp_s){
+            //                     width: 97%;
+            //                     height: 95%;
+            //                 }
+            //             }
+            //         } 
             
-                    &:nth-child(2){
-                        margin-right: 4rem;
+            //         &:nth-child(2){
+            //             margin-right: 4rem;
 
-                        @include mixin.mq(tab_s){
-                            margin-right: 0;
-                        }
+            //             @include mixin.mq(tab_s){
+            //                 margin-right: 0;
+            //             }
 
-                        .top_img_wrap::after{
-                            content: '';
-                            background: mixin.$black;
-                            position: absolute;
-                            display: inline-block;
-                            width: 100%;
-                            height: 100%;
-                            top: 3rem;
-                            left: 2rem;
-                            z-index: -1;
-                            border-radius: 5px;
+            //             .top_img_wrap::after{
+            //                 content: '';
+            //                 background: mixin.$black;
+            //                 position: absolute;
+            //                 display: inline-block;
+            //                 width: 100%;
+            //                 height: 100%;
+            //                 top: 3rem;
+            //                 left: 2rem;
+            //                 z-index: -1;
+            //                 border-radius: 5px;
 
-                            @include mixin.mq(sp_s){
-                                width: 97%;
-                                height: 95%;
-                            }
+            //                 @include mixin.mq(sp_s){
+            //                     width: 97%;
+            //                     height: 95%;
+            //                 }
     
-                        }
-                    } 
+            //             }
+            //         } 
         
-                    .explain_bottom{
-                        width: 300px;
-                        margin-top: 6rem;
-                        z-index: 2;
-                        position: relative;
+            //         .explain_bottom{
+            //             width: 300px;
+            //             margin-top: 6rem;
+            //             z-index: 2;
+            //             position: relative;
 
-                        @include mixin.mq(tab_s){
-                            width: 270px;
-                        }
+            //             @include mixin.mq(tab_s){
+            //                 width: 270px;
+            //             }
 
-                        @include mixin.mq(sp){
-                            width: 100%;
-                            margin-top: 4rem;
-                        }
+            //             @include mixin.mq(sp){
+            //                 width: 100%;
+            //                 margin-top: 4rem;
+            //             }
     
-                        h4{
-                            padding-left: 2.5rem;
-                            border-left: 3px solid mixin.$acsent;
-                            filter: drop-shadow(2px 2px 3px mixin.$main);
-                            @include mixin.mq(sp){
-                                margin-bottom: 6.5rem;
-                            }
-                        }
+            //             h4{
+            //                 padding-left: 2.5rem;
+            //                 border-left: 3px solid mixin.$acsent;
+            //                 filter: drop-shadow(2px 2px 3px mixin.$main);
+            //                 @include mixin.mq(sp){
+            //                     margin-bottom: 6.5rem;
+            //                 }
+            //             }
 
-                        p{
-                            margin-top: 2rem;
+            //             p{
+            //                 margin-top: 2rem;
+            //             }
+    
+    
+            //         }
+            //     }
+            // }
+    
+            .external{
+                margin-top: 8rem;
+
+                .url_area{
+                    text-align: right;
+                    margin-top: 5rem;
+                    a{
+                        
+                        padding-right: 3rem;
+                        text-decoration: none;
+                        font-weight: 700;
+                        color: mixin.$black;
+        
+                        i{
+                            padding-left: 0.3rem;
                         }
-    
-    
+                    }
+        
+                    p{
+                        padding-right: 3rem;
                     }
                 }
-            }
-    
-            .url_area{
-                text-align: right;
-                margin-top: 5rem;
-                a{
-                    
-                    padding-right: 3rem;
-                    text-decoration: none;
-                    font-weight: 700;
-                    color: mixin.$black;
-    
-                    i{
-                        padding-left: 0.3rem;
+        
+                .git_area{
+                    text-align: right;
+                    margin-top: 2rem;
+                    a{
+                        
+                        padding-right: 3rem;
+                        text-decoration: none;
+                        font-weight: 700;
+                        color: mixin.$black;
+        
+                        i{
+                            padding-left: 1.2rem;
+                        }
                     }
-                }
-    
-                p{
-                    padding-right: 3rem;
-                }
-            }
-    
-            .git_area{
-                text-align: right;
-                margin-top: 2rem;
-                a{
-                    
-                    padding-right: 3rem;
-                    text-decoration: none;
-                    font-weight: 700;
-                    color: mixin.$black;
-    
-                    i{
-                        padding-left: 1.2rem;
-                    }
-                }
-    
-                p{
-                    padding-right: 3rem;
-                }
-            }
-
-            .design_area{
-                text-align: right;
-                margin-top: 2rem;
-                a{
-                    
-                    padding-right: 3rem;
-                    text-decoration: none;
-                    font-weight: 700;
-                    color: mixin.$black;
-    
-                    i{
-                        padding-left: 1.2rem;
+        
+                    p{
+                        padding-right: 3rem;
                     }
                 }
     
-                p{
-                    padding-right: 3rem;
+                .design_area{
+                    text-align: right;
+                    margin-top: 2rem;
+                    a{
+                        
+                        padding-right: 3rem;
+                        text-decoration: none;
+                        font-weight: 700;
+                        color: mixin.$black;
+        
+                        i{
+                            padding-left: 1.2rem;
+                        }
+                    }
+        
+                    p{
+                        padding-right: 3rem;
+                    }
                 }
             }
         }
@@ -1789,7 +1847,11 @@
                 bottom: 60px;
             }
 
-         }
+            @include mixin.mq(sp_s){
+                bottom: 120px;
+            }
+
+        }
 
     }
 }

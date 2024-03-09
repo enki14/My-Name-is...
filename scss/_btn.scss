@@ -5,12 +5,28 @@
     justify-content: center;
     margin: 8rem auto 10rem;
 
+    @include mixin.mq(sp_s){
+        margin: 6.4rem auto 8rem;    
+    }
+
     .btn-submit{
         @include mixin.btn_pattern(auto, 20px 30px, mixin.$main, 2.5px);
         box-shadow: 1.5rem 1.5rem #323436;
         border: none;
         transition: 0.5s;
         margin-left: 12rem;
+
+        input{
+            font-family: "Inria Sans", "Inika";
+            font-size: clamp(1.8rem, 1.582rem + 1.09vw * .625, 2.4rem);
+            line-height: 150%;
+            letter-spacing: 2px;
+            color: #FBFFE0;
+            border: none !important;
+            background: #6CA5E8;
+            transition: 0.5s;
+
+        }
 
         @include mixin.mq(sp){
             margin-left: 6rem;
@@ -19,6 +35,9 @@
         &:hover{
             transition: 0.5s;
             background: #98c2f2;
+            input{
+                background: #98c2f2;
+            }
         }
 
         &:active{
@@ -27,17 +46,6 @@
             position: relative;
             transform: translateX(1.5rem);
             transform: translateY(1.5rem);
-
-        }
-
-        .wpcf7-form-control{
-            @include mixin.mq(sp){
-                width: 70px;
-            }
-
-            @include mixin.mq(sp_s){
-                width: 50px;
-            }
 
         }
         

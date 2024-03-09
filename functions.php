@@ -10,6 +10,11 @@
     }
     add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
+    function google_fonts_add() {
+        wp_register_style( 'inika_inria', 'https://fonts.googleapis.com/css2?family=Inika:wght@700&family=Inria+Sans:wght@700&display=swap');
+        wp_enqueue_style( 'inika_inria');
+    }
+    add_action( 'wp_enqueue_scripts', 'google_fonts_add' );
 
     function theme_enqueue_scripts(){
         wp_deregister_script('jquery');
