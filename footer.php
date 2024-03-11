@@ -4,7 +4,7 @@
             <li class="sstw">
                 <a href="https://twitter.com/share?url=<?php echo get_permalink(); ?>&text=<?php echo get_the_title(); ?>"
                 target="_blank" rel="nofollow noopener">
-                    <i class="fa-brands fa-twitter fa-lg"></i>
+                    <i class="fa-brands fa-x-twitter fa-lg"></i>
                 </a>
             </li>
             <li class="ssfb">

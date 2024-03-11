@@ -350,8 +350,8 @@
                         right: auto;
                     }
 
-                    @include mixin.mq(sp_s){
-                        font-size: 2.2rem;
+                    @include mixin.mq(sp){
+                        font-size: 2rem;
                     }
 
                 }
@@ -377,10 +377,15 @@
                 letter-spacing: 0.1rem;
                 transition: 0.5s;
 
+                @include mixin.mq(sp){
+                    line-height: 218%;
+                }
+
 
                 @include mixin.mq(sp_s){
                     width: 90px;
                     height: 34.5px;
+                    font-size: 1.6rem;
                 }
     
                 &:hover{
@@ -410,6 +415,11 @@
         font-size: 2rem;
         color: mixin.$white;
         letter-spacing: 0.3rem;
+
+        @include mixin.mq(sp){
+            bottom: 5vh;
+            font-size: 1.6rem;
+        }
 
         @include mixin.mq(sp_s){
             left: 10vw;

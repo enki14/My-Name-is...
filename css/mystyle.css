@@ -386,9 +386,9 @@ body a {
     right: auto;
   }
 }
-@media all and (max-width: 420px) {
+@media all and (max-width: 720px) {
   .error404 header .dark .not_page p {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 }
 .error404 header .dark a {
@@ -417,10 +417,16 @@ body a {
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
+@media all and (max-width: 720px) {
+  .error404 header .dark a {
+    line-height: 218%;
+  }
+}
 @media all and (max-width: 420px) {
   .error404 header .dark a {
     width: 90px;
     height: 34.5px;
+    font-size: 1.6rem;
   }
 }
 .error404 header .dark a:hover {
@@ -445,6 +451,12 @@ body a {
   font-size: 2rem;
   color: #FBFFE0;
   letter-spacing: 0.3rem;
+}
+@media all and (max-width: 720px) {
+  .error404::after {
+    bottom: 5vh;
+    font-size: 1.6rem;
+  }
 }
 @media all and (max-width: 420px) {
   .error404::after {
@@ -2265,8 +2277,6 @@ body a {
     margin-top: 6.5rem;
     padding-left: 2.5rem;
     border-left: 3px solid #EFBA30;
-    -webkit-filter: drop-shadow(2px 2px 3px #EF9554);
-            filter: drop-shadow(2px 2px 3px #EF9554);
   }
 }
 .single-production main .main_wrap .sideByside .explain_side h4::before {
@@ -2372,6 +2382,7 @@ body a {
 @media all and (max-width: 420px) {
   .single-production main .history_back {
     bottom: 120px;
+    font-size: 16px;
   }
 }
 
