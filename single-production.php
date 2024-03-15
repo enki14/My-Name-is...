@@ -26,12 +26,14 @@
         <?php 
             for($i = 1; $i <= 5; $i++):
                 $detail = get_field('detail_'. $i);
-
-                if($detail === ''): break; endif;
                 
                 $detail_img = 'detail_img'. $i;
                 $detail_title = 'detail_title'. $i;
                 $detail_desc = 'detail_desc'. $i;
+
+                if(empty($detail[$detail_img]['url']) && empty($detail[$detail_img]['alt'])): 
+                    break;
+                endif;
 
                 $url = $detail[$detail_img]['url'];
                 $alt = $detail[$detail_img]['alt'];

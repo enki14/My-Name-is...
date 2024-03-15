@@ -60,17 +60,15 @@ footer{
     }
 }
 
-.page-id-1987,
-.page-id-1989{
-    .wrapper{
-        min-height: 100vh;
-        position: relative;
-        footer{
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }    
-    }
+.confirm_body,
+.thanks_body{
+    min-height: 100vh;
+    position: relative;
+    footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }    
 }
 
 .start{

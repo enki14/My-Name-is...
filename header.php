@@ -39,6 +39,10 @@ if($YesNo == 1){
                     <img src="<?php echo esc_url($header_img['url']); ?>" alt="<?php echo esc_attr($header_img['alt']); ?>">
                 <?php endif; ?>
             </div>
+        <?php elseif(is_page('contact-confirm')): ?>
+            <h3 class="contact_h3">Confirm</h3>
+        <?php elseif(is_page('contact-thanks')): ?>
+            <h3 class="contact_h3">Thanks!!</h3>
         <?php endif; ?>
     </header>
     

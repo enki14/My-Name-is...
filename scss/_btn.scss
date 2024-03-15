@@ -15,29 +15,27 @@
         border: none;
         transition: 0.5s;
         margin-left: 12rem;
-
-        input{
-            font-family: "Inria Sans", "Inika";
-            font-size: clamp(1.8rem, 1.582rem + 1.09vw * .625, 2.4rem);
-            line-height: 150%;
-            letter-spacing: 2px;
-            color: #FBFFE0;
-            border: none !important;
-            background: #6CA5E8;
-            transition: 0.5s;
-
-        }
+        font-family: "Inria Sans", "Inika";
+        font-size: clamp(1.8rem, 1.582rem + 1.09vw * .625, 2.4rem);
+        line-height: 150%;
+        letter-spacing: 2px;
+        color: #FBFFE0;
+        border: none !important;
+        background: #6CA5E8;
+        transition: 0.5s;
 
         @include mixin.mq(sp){
             margin-left: 6rem;
         }
 
+        @include mixin.mq(sp_s){
+            margin-left: 4.8rem;
+            padding: 2rem 2.8rem;
+        }
+
         &:hover{
             transition: 0.5s;
             background: #98c2f2;
-            input{
-                background: #98c2f2;
-            }
         }
 
         &:active{
@@ -53,14 +51,21 @@
 
     .backbtn_wrapper{
         margin: auto 0;
-        .wpcf7-previous{
-            @include mixin.btn_pattern(auto, 16px 30px, #849cb8, 2.5px);
+        .wpcf7-previous,
+        .reset_btn{
+            @include mixin.btn_pattern(auto, 16px 24px, #849cb8, 2.5px);
             box-shadow: 1rem 1rem #323436;
             border: none;
             transition: 0.5s;
+            font-family: "Inria Sans", "Inika";
+            font-size: 14px;
+            line-height: 150%;
+            letter-spacing: 2px;
+            color: #323436;
     
             @include mixin.mq(sp_s){
-                padding: 12px 26px;
+                padding: 12px 20px;
+                font-size: 12px;
     
             }
     
@@ -77,42 +82,30 @@
                 transform: translateY(1.5rem);
     
             }
-    
-            .wpcf7-form-control{
-                @include mixin.mq(sp){
-                    width: 70px;
-                }
-    
-                @include mixin.mq(sp_s){
-                    width: 50px;
-                }
-    
-            }
+        }
+
+        input[type="button"]{
+            -webkit-appearance: none;
+            border-radius: 2.5px;
         }
     
     }
-}
-
-.home .p-btnArea .btn-submit{
-    margin-left: 0;
 }
 
 .thanks_body .p-btnArea .btn-submit{
     margin-left: 0;
     padding: 3rem;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-family: 'HGSKyokashotai', 'Hiragino Mincho ProN', 'ヒラギノ明朝 ProN', 'Yu Mincho Light','YuMincho',
+'Yu Mincho','游明朝体', 'MS Mincho', 'YuGothic','Yu Gothic', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05mm;
+    color: #323436;
+    @include mixin.mq(sp_s){
+        font-size: 1.6rem;
+    }
     @include mixin.mq(sp_s){
         padding: 2.6rem;
-    }
-    a{
-        text-decoration: none;
-        font-size: 1.8rem;
-        font-family: 'HGSKyokashotai', 'Hiragino Mincho ProN', 'ヒラギノ明朝 ProN', 'Yu Mincho Light','YuMincho',
-    'Yu Mincho','游明朝体', 'MS Mincho', 'YuGothic','Yu Gothic', sans-serif;
-        font-weight: 700;
-        letter-spacing: 0.05mm;
-        color: #323436;
-        @include mixin.mq(sp_s){
-            font-size: 1.6rem;
-        }
     }
 }

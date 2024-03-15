@@ -157,14 +157,6 @@
         let btn_cls = $('.btn_close');
 
 
-    //     $(document).on('wpcf7mailsent', function(event){
-    //         okText.html(okWord);
-    //         modal.addClass('ok_modal');
-    //         content.css('outline','10px solid #6CA5E8');
-    //         btn_cls.css('background','#6CA5E8');
-    //         $('.ok_modal').fadeIn();
-    //         return false;
-    //     });
         $(document).on('wpcf7invalid', function(event){
             okText.html(ngWord_1);
             modal.addClass('ng_modal');
