@@ -70,7 +70,7 @@
                 <div class="ab_basic">
                     <dl>
                         <div class="d_line">
-                            <dt>サイト</dt><dd>UKIGUMO-X</dd>
+                            <dt>サイト</dt><dd>うきぐも-X</dd>
                         </div>
                         <div class="d_line">
                             <dt>所在地</dt><dd>東京都中野区</dd>

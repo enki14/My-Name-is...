@@ -92,13 +92,7 @@ body{
     font-family: 'HGSKyokashotai', 'Hiragino Mincho ProN', 'ヒラギノ明朝 ProN', 'Yu Mincho Light','YuMincho',
     'Yu Mincho','游明朝体', 'MS Mincho', 'YuGothic','Yu Gothic', sans-serif;
     @include font_pattern(16px, #333, 500);
-    // htmlの謎の余白対応
-    margin-top: -3.2rem;
 
-    // htmlの謎の余白対応
-    @media screen and (max-width: 782px){
-        margin-top: -4.6rem;
-    }
 
     h1{
         font-size: 2.3em;
@@ -117,3 +111,13 @@ body{
         font-size: 1em;
     }
 }
+
+// body:not(.home){
+//     // htmlの謎の余白対応
+//     margin-top: -3.2rem;
+
+//     // htmlの謎の余白対応
+//     @media screen and (max-width: 782px){
+//         margin-top: -4.6rem;
+//     }
+// }

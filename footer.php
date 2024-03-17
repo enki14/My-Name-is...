@@ -28,7 +28,7 @@
     <div class="moon_wrap">
         <img src="<?php echo esc_url(get_template_directory_uri() . '/images/pc/Ellipse 16.png'); ?>" alt="月光">
     </div>
-    <img src="<?php echo esc_url(get_template_directory_uri() . '/images/ukigumo.png'); ?>" 
+    <img src="<?php echo esc_url(get_template_directory_uri() . '/images/ukigumo-x.png'); ?>" 
     class="norimakisan" alt="うきぐものロゴ">
     <div class="cloudy_area">
         <img src="<?php echo esc_url(get_template_directory_uri() . '/images/pc/Group 147.png'); ?>" 

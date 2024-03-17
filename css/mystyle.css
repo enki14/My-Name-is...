@@ -13,12 +13,6 @@ body {
   font-size: 16px;
   color: #333;
   font-weight: 500;
-  margin-top: -3.2rem;
-}
-@media screen and (max-width: 782px) {
-  body {
-    margin-top: -4.6rem;
-  }
 }
 body h1 {
   font-size: 2.3em;
@@ -267,6 +261,7 @@ body a {
 @media all and (max-width: 720px) {
   .single-production header::before {
     left: 10vw;
+    top: 25%;
   }
 }
 @media all and (max-width: 420px) {
@@ -326,7 +321,7 @@ body a {
   .single-production header .ph_wrap img {
     left: 0;
     width: 100%;
-    top: 25%;
+    top: 30%;
   }
 }
 @media all and (max-width: 420px) {
@@ -2015,12 +2010,13 @@ body a {
 @media all and (max-width: 720px) {
   .single-production main .main_wrap {
     width: 86%;
+    padding-top: 8rem;
   }
 }
 @media all and (max-width: 420px) {
   .single-production main .main_wrap {
     width: 90%;
-    padding-top: 10rem;
+    padding-top: 8px;
   }
 }
 .single-production main .main_wrap .title_area {
@@ -2729,6 +2725,10 @@ footer .f_wrap p {
   -webkit-transform: translateY(1.5rem);
           transform: translateY(1.5rem);
 }
+.p-btnArea input[type=submit] {
+  -webkit-appearance: none;
+  border-radius: 2.5px;
+}
 .p-btnArea .backbtn_wrapper {
   margin: auto 0;
 }
@@ -2776,6 +2776,10 @@ footer .f_wrap p {
           transform: translateY(1.5rem);
 }
 .p-btnArea .backbtn_wrapper input[type=button] {
+  -webkit-appearance: none;
+  border-radius: 2.5px;
+}
+.p-btnArea .backbtn_wrapper input[type=reset] {
   -webkit-appearance: none;
   border-radius: 2.5px;
 }

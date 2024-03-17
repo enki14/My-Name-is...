@@ -1307,11 +1307,12 @@
 
             @include mixin.mq(sp){
                 width: 86%;
+                padding-top: 8rem;
             }
 
             @include mixin.mq(sp_s){
                 width: 90%;
-                padding-top: 10rem;
+                padding-top: 8px;
             }
     
             .title_area{
