@@ -40,12 +40,13 @@
                 <?php if ($counter <= 1): ?>
                     <p class="new_tag">NEW</p>
                 <?php endif; ?>
+                <!-- <?php var_dump($header_img) ?> -->
                 <img src="<?php echo esc_url($header_img['url']) ?>" alt="<?php echo esc_attr($header_img['alt']) ?>">
                 <div class="post_side">
                     <h4><?php the_title() ?></h4>
                     <p><?php the_field('excerpt') ?></p>
                     <a href="<?php the_permalink() ?>">詳しく確認する<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    <div class="updown"></div>
+                    <div id="updown<?php $header_img["ID"] ?>" class="updown"></div>
                 </div>
             </article>
         </div>
@@ -62,7 +63,7 @@
         <div class="about_wrap">
             <h3>About</h3>
             <p class="a_overview">
-                このサイトは、私カリストの砂のポートフォリオ集となります。
+                このサイトは、Masashiのポートフォリオ集となります。
                 主に、これまでのサイト制作を発信し、また今後も新しい練習素材を更新していくものとなります。
             </p>
             <article>
@@ -81,13 +82,16 @@
                         <div class="d_line">
                             <dt>制作事例</dt><dd>webデザイン、コーディング、CMS導入</dd>
                         </div>
+                        <div class="d_line">
+                            <dt>開発ツール</dt><dd>Laravel、WordPress、Figma、Photoshopなど</dd>
+                        </div>
                     </dl>
                     <dl>
                         <div class="d_line">
-                            <dt>カリストの砂</dt><dd></dd>
+                            <dt>Masashi</dt><dd></dd>
                         </div>
                         <div class="d_line">
-                            <dt>Twitter</dt><dd>@RBtIpvNr6OkIKiX</dd>
+                            <dt>Twitter</dt><dd>@Masashi87343288</dd>
                         </div>
                         <div class="d_line">
                             <dt>Facebook</dt><dd>https://www.facebook.com/jyakarisuto</dd>
@@ -95,12 +99,25 @@
                     </dl>
                 </div>
             </article>
-            <div class="profile_aria">
+            <article class="profile_aria">
                 <h4>自己紹介</h4>
-                <p class="profile">個人的なサイト運営からプログラミングやホームページ作成に興味を持ち、4年の月日を経て今に至ります。
-                現在は都内の介護施設に勤務。その傍ら専業のフリーランスを目指し
-                10年20年を見据えて質の良い開発のために日々精進しております。</p>
-            </div>
+                <div class="profile">
+                    <p>
+                        自身でサイトを立ち上げブログを書いていた時期があり、そこからプログラミングやホームページ作成に興味を持ちました。
+                        現在はそれらの技術を仕事に生かすべく、制作した新規サイトやランディングページなどをこちらのサイトに順次アップしております。
+                        作成したものはすべて架空のオリジナルであり、掲載されている企業などもすべて架空のものになります。</p>
+                    <p>
+                        昨今はAIの発達により、それまでの制作方法を改める必要に迫られ、それと同時に生産性に難がある私としてはAIに関連したツールを積極的に活用しながら、
+                        スピーディーで質の高い成果物を展開していきたいと考えています
+                    </p>
+                    <p>
+                        私の普段の仕事は介護施設で働く介護スタッフであり、今後もそちらの仕事は継続していくつもりですが、web制作に関する継続的なお仕事も検討しているところです。
+                        今後の活動希望としては、未経験者としてweb制作の全体的な流れやクライアントへのニーズにどのように対応しているのかを知ることができるような環境でお仕事ができれば幸いです。
+                        特に今はFigmaを使用したWebデザインの仕事に興味があります。Figmaは自分が使い慣れているというのもありますが、今後デザインの様々な分野で重宝するツールと認識しています。
+                        <br>これを機にどうぞよろしくお願い致します
+                    </p>
+                </div>
+            </article>
         </div>
         <div class="about_bottom">
             <div class="bottom_mountain">

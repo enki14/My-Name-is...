@@ -111,6 +111,7 @@ body a {
   font-weight: 700;
   text-align: left;
   text-shadow: 2px 1px 1px #54585c;
+  letter-spacing: 3px;
 }
 @media all and (max-width: 1200px) {
   .home header .h_wrap p {
@@ -704,7 +705,7 @@ body a {
   background: linear-gradient(45deg, rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.2));
   border-radius: 50%;
   z-index: 5;
-  display: none;
+  opacity: 0;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   -webkit-animation: updown 2s ease-in-out infinite;
@@ -722,7 +723,7 @@ body a {
     top: 3rem;
   }
   50% {
-    top: 6rem;
+    top: 9rem;
   }
   100% {
     top: 3rem;
@@ -733,7 +734,7 @@ body a {
     top: 3rem;
   }
   50% {
-    top: 6rem;
+    top: 9rem;
   }
   100% {
     top: 3rem;
@@ -975,6 +976,9 @@ body a {
 .home main #about .about_wrap article .ab_basic dl:nth-of-type(1) .d_line:nth-of-type(4)::before {
   left: 11rem;
 }
+.home main #about .about_wrap article .ab_basic dl:nth-of-type(1) .d_line:nth-of-type(5)::before {
+  left: 13rem;
+}
 @media all and (max-width: 720px) {
   .home main #about .about_wrap article .ab_basic dl:nth-of-type(1) {
     padding-left: 0;
@@ -1074,6 +1078,7 @@ body a {
   width: 800px;
   margin: 0 auto;
   padding: 8rem 0 4rem;
+  display: block;
 }
 @media all and (max-width: 920px) {
   .home main #about .about_wrap .profile_aria {
@@ -1091,11 +1096,12 @@ body a {
     padding: 4rem 0;
   }
 }
-.home main #about .about_wrap .profile_aria p {
+.home main #about .about_wrap .profile_aria .profile p {
   font-size: 2rem;
+  padding-bottom: 1.6rem;
 }
 @media all and (max-width: 420px) {
-  .home main #about .about_wrap .profile_aria p {
+  .home main #about .about_wrap .profile_aria .profile p {
     font-size: 1.7rem;
   }
 }

@@ -124,3 +124,25 @@ jQuery(function(){
 
     });
 });
+
+
+window.addEventListener("scroll", function() {
+    var targetElement = document.getElementById("training"); // アニメーションを発動させたい要素のIDを指定する
+    var updown = document.getElementsByClassName("updown");
+    var targetPosition = targetElement.getBoundingClientRect().top;
+    var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    if (scrollPosition >= targetPosition) {
+        for(var i = 0; i < updown.length; i++){
+            updown[i].style.opacity = 1;
+            updown[i].style.transition = "opacity 300ms";
+
+            // 5秒後に要素を非表示にする
+            setTimeout(function() {
+                for(var i = 0; i < updown.length; i++){
+                    updown[i].style.opacity = 0;
+                }
+            }, 5000); // 5000ミリ秒 = 5秒
+        }
+    }
+});

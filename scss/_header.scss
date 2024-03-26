@@ -84,6 +84,8 @@
                 @include mixin.font_pattern(34px, mixin.$white, 700);
                 text-align: left;
                 text-shadow: 2px 1px 1px #54585c;
+                letter-spacing: 3px;
+
 
                 @include mixin.mq(tab){
                     bottom: 30%;

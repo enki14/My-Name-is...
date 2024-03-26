@@ -26,9 +26,9 @@ if($YesNo == 1){
             <?php wp_nav_menu(array('theme_location'=>'header-navigation')); ?>
             <div class="h_wrap">
                 <p class="p_1">ようこそ<br>浮雲の間へ</p>
-                <p class="p_2">このサイトは<br>私のweb制作におけるポートフォリオ集となります</p>
+                <p class="p_2">このサイトは<br>私のweb制作における<br>ポートフォリオ集となります</p>
                 <p class="p_3">コーディングなどのご依頼がありましたら<br>どうぞご気軽にお問い合わせください</p>
-                <p class="p_4">by, カリストの砂</p>
+                <p class="p_4">produced by - Masashi</p>
             </div>
         <?php elseif(is_singular('production')): ?>
             <div class="ph_wrap">
