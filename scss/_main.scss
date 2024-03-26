@@ -233,6 +233,26 @@
                                 }
                             }
 
+                            @include mixin.mq(sp){
+                                bottom: 15rem;
+                                top: auto;
+
+                                @keyframes updown {
+                                    0%{
+                                        bottom: 15rem;
+                                        top: auto;
+                                    }
+                                    50%{
+                                        bottom: 9rem;
+                                        top: auto;
+                                    }
+                                    100%{
+                                        bottom: 15rem;
+                                        top: auto;
+                                    }
+                                }
+                            }
+
                         }
                         
                         h4{

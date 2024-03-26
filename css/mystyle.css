@@ -740,6 +740,40 @@ body a {
     top: 3rem;
   }
 }
+@media all and (max-width: 720px) {
+  .home main #training .one_post article .post_side .updown {
+    bottom: 15rem;
+    top: auto;
+  }
+  @-webkit-keyframes updown {
+    0% {
+      bottom: 15rem;
+      top: auto;
+    }
+    50% {
+      bottom: 9rem;
+      top: auto;
+    }
+    100% {
+      bottom: 15rem;
+      top: auto;
+    }
+  }
+  @keyframes updown {
+    0% {
+      bottom: 15rem;
+      top: auto;
+    }
+    50% {
+      bottom: 9rem;
+      top: auto;
+    }
+    100% {
+      bottom: 15rem;
+      top: auto;
+    }
+  }
+}
 .home main #training .one_post article .post_side h4 {
   margin-top: 0;
 }
